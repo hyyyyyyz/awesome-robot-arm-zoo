@@ -1,0 +1,324 @@
+<?xml version="1.0"?>
+<!-- Static URDF prepared from the upstream model; mesh and texture references use local relative paths. -->
+<robot name="lbr_iisy3_r760">
+  <ros2_control is_async="False" name="lbr_iisy3_r760" type="system">
+    <properties>
+      <async affinity="[]" print_warnings="false" scheduling_policy="detached" thread_priority="69" />
+    </properties>
+    <hardware>
+      <param name="interface_prefix" />
+      <plugin>kuka_mock_hardware_interface::KukaMockHardwareInterface</plugin>
+      <param name="cycle_time_ms">4</param>
+      <param name="roundtrip_time_micro">0</param>
+      <param name="mock_sensor_commands">false</param>
+      <param name="state_following_offset">0.0</param>
+      <param name="custom_interface_with_following_offset">commanded_position</param>
+      <param name="position_state_following_offset">0.0</param>
+    </hardware>
+    <joint name="joint_1">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <command_interface name="effort" />
+      <state_interface name="effort">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <command_interface name="velocity" />
+      <state_interface name="velocity">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+    <joint name="joint_2">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">-1.5708</param>
+      </state_interface>
+      <command_interface name="effort" />
+      <state_interface name="effort">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <command_interface name="velocity" />
+      <state_interface name="velocity">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+    <joint name="joint_3">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">1.5708</param>
+      </state_interface>
+      <command_interface name="effort" />
+      <state_interface name="effort">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <command_interface name="velocity" />
+      <state_interface name="velocity">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+    <joint name="joint_4">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <command_interface name="effort" />
+      <state_interface name="effort">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <command_interface name="velocity" />
+      <state_interface name="velocity">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+    <joint name="joint_5">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <command_interface name="effort" />
+      <state_interface name="effort">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <command_interface name="velocity" />
+      <state_interface name="velocity">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+    <joint name="joint_6">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <command_interface name="effort" />
+      <state_interface name="effort">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <command_interface name="velocity" />
+      <state_interface name="velocity">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+    <gpio name="gpio" />
+  </ros2_control>
+  <link name="world" />
+  <link name="base_link">
+    <collision>
+      <geometry>
+        <mesh filename="resources/kuka_lbr_iisy_support/meshes/lbr_iisy3_r760/collision/base_link.stl" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+    </collision>
+    <inertial>
+      <inertia ixx="0.012748224322771616" ixy="0.0" ixz="0.0" iyy="0.010816256892101183" iyz="0.0" izz="0.014034253414070816" />
+      <mass value="3.6832E0" />
+      <origin rpy="-1.635646718734919 -1.5587113211406542 -3.076430534295977" xyz="-0.010469427580225498 2.2191996713941945E-18 0.06527114050303555" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/kuka_lbr_iisy_support/meshes/lbr_iisy3_r760/visual/base_link.stl" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+      <material name="">
+        <color rgba="0.9450980392156862 0.9254901960784314 1.0 1.0" />
+      </material>
+    </visual>
+  </link>
+  <link name="link_1">
+    <collision>
+      <geometry>
+        <mesh filename="resources/kuka_lbr_iisy_support/meshes/lbr_iisy3_r760/collision/link_1.stl" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+    </collision>
+    <inertial>
+      <inertia ixx="0.00864540353780418" ixy="0.0" ixz="0.0" iyy="0.00573103463618732" iyz="0.0" izz="0.00974792600424334" />
+      <mass value="3.2492E0" />
+      <origin rpy="-1.5252872042613295 -0.9405332807925293 1.5213371149412753" xyz="-1.91677951495753E-4 0.024070491197833298 -0.0710631416964176" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/kuka_lbr_iisy_support/meshes/lbr_iisy3_r760/visual/link_1.stl" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+      <material name="">
+        <color rgba="0.9450980392156862 0.9254901960784314 1.0 1.0" />
+      </material>
+    </visual>
+  </link>
+  <link name="link_2">
+    <collision>
+      <geometry>
+        <mesh filename="resources/kuka_lbr_iisy_support/meshes/lbr_iisy3_r760/collision/link_2.stl" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+    </collision>
+    <inertial>
+      <inertia ixx="0.0521692170047944" ixy="0.0" ixz="0.0" iyy="0.0042331111850977" iyz="0.0" izz="0.0534425693052013" />
+      <mass value="3.212E0" />
+      <origin rpy="9.692351535578106E-5 0.0015557646011294692 -1.5702311120941035" xyz="0.151061643835616 -6.75591531755915E-4 -0.034993673723536706" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/kuka_lbr_iisy_support/meshes/lbr_iisy3_r760/visual/link_2.stl" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+      <material name="">
+        <color rgba="0.9450980392156862 0.9254901960784314 1.0 1.0" />
+      </material>
+    </visual>
+  </link>
+  <link name="link_3">
+    <collision>
+      <geometry>
+        <mesh filename="resources/kuka_lbr_iisy_support/meshes/lbr_iisy3_r760/collision/link_3.stl" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+    </collision>
+    <inertial>
+      <inertia ixx="0.0113804888378926" ixy="0.0" ixz="0.0" iyy="0.00566536942404497" iyz="0.0" izz="0.0133950588482047" />
+      <mass value="3.471E0" />
+      <origin rpy="1.5993955084701255 -1.1491769762279627 3.1012276608488882" xyz="0.029424678766926 2.54105445116681E-4 0.058670936329588" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/kuka_lbr_iisy_support/meshes/lbr_iisy3_r760/visual/link_3.stl" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+      <material name="">
+        <color rgba="0.9450980392156862 0.9254901960784314 1.0 1.0" />
+      </material>
+    </visual>
+  </link>
+  <link name="link_4">
+    <collision>
+      <geometry>
+        <mesh filename="resources/kuka_lbr_iisy_support/meshes/lbr_iisy3_r760/collision/link_4.stl" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+    </collision>
+    <inertial>
+      <inertia ixx="0.00244684891934666" ixy="0.0" ixz="0.0" iyy="0.00929300990970133" iyz="0.0" izz="0.00957902612033654" />
+      <mass value="2.0138E0" />
+      <origin rpy="1.6613960972986936 -1.1557380835519457 -1.5702834955545293" xyz="1.05670870990168E-4 0.038203987486344196 -0.0813488578806237" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/kuka_lbr_iisy_support/meshes/lbr_iisy3_r760/visual/link_4.stl" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+      <material name="">
+        <color rgba="0.9450980392156862 0.9254901960784314 1.0 1.0" />
+      </material>
+    </visual>
+  </link>
+  <link name="link_5">
+    <collision>
+      <geometry>
+        <mesh filename="resources/kuka_lbr_iisy_support/meshes/lbr_iisy3_r760/collision/link_5.stl" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+    </collision>
+    <inertial>
+      <inertia ixx="0.00236252846105637" ixy="0.0" ixz="0.0" iyy="0.00141854396142661" iyz="0.0" izz="0.0025813096143987" />
+      <mass value="1.4418E0" />
+      <origin rpy="-1.7233052822660835 -1.3466087566012612 0.1844343658550185" xyz="0.0223951033430434 -2.98134988556471E-21 -0.0316419475655431" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/kuka_lbr_iisy_support/meshes/lbr_iisy3_r760/visual/link_5.stl" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+      <material name="">
+        <color rgba="0.9450980392156862 0.9254901960784314 1.0 1.0" />
+      </material>
+    </visual>
+  </link>
+  <link name="link_6">
+    <collision>
+      <geometry>
+        <mesh filename="resources/kuka_lbr_iisy_support/meshes/lbr_iisy3_r760/collision/link_6.stl" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+    </collision>
+    <inertial>
+      <inertia ixx="0.00130428196885741" ixy="0.0" ixz="0.0" iyy="8.59824496082689E-4" iyz="0.0" izz="0.00133168575299756" />
+      <mass value="7.25E-1" />
+      <origin rpy="-0.5546496285205927 -0.9838872221389914 0.47057095417629574" xyz="-8.78896551724138E-4 0.0100584827586207 -0.0396903310344828" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/kuka_lbr_iisy_support/meshes/lbr_iisy3_r760/visual/link_6.stl" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+      <material name="">
+        <color rgba="0.9450980392156862 0.9254901960784314 1.0 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint name="joint_1" type="revolute">
+    <axis xyz="0.0 0.0 -1.0" />
+    <child link="link_1" />
+    <limit effort="74.930405" lower="-3.2288591E0" upper="3.2288591E0" velocity="3.490656" />
+    <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.1264" />
+    <parent link="base_link" />
+  </joint>
+  <joint name="joint_2" type="revolute">
+    <axis xyz="0.0 0.0 1.0" />
+    <child link="link_2" />
+    <limit effort="74.472453" lower="-4.0142572796E0" upper="8.726646E-1" velocity="3.490656" />
+    <origin rpy="-1.5707963267948966 0.0 -0.0" xyz="0.0 0.0 0.0886" />
+    <parent link="link_1" />
+  </joint>
+  <joint name="joint_3" type="revolute">
+    <axis xyz="0.0 0.0 1.0" />
+    <child link="link_3" />
+    <limit effort="43.393430" lower="-2.61799387799E0" upper="2.61799387799E0" velocity="3.490656" />
+    <origin rpy="0.0 0.0 -1.5707963267948966" xyz="0.3 0.0 0.0" />
+    <parent link="link_2" />
+  </joint>
+  <joint name="joint_4" type="revolute">
+    <axis xyz="0.0 0.0 1.0" />
+    <child link="link_4" />
+    <limit effort="14.767719" lower="-3.05432619E0" upper="3.05432619E0" velocity="5.235988" />
+    <origin rpy="1.5707963267948966 0.0 -0.0" xyz="0.0 0.0 0.0" />
+    <parent link="link_3" />
+  </joint>
+  <joint name="joint_5" type="revolute">
+    <axis xyz="0.0 0.0 1.0" />
+    <child link="link_5" />
+    <limit effort="13.187655" lower="-1.919862177E0" upper="1.919862177E0" velocity="5.235988" />
+    <origin rpy="-1.5707963267948966 0.0 -0.0" xyz="0.0 0.0 -0.3" />
+    <parent link="link_4" />
+  </joint>
+  <joint name="joint_6" type="revolute">
+    <axis xyz="0.0 0.0 1.0" />
+    <child link="link_6" />
+    <limit effort="4.834440" lower="-3.839724354E0" upper="3.839724354E0" velocity="6.981310" />
+    <origin rpy="1.5707963267948966 0.0 -0.0" xyz="0.0 0.0 0.0" />
+    <parent link="link_5" />
+  </joint>
+  <link name="base" />
+  <joint name="base_link-base" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="base_link" />
+    <child link="base" />
+  </joint>
+  <link name="flange" />
+  <joint name="link6-flange" type="fixed">
+    <child link="flange" />
+    <origin rpy="0 1.5707963267948966 -0.0" xyz="0.0 0.0 -0.1605" />
+    <parent link="link_6" />
+  </joint>
+  <link name="tool0" />
+  <joint name="link6-tool0" type="fixed">
+    <child link="tool0" />
+    <origin rpy="0 3.141592653589793 -0.0" xyz="0.0 0.0 -0.1605" />
+    <parent link="link_6" />
+  </joint>
+  <joint name="world-base_link" type="fixed">
+    <parent link="world" />
+    <child link="base_link" />
+    <origin rpy="0 0 0" xyz="0 0 0" />
+  </joint>
+</robot>

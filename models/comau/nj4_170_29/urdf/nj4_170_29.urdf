@@ -1,0 +1,343 @@
+<?xml version="1.0"?>
+<!-- Static URDF prepared from the upstream model; mesh and texture references use local relative paths. -->
+<robot name="nj4-170-29">
+  <link name="base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0358170633766101 -0.133200870997853 -1.20441996126676E-05" />
+      <mass value="536.680741" />
+      <inertia ixx="62.360874" ixy="0.654948" ixz="-1.979074" iyy="76.271867" iyz="-0.358742" izz="57.830487" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/nj4-170-29_description/meshes/nj4-170-aura/base_link.STL" />
+      </geometry>
+      <material name="comau_dark_grey">
+        <color rgba="0.25098 0.25098 0.25098 1" />
+      </material>
+    </visual>
+    <collision>
+      <surface>
+        <contact>
+          <collide_bitmask>0x01</collide_bitmask>
+        </contact>
+      </surface>
+      <geometry>
+        <mesh filename="resources/nj4-170-29_description/meshes/nj4-170-aura/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.281724738455948 0.0188072298221098 0.424980225708466" />
+      <mass value="495.053691" />
+      <inertia ixx="111.675220" ixy="58.620245" ixz="-2.104607" iyy="80.645840" iyz="-2.948129" izz="133.290493" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/nj4-170-29_description/meshes/nj4-170-aura/link1.STL" />
+      </geometry>
+      <material name="comau_grey">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <surface>
+        <contact>
+          <collide_bitmask>0x10</collide_bitmask>
+        </contact>
+      </surface>
+      <geometry>
+        <mesh filename="resources/nj4-170-29_description/meshes/nj4-170-aura/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0184154121072617 -0.00325920706538008 0.5138379312381" />
+      <mass value="127.559389" />
+      <inertia ixx="2.196733" ixy="-0.075490" ixz="-0.000625" iyy="23.519186" iyz="0.000539" izz="23.885208" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/nj4-170-29_description/meshes/nj4-170-aura/link2.STL" />
+      </geometry>
+      <material name="comau_grey">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <surface>
+        <contact>
+          <collide_bitmask>0x01</collide_bitmask>
+        </contact>
+      </surface>
+      <geometry>
+        <mesh filename="resources/nj4-170-29_description/meshes/nj4-170-aura/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0344340431558973 0.140671597782221 0.214177487655968" />
+      <mass value="190.944976" />
+      <inertia ixx="25.534120" ixy="-6.654023" ixz="-10.202298" iyy="25.607238" iyz="8.329824" izz="20.298344" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/nj4-170-29_description/meshes/nj4-170-aura/link3.STL" />
+      </geometry>
+      <material name="comau_grey">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <surface>
+        <contact>
+          <collide_bitmask>0x01</collide_bitmask>
+        </contact>
+      </surface>
+      <geometry>
+        <mesh filename="resources/nj4-170-29_description/meshes/nj4-170-aura/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_3_virtual">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="1.90944976" />
+      <inertia ixx="25.534120" ixy="-6.654023" ixz="-10.202298" iyy="25.607238" iyz="8.329824" izz="20.298344" />
+    </inertial>
+  </link>
+  <link name="link_4">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.80900424962901 0.000451706567845002 -0.00382756003622609" />
+      <mass value="120.345471" />
+      <inertia ixx="74.553230" ixy="0.085830" ixz="-0.051324" iyy="19.281614" iyz="-31.774605" izz="56.337834" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/nj4-170-29_description/meshes/nj4-170-aura/link4.STL" />
+      </geometry>
+      <material name="comau_grey">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <surface>
+        <contact>
+          <collide_bitmask>0x01</collide_bitmask>
+        </contact>
+      </surface>
+      <geometry>
+        <mesh filename="resources/nj4-170-29_description/meshes/nj4-170-aura/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_5">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.115261031754369 0.000133172079047274 0.303652656537663" />
+      <mass value="34.709332" />
+      <inertia ixx="1.484441" ixy="-0.003976" ixz="0.000570" iyy="0.463806" iyz="0.283810" izz="1.194671" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/nj4-170-29_description/meshes/nj4-170-aura/link5.STL" />
+      </geometry>
+      <material name="comau_dark_grey">
+        <color rgba="0.25098 0.25098 0.25098 1" />
+      </material>
+    </visual>
+    <collision>
+      <surface>
+        <contact>
+          <collide_bitmask>0x10</collide_bitmask>
+        </contact>
+      </surface>
+      <geometry>
+        <mesh filename="resources/nj4-170-29_description/meshes/nj4-170-aura/link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_6">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0504075130041792 0.000546453728390363 0.004902792369613" />
+      <mass value="10.580951" />
+      <inertia ixx="0.045584" ixy="-0.001353" ixz="-0.000164" iyy="0.045388" iyz=" -0.000059" izz="0.080017" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/nj4-170-29_description/meshes/nj4-170-aura/link6.STL" />
+      </geometry>
+      <material name="comau_dark_grey">
+        <color rgba="0.25098 0.25098 0.25098 1" />
+      </material>
+    </visual>
+    <collision>
+      <surface>
+        <contact>
+          <collide_bitmask>0x01</collide_bitmask>
+        </contact>
+      </surface>
+      <geometry>
+        <mesh filename="resources/nj4-170-29_description/meshes/nj4-170-aura/link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="ee_link" />
+  <joint name="joint_1" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0.30155" />
+    <parent link="base_link" />
+    <child link="link_1" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" lower="-3.1416" upper="3.1416" velocity="1.75" />
+    <dynamics damping="0.02" friction="0.0" />
+  </joint>
+  <joint name="joint_2" type="revolute">
+    <origin rpy="0 0 0" xyz="0.4 0 0.52845" />
+    <parent link="link_1" />
+    <child link="link_2" />
+    <axis xyz="0 1 0" />
+    <limit effort="70" lower="-0.34907" upper="1.4835" velocity="1.48" />
+    <dynamics damping="0.02" friction="0.0" />
+  </joint>
+  <joint name="joint_2m" type="continuous">
+    <origin rpy="0 -1.5708 0" xyz="0 0 1.175" />
+    <parent link="link_2" />
+    <child link="link_3_virtual" />
+    <axis xyz="0 -1 0" />
+    <limit effort="70" lower="-3.8397" upper="-0.87267" velocity="1.48" />
+    <mimic joint="joint_2" multiplier="1" offset="0" />
+    <dynamics damping="0.02" friction="0.0" />
+  </joint>
+  <joint name="joint_3" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="link_3_virtual" />
+    <child link="link_3" />
+    <axis xyz="0 -1 0" />
+    <limit effort="100" lower="-3.8397" upper="-0.87267" velocity="1.75" />
+    <dynamics damping="0.02" friction="0.0" />
+  </joint>
+  <joint name="joint_4" type="revolute">
+    <origin rpy="0 0 0" xyz="0.11564 0 0.25" />
+    <parent link="link_3" />
+    <child link="link_4" />
+    <axis xyz="-1 0 0" />
+    <limit effort="100" lower="-3.1416" upper="3.1416" velocity="2.27" />
+    <dynamics damping="0.02" friction="0.0" />
+  </joint>
+  <joint name="joint_5" type="revolute">
+    <origin rpy="0 0 0" xyz="1.1805 0 -0.12279" />
+    <parent link="link_4" />
+    <child link="link_5" />
+    <axis xyz="0.5 0 0.86603" />
+    <limit effort="100" lower="-3.1416" upper="3.1416" velocity="2.44" />
+    <dynamics damping="0.02" friction="0.0" />
+  </joint>
+  <joint name="joint_6" type="revolute">
+    <origin rpy="0 0 0" xyz="0.249020884993843 0 0.252697025311508" />
+    <parent link="link_5" />
+    <child link="link_6" />
+    <axis xyz="1 0 0" />
+    <limit effort="70" lower="-3.1416" upper="3.1416" velocity="3.32" />
+    <dynamics damping="0.02" friction="0.0" />
+  </joint>
+  <joint name="fixed_ee_joint" type="fixed">
+    <parent link="link_6" />
+    <child link="ee_link" />
+  </joint>
+  <ros2_control name="nj4-170-29" type="system">
+    <hardware>
+      <plugin>comau_hardware_interface/ComauHardwareInterface</plugin>
+    </hardware>
+    <joint name="joint_1">
+      <command_interface name="position">
+        <param name="min">{-2*pi}</param>
+        <param name="max">{2*pi}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.15</param>
+        <param name="max">3.15</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint_2">
+      <command_interface name="position">
+        <param name="min">{-2*pi}</param>
+        <param name="max">{2*pi}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.15</param>
+        <param name="max">3.15</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint_3">
+      <command_interface name="position">
+        <param name="min">{-pi}</param>
+        <param name="max">{pi}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.15</param>
+        <param name="max">3.15</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint_4">
+      <command_interface name="position">
+        <param name="min">{-2*pi}</param>
+        <param name="max">{2*pi}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.2</param>
+        <param name="max">3.2</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint_5">
+      <command_interface name="position">
+        <param name="min">{-2*pi}</param>
+        <param name="max">{2*pi}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.2</param>
+        <param name="max">3.2</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint_6">
+      <command_interface name="position">
+        <param name="min">{-2*pi}</param>
+        <param name="max">{2*pi}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.2</param>
+        <param name="max">3.2</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+    </joint>
+  </ros2_control>
+  <link name="world" />
+  <joint name="world_joint" type="fixed">
+    <parent link="world" />
+    <child link="base_link" />
+    <origin rpy="0 0 0" xyz="0 0 0" />
+  </joint>
+</robot>

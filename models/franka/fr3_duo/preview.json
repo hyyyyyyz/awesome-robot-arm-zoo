@@ -1,0 +1,44 @@
+{
+  "entry": "models/franka/fr3_duo/urdf/fr3_duo.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "left_fr3v2_joint1": 0.0,
+    "left_fr3v2_joint2": 0.0,
+    "left_fr3v2_joint3": 0.0,
+    "left_fr3v2_joint4": -0.11693708333333333,
+    "left_fr3v2_joint5": 0.0,
+    "left_fr3v2_joint6": 0.43982265,
+    "left_fr3v2_joint7": 0.0,
+    "left_fr3v2_finger_joint1": 0.0,
+    "right_fr3v2_joint1": 0.0,
+    "right_fr3v2_joint2": 0.0,
+    "right_fr3v2_joint3": 0.0,
+    "right_fr3v2_joint4": -0.11693708333333333,
+    "right_fr3v2_joint5": 0.0,
+    "right_fr3v2_joint6": 0.43982265,
+    "right_fr3v2_joint7": 0.0,
+    "right_fr3v2_finger_joint1": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 2.7739813455513547,
+    "lookat": [
+      0.07898121258540369,
+      0.10131463794627482,
+      0.4182283979204233
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    181,
+    132,
+    463,
+    299
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "entry": "models/yaskawa/ms210/urdf/ms210.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "joint_1": 0.0,
+    "joint_2": 0.0,
+    "joint_3": 0.0,
+    "joint_4": 0.0,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 4.503257282722144,
+    "lookat": [
+      0.7927265299064459,
+      0.14101399459693287,
+      1.3005968101082264
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    210,
+    103,
+    420,
+    331
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "entry": "models/ufactory/dual_xarm7/urdf/dual_xarm7.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "L_joint1": 0.0,
+    "L_joint2": 0.0,
+    "L_joint3": 0.0,
+    "L_joint4": 0.0,
+    "L_joint5": 0.0,
+    "L_joint6": 0.0,
+    "L_joint7": 0.0,
+    "R_joint1": 0.0,
+    "R_joint2": 0.0,
+    "R_joint3": 0.0,
+    "R_joint4": 0.0,
+    "R_joint5": 0.0,
+    "R_joint6": 0.0,
+    "R_joint7": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 1.364619885176543,
+    "lookat": [
+      0.23983037573717836,
+      0.21465988936782887,
+      0.4095320443214463
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    161,
+    87,
+    470,
+    351
+  ]
+}

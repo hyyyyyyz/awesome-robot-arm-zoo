@@ -1,0 +1,339 @@
+<?xml version="1.0"?>
+<!-- Static URDF prepared from the upstream model; mesh and texture references use local relative paths. -->
+<robot name="elfin3">
+  <material name="black">
+    <color rgba="0.0 0.0 0.0 1.0" />
+  </material>
+  <material name="blue">
+    <color rgba="0.0 0.0 0.8 1.0" />
+  </material>
+  <material name="green">
+    <color rgba="0.0 0.8 0.0 1.0" />
+  </material>
+  <material name="grey">
+    <color rgba="0.2 0.2 0.2 1.0" />
+  </material>
+  <material name="orange">
+    <color rgba="1.0 0.4235294117647059 0.0392156862745098 1.0" />
+  </material>
+  <material name="brown">
+    <color rgba="0.8705882352941177 0.8117647058823529 0.7647058823529411 1.0" />
+  </material>
+  <material name="red">
+    <color rgba="0.8 0.0 0.0 1.0" />
+  </material>
+  <material name="white">
+    <color rgba="1.0 1.0 1.0 1.0" />
+  </material>
+  <material name="metal">
+    <color rgba="0.768627450980392 0.749019607843137 0.729411764705882 1" />
+  </material>
+  <material name="metal_grey">
+    <color rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+  </material>
+  <material name="metal_white">
+    <color rgba="0.866666666666667 0.866666666666667 0.890196078431373 1" />
+  </material>
+  <gazebo>
+    <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+  </gazebo>
+  <gazebo reference="elfin_link2">
+    <visual name="visual">
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/Grey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+  <gazebo reference="elfin_link4">
+    <visual name="visual">
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/Grey</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+  <transmission name="elfin_joint1_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="elfin_joint1">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="elfin_joint1_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="elfin_joint2_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="elfin_joint2">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="elfin_joint2_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="elfin_joint3_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="elfin_joint3">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="elfin_joint3_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="elfin_joint4_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="elfin_joint4">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="elfin_joint4_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="elfin_joint5_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="elfin_joint5">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="elfin_joint5_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="elfin_joint6_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="elfin_joint6">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="elfin_joint6_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <link name="world" />
+  <joint name="world_base" type="fixed">
+    <origin rpy="0 0 -1.5708" xyz="0 0 0" />
+    <parent link="world" />
+    <child link="elfin_base_link" />
+  </joint>
+  <link name="elfin_base_link" />
+  <joint name="elfin_base_joint" type="fixed">
+    <origin rpy="0 0 1.5707963267948966" xyz="0 0 0" />
+    <parent link="elfin_base_link" />
+    <child link="elfin_base" />
+  </joint>
+  <link name="elfin_base">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-3.29424604565274E-17 -1.34268095035506E-13 0.0281618442441758" />
+      <mass value="0.957790548974336" />
+      <inertia ixx="0.00150277910425554" ixy="-5.07476794726385E-15" ixz="6.74486887384113E-19" iyy="0.00150277910426632" iyz="-6.77700047631768E-15" izz="0.00236857924691092" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/elfin_description/meshes/elfin3/elfin_base.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.866666666666667 0.866666666666667 0.890196078431372 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/elfin_description/meshes/elfin3/elfin_base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="elfin_link1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-9.91151833157951E-06 -0.00381802038981039 -0.0288793541460785" />
+      <mass value="1.76831994028414" />
+      <inertia ixx="0.00611258909183611" ixy="-9.83139510435094E-07" ixz="-4.14810998305304E-07" iyy="0.00490858433987136" iyz="0.000238616259770754" izz="0.00347391582535924" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/elfin_description/meshes/elfin3/elfin_link1.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/elfin_description/meshes/elfin3/elfin_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="elfin_joint1" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0.1925" />
+    <parent link="elfin_base" />
+    <child link="elfin_link1" />
+    <axis xyz="0 0 1" />
+    <limit effort="104" lower="-3.14" upper="3.14" velocity="1.57" />
+  </joint>
+  <link name="elfin_link2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-1.09591115591905E-05 0.119133426891285 0.104133324863746" />
+      <mass value="1.41431338277405" />
+      <inertia ixx="0.015779563515351" ixy="2.57229005873321E-06" ixz="-1.33122516224454E-07" iyy="0.00107744893104323" iyz="0.000788193806414118" izz="0.016037242338571" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/elfin_description/meshes/elfin3/elfin_link2.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/elfin_description/meshes/elfin3/elfin_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="elfin_joint2" type="revolute">
+    <origin rpy="1.5708 0 0" xyz="0 0 0" />
+    <parent link="elfin_link1" />
+    <child link="elfin_link2" />
+    <axis xyz="0 0 1" />
+    <limit effort="104" lower="-2.35" upper="2.35" velocity="1.27" />
+  </joint>
+  <link name="elfin_link3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0250568861242891 6.90447572674757E-06 -0.00212484357202786" />
+      <mass value="1.24814802120785" />
+      <inertia ixx="0.00198810458497945" ixy="-2.27641402661824E-07" ixz="-8.7904200299055E-05" iyy="0.00344858240749365" iyz="-4.73997143171874E-07" izz="0.00270707588537784" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/elfin_description/meshes/elfin3/elfin_link3.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/elfin_description/meshes/elfin3/elfin_link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="elfin_joint3" type="revolute">
+    <origin rpy="3.1416 0 1.5708" xyz="0 0.266 0" />
+    <parent link="elfin_link2" />
+    <child link="elfin_link3" />
+    <axis xyz="0 0 1" />
+    <limit effort="69" lower="-2.61" upper="2.61" velocity="1.57" />
+  </joint>
+  <link name="elfin_link4">
+    <inertial>
+      <origin rpy="0 0 0" xyz="1.72360446946572E-06 -0.0572841318243815 0.203781479974732" />
+      <mass value="1.11383740307423" />
+      <inertia ixx="0.00840848075882267" ixy="1.16819985276106E-10" ixz="3.20661375501498E-08" iyy="0.0068932070989986" iyz="0.00249453758997878" izz="0.00249504881189781" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/elfin_description/meshes/elfin3/elfin_link4.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/elfin_description/meshes/elfin3/elfin_link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="elfin_joint4" type="revolute">
+    <origin rpy="1.5708 0 1.5708" xyz="0 0 0" />
+    <parent link="elfin_link3" />
+    <child link="elfin_link4" />
+    <axis xyz="0 0 1" />
+    <limit effort="69" lower="-3.14" upper="3.14" velocity="1.57" />
+  </joint>
+  <link name="elfin_link5">
+    <inertial>
+      <origin rpy="0 0 0" xyz="3.18971281487254E-07 -0.0247904768102997 -0.00288553868007254" />
+      <mass value="0.932428626153683" />
+      <inertia ixx="0.00225363150047226" ixy="1.57057111903631E-08" ixz="6.68352833152811E-08" iyy="0.00123622421076959" iyz="7.71608214306329E-05" izz="0.00173913787162088" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/elfin_description/meshes/elfin3/elfin_link5.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/elfin_description/meshes/elfin3/elfin_link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="elfin_joint5" type="revolute">
+    <origin rpy="-1.5708 0 0" xyz="0 0 0.324" />
+    <parent link="elfin_link4" />
+    <child link="elfin_link5" />
+    <axis xyz="0 0 1" />
+    <limit effort="34" lower="-2.56" upper="2.56" velocity="1.57" />
+  </joint>
+  <link name="elfin_link6">
+    <inertial>
+      <origin rpy="0 0 0" xyz="1.4323826069585E-07 -0.00502093248893552 0.129189718099031" />
+      <mass value="0.288820351990399" />
+      <inertia ixx="0.00021791903145322" ixy="9.9472362909318E-10" ixz="3.50877282174168E-11" iyy="0.000175921298751184" iyz="1.17498406450176E-06" izz="0.000299410517394812" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/elfin_description/meshes/elfin3/elfin_link6.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/elfin_description/meshes/elfin3/elfin_link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="elfin_joint6" type="revolute">
+    <origin rpy="1.5708 0 0" xyz="0 0 0" />
+    <parent link="elfin_link5" />
+    <child link="elfin_link6" />
+    <axis xyz="0 0 1" />
+    <limit effort="34" lower="-3.14" upper="3.14" velocity="1.57" />
+  </joint>
+  <link name="elfin_end_link">
+  </link>
+  <joint name="elfin_end_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0.155" />
+    <parent link="elfin_link6" />
+    <child link="elfin_end_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="elfin_dummy_gripper" />
+  <joint name="elfin_dummy_joint" type="fixed">
+    <origin rpy="1.5707963267948966 -1.5707963267948966 0" xyz="0 -0.111 0" />
+    <parent link="elfin_link6" />
+    <child link="elfin_dummy_gripper" />
+  </joint>
+</robot>

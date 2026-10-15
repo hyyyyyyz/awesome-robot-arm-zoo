@@ -1,0 +1,4 @@
+Source: https://github.com/RealManRobot/rm_robot.git
+Version: 3d7063025786c4c5ed2db2ebc09f68d89d589539
+Scope: rm_description/urdf/ECO63_6FB/rm_eco63_6fb_description.urdf and its referenced model resources.
+Changes: resource paths made relative; mechanical definitions retained.

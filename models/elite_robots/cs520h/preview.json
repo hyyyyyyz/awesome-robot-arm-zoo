@@ -1,0 +1,33 @@
+{
+  "entry": "models/elite_robots/cs520h/urdf/cs520h.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "shoulder_pan_joint": 0.0,
+    "shoulder_lift_joint": -1.57,
+    "elbow_joint": -1.57,
+    "wrist_1_joint": -3.14,
+    "wrist_2_joint": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 2.5437951069555167,
+    "lookat": [
+      0.4546890697834802,
+      -0.016597273129594914,
+      0.813947002502098
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    201,
+    103,
+    431,
+    324
+  ]
+}

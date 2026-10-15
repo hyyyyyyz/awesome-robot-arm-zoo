@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="lrmate25_19a">
+  <!-- Resource filenames are local paths relative to this entry. -->
+  <link name="world" />
+  <link name="ee_link" />
+  <!-- links -->
+  <link name="base_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/fanuc_lrmate_description/meshes/lrmate25_19a/visual/base.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/fanuc_lrmate_description/meshes/lrmate25_19a/collision/base.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value=" 32.5" />
+      <origin xyz="-.0269 -.0000215  .157" />
+      <inertia ixx=" .556" ixy="-.00546" ixz="-.00524" iyy=" .681" iyz="-.000569" izz=" .667" />
+    </inertial>
+  </link>
+  <link name="J1_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/fanuc_lrmate_description/meshes/lrmate25_19a/visual/j1.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/fanuc_lrmate_description/meshes/lrmate25_19a/collision/j1.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value=" 52.3" />
+      <origin xyz=" .0372  .00108 -.101" />
+      <inertia ixx=" 1.85" ixy="-.00339" ixz="-.149" iyy=" 1.15" iyz="-.00387" izz=" 1.52" />
+    </inertial>
+  </link>
+  <link name="J2_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/fanuc_lrmate_description/meshes/lrmate25_19a/visual/j2.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/fanuc_lrmate_description/meshes/lrmate25_19a/collision/j2.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value=" 92.7" />
+      <origin xyz="-.0012 -.000625  .461" />
+      <inertia ixx=" 10.7" ixy="-.00108" ixz=" .00167" iyy=" 10" iyz=" .00496" izz=" 1.7" />
+    </inertial>
+  </link>
+  <link name="J3_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/fanuc_lrmate_description/meshes/lrmate25_19a/visual/j3.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/fanuc_lrmate_description/meshes/lrmate25_19a/collision/j3.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value=" 17.2" />
+      <origin xyz=" .0221 -.00161  .0386" />
+      <inertia ixx=" .21" ixy="-.00523" ixz="-.0224" iyy=" .233" iyz="-.00207" izz=" .205" />
+    </inertial>
+  </link>
+  <link name="J4_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/fanuc_lrmate_description/meshes/lrmate25_19a/visual/j4.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/fanuc_lrmate_description/meshes/lrmate25_19a/collision/j4.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value=" 14.2" />
+      <origin xyz=" .524  .00617 -.0000045" />
+      <inertia ixx=" .0578" ixy=" .00266" ixz="-.00000254" iyy=" .638" iyz=" .00000567" izz=" .654" />
+    </inertial>
+  </link>
+  <link name="J5_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/fanuc_lrmate_description/meshes/lrmate25_19a/visual/j5.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/fanuc_lrmate_description/meshes/lrmate25_19a/collision/j5.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value=" 1.12" />
+      <origin xyz=" .0173  .00272  .0000418" />
+      <inertia ixx=" .00181" ixy=" .0000283" ixz=" .000000144" iyy=" .00267" iyz="-.00000051" izz=" .00259" />
+    </inertial>
+  </link>
+  <link name="J6_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/fanuc_lrmate_description/meshes/lrmate25_19a/visual/j6.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/fanuc_lrmate_description/meshes/lrmate25_19a/collision/j6.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value=" .024" />
+      <origin xyz=" .0936 -3.11E-18  2.17E-17" />
+      <inertia ixx=" .00000962" ixy=" 1.75E-20" ixz=" 9.56E-20" iyy=" .00000508" iyz="-3.95E-21" izz=" .00000508" />
+    </inertial>
+  </link>
+  <!-- joints -->
+  <joint name="J1" type="revolute">
+    <origin rpy="0 0 0" xyz=" 0  0  .65" />
+    <parent link="base_link" />
+    <child link="J1_link" />
+    <axis xyz=" 0  0  1" />
+    <limit effort="4000" lower="-3.141592653589793" upper="3.141592653589793" velocity="3.5779249665883754" />
+  </joint>
+  <joint name="J2" type="revolute">
+    <origin rpy="0 0 0" xyz=" .075  0  0" />
+    <parent link="J1_link" />
+    <child link="J2_link" />
+    <axis xyz=" 0  1  0" />
+    <limit effort="7000" lower="-1.7453292519943295" upper="2.443460952792061" velocity="3.5779249665883754" />
+  </joint>
+  <joint name="J3" type="revolute">
+    <origin rpy="0 0 0" xyz=" 0  0  .905" />
+    <parent link="J2_link" />
+    <child link="J3_link" />
+    <axis xyz=" 0 -1  0" />
+    <limit effort="2000" lower="-1.4486232791552935" upper="3.839724354387525" velocity="4.537856055185257" />
+  </joint>
+  <joint name="J4" type="revolute">
+    <origin rpy="0 0 0" xyz=" 0  0  .12" />
+    <parent link="J3_link" />
+    <child link="J4_link" />
+    <axis xyz="-1  0  0" />
+    <limit effort="500" lower="-3.490658503988659" upper="3.490658503988659" velocity="7.243116395776467" />
+  </joint>
+  <joint name="J5" type="revolute">
+    <origin rpy="0 0 0" xyz=" .865  0  0" />
+    <parent link="J4_link" />
+    <child link="J5_link" />
+    <axis xyz=" 0 -1  0" />
+    <limit effort="300" lower="-2.530727415391778" upper="2.530727415391778" velocity="7.243116395776467" />
+  </joint>
+  <joint name="J6" type="revolute">
+    <origin rpy="0 0 0" xyz=" 0  0  0" />
+    <parent link="J5_link" />
+    <child link="J6_link" />
+    <axis xyz="-1  0  0" />
+    <limit effort="200" lower="-4.71238898038469" upper="4.71238898038469" velocity="15.3588974175501" />
+  </joint>
+  <!-- world coords -->
+  <link name="wbase" />
+  <joint name="base_link-wbase" type="fixed">
+    <origin rpy="0 0 0" xyz=" 0  0  .65" />
+    <parent link="base_link" />
+    <child link="wbase" />
+  </joint>
+  <!-- flange coords -->
+  <link name="flange" />
+  <joint name="J6-flange" type="fixed">
+    <origin rpy="0 0 0" xyz=" .1  0  0" />
+    <parent link="J6_link" />
+    <child link="flange" />
+  </joint>
+  <!-- FANUC flange coords -->
+  <link name="fanuc_flange" />
+  <joint name="flange-fanuc_flange" type="fixed">
+    <origin rpy="3.141592653589793 -1.5707963267948966 0.0" xyz="0 0 0" />
+    <parent link="flange" />
+    <child link="fanuc_flange" />
+  </joint>
+  <!-- Attach to parent -->
+  <joint name="base_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="world" />
+    <child link="base_link" />
+  </joint>
+  <!-- Attach child -->
+  <joint name="child_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="flange" />
+    <child link="ee_link" />
+  </joint>
+</robot>

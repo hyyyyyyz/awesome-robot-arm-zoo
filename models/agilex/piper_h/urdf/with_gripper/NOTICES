@@ -1,0 +1,4 @@
+Source: https://github.com/agilexrobotics/agx_arm_urdf.git
+Version: a68b8e876a2c6fcb0ecee7a7943129e4d48dd864
+Scope: piper_h/urdf/piper_h_with_gripper_description.xacro and its referenced model resources.
+Changes: Xacro expanded to static URDF; resource paths made relative; mechanical definitions retained.

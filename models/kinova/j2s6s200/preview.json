@@ -1,0 +1,38 @@
+{
+  "entry": "models/kinova/j2s6s200/urdf/j2s6s200.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "j2s6s200_joint_1": 0.0,
+    "j2s6s200_joint_2": 0.8203047484373349,
+    "j2s6s200_joint_3": 0.33161255787892263,
+    "j2s6s200_joint_4": 0.0,
+    "j2s6s200_joint_5": 0.5235987755982988,
+    "j2s6s200_joint_6": 0.0,
+    "j2s6s200_joint_finger_1": 0.0,
+    "j2s6s200_joint_finger_tip_1": 0.0,
+    "j2s6s200_joint_finger_2": 0.0,
+    "j2s6s200_joint_finger_tip_2": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 0.8083128494827592,
+    "lookat": [
+      0.2377409274454439,
+      -0.017706384022460275,
+      0.1588662582821987
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    204,
+    87,
+    437,
+    344
+  ]
+}

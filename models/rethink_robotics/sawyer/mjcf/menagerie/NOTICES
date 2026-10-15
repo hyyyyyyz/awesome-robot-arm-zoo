@@ -1,0 +1,5 @@
+Source: https://github.com/google-deepmind/mujoco_menagerie
+Version: 6da8b971844845de6ab27315aacc3a3fea4ddb8e
+Scope: rethink_robotics_sawyer/ model XML entries and their referenced assets.
+Source status: MuJoCo Menagerie, curated by Google DeepMind.
+Preparation: model and asset files retain their upstream contents and relative paths.

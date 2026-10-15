@@ -1,0 +1,35 @@
+{
+  "entry": "models/realman/gen72_ii/urdf/gen72_ii.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "joint1": 0.0,
+    "joint2": 0.0,
+    "joint3": 0.0,
+    "joint4": 0.0,
+    "joint5": 0.0,
+    "joint6": 0.0,
+    "joint7": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 1.4171927425351163,
+    "lookat": [
+      0.062114758572666684,
+      -0.021387152596629266,
+      0.493022441718707
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    293,
+    84,
+    344,
+    357
+  ]
+}

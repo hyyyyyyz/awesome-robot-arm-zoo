@@ -1,0 +1,32 @@
+{
+  "entry": "models/elephant_robotics/mypalletizer_260_pi/urdf/arm/mypalletizer_260_pi.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "joint1_to_base": 0.0,
+    "joint2_to_joint1": 0.0,
+    "joint3_to_joint2": 0.0,
+    "joint5_to_joint4": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 0.6414172630067225,
+    "lookat": [
+      0.0764440529320477,
+      0.013302233389836327,
+      0.17241992382871682
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    228,
+    97,
+    400,
+    338
+  ]
+}

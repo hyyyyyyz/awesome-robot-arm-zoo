@@ -1,0 +1,43 @@
+{
+  "entry": "models/rethink_robotics/baxter/urdf/baxter.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "head_pan": 0.0,
+    "right_s0": 0.0,
+    "right_s1": 0.0,
+    "right_e0": 0.0,
+    "right_e1": 0.0,
+    "right_w0": 0.0,
+    "right_w1": 0.0,
+    "right_w2": 0.0,
+    "left_s0": 0.0,
+    "left_s1": 0.0,
+    "left_e0": 0.0,
+    "left_e1": 0.0,
+    "left_w0": 0.0,
+    "left_w1": 0.0,
+    "left_w2": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 4.38978163928652,
+    "lookat": [
+      0.359424867985243,
+      0.15501434367534284,
+      -0.033102450920793114
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    214,
+    104,
+    427,
+    329
+  ]
+}

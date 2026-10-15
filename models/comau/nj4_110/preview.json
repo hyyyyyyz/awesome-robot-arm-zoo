@@ -1,0 +1,34 @@
+{
+  "entry": "models/comau/nj4_110/urdf/nj4_110.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "joint_1": 0.0,
+    "joint_2": 0.0,
+    "joint_3": 0.0,
+    "joint_4": 0.0,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 3.4152931843274907,
+    "lookat": [
+      0.7970454652255379,
+      -0.02696168855983938,
+      1.111225075134664
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    202,
+    100,
+    438,
+    333
+  ]
+}

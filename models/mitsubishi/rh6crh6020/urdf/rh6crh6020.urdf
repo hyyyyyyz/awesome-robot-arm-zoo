@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="rh6crh6020">
+  <!-- Resource filenames are local paths relative to this entry. -->
+  <material name="white">
+    <color rgba="1.0 1.0 1.0 1.0" />
+  </material>
+  <link name="world" />
+  <link name="rh6crh6020_base">
+    <visual>
+      <material name="white" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rh6crh6020/base.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rh6crh6020/base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh6crh6020_no1arm">
+    <visual>
+      <material name="white" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rh6crh6020/no1arm.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rh6crh6020/no1arm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh6crh6020_no2arm">
+    <visual>
+      <material name="white" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rh6crh6020/no2arm.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rh6crh6020/no2arm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh6crh6020_shaft_z" />
+  <link name="rh6crh6020_shaft">
+    <visual>
+      <material name="white" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rh6crh6020/shaft.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rh6crh6020/shaft.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rh6crh6020_default_tcp" />
+  <joint name="rh6crh6020_world_to_base" type="fixed">
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+    <parent link="world" />
+    <child link="rh6crh6020_base" />
+  </joint>
+  <joint name="rh6crh6020_joint_1" type="revolute">
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+    <parent link="rh6crh6020_base" />
+    <child link="rh6crh6020_no1arm" />
+    <axis xyz="0 0 1" />
+    <limit effort="1" lower="-2.303834612632515" upper="2.303834612632515" velocity="7.3303828583761845" />
+  </joint>
+  <joint name="rh6crh6020_joint_2" type="revolute">
+    <origin rpy="0 0 0" xyz="0.325 0.0 0.0" />
+    <parent link="rh6crh6020_no1arm" />
+    <child link="rh6crh6020_no2arm" />
+    <axis xyz="0 0 1" />
+    <limit effort="1" lower="-2.6179938779914944" upper="2.6179938779914944" velocity="12.566370614359172" />
+  </joint>
+  <joint name="rh6crh6020_joint_3" type="prismatic">
+    <origin rpy="0 0 0" xyz="0.275 0.0 0.0" />
+    <parent link="rh6crh6020_no2arm" />
+    <child link="rh6crh6020_shaft_z" />
+    <axis xyz="0 0 1" />
+    <limit effort="1" lower="-0.051" upper="0.149" velocity="1.1" />
+  </joint>
+  <joint name="rh6crh6020_joint_4" type="revolute">
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+    <parent link="rh6crh6020_shaft_z" />
+    <child link="rh6crh6020_shaft" />
+    <axis xyz="0 0 1" />
+    <limit effort="1" lower="-6.283185307179586" upper="6.283185307179586" velocity="43.63323129985824" />
+  </joint>
+  <joint name="rh6crh6020_shift_to_default_tcp" type="fixed">
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+    <parent link="rh6crh6020_shaft" />
+    <child link="rh6crh6020_default_tcp" />
+  </joint>
+</robot>

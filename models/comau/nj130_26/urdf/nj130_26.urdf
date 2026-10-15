@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+<!-- Static URDF prepared from the upstream model; mesh and texture references use local relative paths. -->
+<robot name="nj130-26">
+  <link name="base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0361845572105411 -3.05740596352742E-05 0.132251332860171" />
+      <mass value="774.894943020899" />
+      <inertia ixx="25.6575789201931" ixy="-0.00496689814433623" ixz="0.0198401850217023" iyy="33.5126130551" iyz="-0.000259272865919447" izz="47.9029473115196" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj130-26_description/meshes/link0.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj130-26_description/meshes/link0.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.223823373633036 0.0182515023064352 0.370408964002915" />
+      <mass value="622.742568357298" />
+      <inertia ixx="67.8176971990728" ixy="2.62565563323783" ixz="-14.9372082983885" iyy="51.0345456787575" iyz="0.850388863470645" izz="71.0963408141935" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj130-26_description/meshes/link1.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj130-26_description/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_1" type="continuous">
+    <origin rpy="0 0 0" xyz="0 0 0.29865" />
+    <parent link="base_link" />
+    <child link="link_1" />
+    <axis xyz="0 0 -1" />
+  </joint>
+  <link name="link_2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0239282633860053 -0.0242000728108603 0.523998538656614" />
+      <mass value="179.411938551206" />
+      <inertia ixx="24.9443415856971" ixy="0.0547214435284436" ixz="-0.0565192589255693" iyy="24.0973147552006" iyz="0.401816406646127" izz="2.6804399042202" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj130-26_description/meshes/link2.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj130-26_description/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_2" type="continuous">
+    <origin rpy="0 0 0" xyz="0.35 0 0.53135" />
+    <parent link="link_1" />
+    <child link="link_2" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="link_3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00823086364130676 0.0336245409135121 0.214015592296739" />
+      <mass value="226.714584241142" />
+      <inertia ixx="6.82656511799789" ixy="0.644549711948834" ixz="-0.663209563468363" iyy="5.38455261928483" iyz="-0.817561197021521" izz="6.14633521526375" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj130-26_description/meshes/link3.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj130-26_description/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_3" type="continuous">
+    <origin rpy="0 -1.57 0" xyz="0 0 1.16" />
+    <parent link="link_2" />
+    <child link="link_3" />
+    <axis xyz="0 -1 0" />
+  </joint>
+  <link name="link_4">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.631483857028514 0.00143736237037472 0.00269777742445765" />
+      <mass value="310.871263888054" />
+      <inertia ixx="4.15091709295853" ixy="0.465598960288027" ixz="-0.0778277655707573" iyy="24.6174611135231" iyz="-0.0458840065894541" izz="26.7234725545298" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj130-26_description/meshes/link4.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj130-26_description/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_4" type="continuous">
+    <origin rpy="0 0 0" xyz="0.145 0 0.25" />
+    <parent link="link_3" />
+    <child link="link_4" />
+    <axis xyz="-1 0 0" />
+  </joint>
+  <link name="link_5">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0501381933007941 0.000255411382632705 0.000312892923768793" />
+      <mass value="31.4945074401953" />
+      <inertia ixx="0.0899904162298318" ixy="-0.00272588283998132" ixz="0.00261845532875675" iyy="0.236429812146763" iyz="8.81391505459128E-05" izz="0.250342696638773" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj130-26_description/meshes/link5.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj130-26_description/meshes/link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_5" type="continuous">
+    <origin rpy="0 0 0" xyz="0.96058 0 0" />
+    <parent link="link_4" />
+    <child link="link_5" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="link_6">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0273479317034322 -4.70620758939121E-08 -0.00160267586794882" />
+      <mass value="3.76689116258319" />
+      <inertia ixx="0.0127050616656888" ixy="-4.39171290610782E-09" ixz="-3.45917454019728E-05" iyy="0.00657213950823366" iyz="7.99509556103947E-10" izz="0.00702021362826505" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj130-26_description/meshes/link6.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj130-26_description/meshes/link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_6" type="continuous">
+    <origin rpy="0 0 0" xyz="0.165 0 0" />
+    <parent link="link_5" />
+    <child link="link_6" />
+    <axis xyz="-1 0 0" />
+  </joint>
+  <link name="ee_link" />
+  <joint name="fixed_ee_joint" type="fixed">
+    <origin rpy="0 1.5707963267948966 0" xyz="0.0 0 0.0" />
+    <parent link="link_6" />
+    <child link="ee_link" />
+  </joint>
+  <ros2_control name="nj130-26" type="system">
+    <hardware>
+      <plugin>comau_hardware_interface/ComauHardwareInterface</plugin>
+    </hardware>
+    <joint name="joint_1">
+      <command_interface name="position">
+        <param name="min">{-2*pi}</param>
+        <param name="max">{2*pi}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.15</param>
+        <param name="max">3.15</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint_2">
+      <command_interface name="position">
+        <param name="min">{-2*pi}</param>
+        <param name="max">{2*pi}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.15</param>
+        <param name="max">3.15</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint_3">
+      <command_interface name="position">
+        <param name="min">{-pi}</param>
+        <param name="max">{pi}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.15</param>
+        <param name="max">3.15</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint_4">
+      <command_interface name="position">
+        <param name="min">{-2*pi}</param>
+        <param name="max">{2*pi}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.2</param>
+        <param name="max">3.2</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint_5">
+      <command_interface name="position">
+        <param name="min">{-2*pi}</param>
+        <param name="max">{2*pi}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.2</param>
+        <param name="max">3.2</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint_6">
+      <command_interface name="position">
+        <param name="min">{-2*pi}</param>
+        <param name="max">{2*pi}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.2</param>
+        <param name="max">3.2</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+    </joint>
+  </ros2_control>
+  <link name="world" />
+  <joint name="world_joint" type="fixed">
+    <parent link="world" />
+    <child link="base_link" />
+    <origin rpy="0 0 0" xyz="0 0 0" />
+  </joint>
+</robot>

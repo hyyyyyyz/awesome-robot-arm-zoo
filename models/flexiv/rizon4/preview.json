@@ -1,0 +1,27 @@
+{
+  "entry": "models/flexiv/rizon4/mjcf/menagerie/flexiv_rizon4.xml",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "Native MJCF loaded in MuJoCo",
+  "pose": "keyframe: home",
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 1.5710764993978628,
+    "lookat": [
+      0.24802106804920332,
+      -0.040131946008313824,
+      0.5104031244998056
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    240,
+    101,
+    400,
+    328
+  ]
+}

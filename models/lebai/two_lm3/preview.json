@@ -1,0 +1,40 @@
+{
+  "entry": "models/lebai/two_lm3/urdf/two_lm3.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "robot1_joint_1": 0.0,
+    "robot1_joint_2": 0.0,
+    "robot1_joint_3": 0.0,
+    "robot1_joint_4": 0.0,
+    "robot1_joint_5": 0.0,
+    "robot1_joint_6": 0.0,
+    "robot2_joint_1": 0.0,
+    "robot2_joint_2": 0.0,
+    "robot2_joint_3": 0.0,
+    "robot2_joint_4": 0.0,
+    "robot2_joint_5": 0.0,
+    "robot2_joint_6": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 1.6773703210055828,
+    "lookat": [
+      -0.12050258231369027,
+      -0.3062560450138311,
+      0.17249427108134496
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    140,
+    121,
+    496,
+    314
+  ]
+}

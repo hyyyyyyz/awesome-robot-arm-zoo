@@ -1,0 +1,34 @@
+{
+  "entry": "models/abb/irb6640_185_280/urdf/irb6640_185_280.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "joint_1": 0.0,
+    "joint_2": 0.0,
+    "joint_3": 0.0,
+    "joint_4": 0.0,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 4.531076080023998,
+    "lookat": [
+      0.8498225847906586,
+      0.036755649944976376,
+      1.3336592934436777
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    198,
+    97,
+    435,
+    333
+  ]
+}

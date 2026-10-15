@@ -1,0 +1,6 @@
+mujoco==3.16.0
+yourdfpy==0.0.60
+trimesh==5.1.1
+numpy==2.5.4
+Pillow==12.3.0
+pycollada==0.9.3

@@ -1,0 +1,34 @@
+{
+  "entry": "models/elephant_robotics/mycobot_pro_630/urdf/arm/mycobot_pro_630.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "joint1": 0.0,
+    "joint2": 0.0,
+    "joint3": 0.0,
+    "joint4": 0.0,
+    "joint5": 0.0,
+    "joint6": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 1.5368839460942483,
+    "lookat": [
+      0.009855261418632577,
+      0.017627106496441725,
+      0.4843862693092541
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    283,
+    79,
+    355,
+    360
+  ]
+}

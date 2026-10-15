@@ -1,0 +1,301 @@
+<?xml version="1.0"?>
+<!-- Static URDF prepared from the upstream model; mesh and texture references use local relative paths. -->
+<robot name="kr560_r3100_2">
+  <ros2_control is_async="False" name="kr560_r3100_2" type="system">
+    <properties>
+      <async affinity="[]" print_warnings="false" scheduling_policy="detached" thread_priority="69" />
+    </properties>
+    <hardware>
+      <param name="interface_prefix" />
+      <plugin>kuka_mock_hardware_interface::KukaMockHardwareInterface</plugin>
+      <param name="cycle_time_ms">4</param>
+      <param name="roundtrip_time_micro">0</param>
+      <param name="mock_sensor_commands">false</param>
+      <param name="state_following_offset">0.0</param>
+    </hardware>
+    <joint name="joint_1">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <command_interface name="velocity" />
+      <command_interface name="effort" />
+      <state_interface name="velocity">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="effort">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+    <joint name="joint_2">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">-1.5708</param>
+      </state_interface>
+      <command_interface name="velocity" />
+      <command_interface name="effort" />
+      <state_interface name="velocity">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="effort">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+    <joint name="joint_3">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">1.5708</param>
+      </state_interface>
+      <command_interface name="velocity" />
+      <command_interface name="effort" />
+      <state_interface name="velocity">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="effort">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+    <joint name="joint_4">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <command_interface name="velocity" />
+      <command_interface name="effort" />
+      <state_interface name="velocity">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="effort">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+    <joint name="joint_5">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <command_interface name="velocity" />
+      <command_interface name="effort" />
+      <state_interface name="velocity">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="effort">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+    <joint name="joint_6">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <command_interface name="velocity" />
+      <command_interface name="effort" />
+      <state_interface name="velocity">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="effort">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+    <gpio name="gpio" />
+  </ros2_control>
+  <link name="world" />
+  <link name="base_link">
+    <collision>
+      <geometry>
+        <mesh filename="resources/kuka_fortec_support/meshes/kr560_r3100_2/collision/base_link.stl" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+    </collision>
+    <inertial>
+      <inertia ixx="35.410866659826" ixy="0.0" ixz="0.0" iyy="34.5547429413375" iyz="0.0" izz="38.9749152422865" />
+      <mass value="4.3839E2" />
+      <origin rpy="-0.26345077947988915 -0.011417952338033863 -1.5831162104095253" xyz="-0.0219634111179543 2.66337735806023E-4 0.290824658865394" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/kuka_fortec_support/meshes/kr560_r3100_2/visual/base_link.dae" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+    </visual>
+  </link>
+  <link name="link_1">
+    <collision>
+      <geometry>
+        <mesh filename="resources/kuka_fortec_support/meshes/kr560_r3100_2/collision/link_1.stl" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+    </collision>
+    <inertial>
+      <inertia ixx="68.8871727481765" ixy="0.0" ixz="0.0" iyy="31.9479323362134" iyz="0.0" izz="84.5563373850467" />
+      <mass value="5.5748E2" />
+      <origin rpy="-1.8734135274052497 -1.508489219626719 0.30671025878674923" xyz="0.0812269789050728 0.00860667378201908 -0.29662668257157204" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/kuka_fortec_support/meshes/kr560_r3100_2/visual/link_1.dae" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+    </visual>
+  </link>
+  <link name="link_2">
+    <collision>
+      <geometry>
+        <mesh filename="resources/kuka_fortec_support/meshes/kr560_r3100_2/collision/link_2.stl" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+    </collision>
+    <inertial>
+      <inertia ixx="344.9055856506" ixy="0.0" ixz="0.0" iyy="45.4306396522043" iyz="0.0" izz="376.577425687136" />
+      <mass value="7.4023E2" />
+      <origin rpy="-1.4188791588206504 -1.5562308152773727 3.0008589795117246" xyz="0.673327322588925 -0.006679975683233591 0.022081825378598603" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/kuka_fortec_support/meshes/kr560_r3100_2/visual/link_2.dae" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+    </visual>
+  </link>
+  <link name="link_3">
+    <collision>
+      <geometry>
+        <mesh filename="resources/kuka_fortec_support/meshes/kr560_r3100_2/collision/link_3.stl" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+    </collision>
+    <inertial>
+      <inertia ixx="6.30840213271945" ixy="0.0" ixz="0.0" iyy="26.687628198328" iyz="0.0" izz="29.5636589044743" />
+      <mass value="2.41307E2" />
+      <origin rpy="0.028058985026686887 -0.003311222914120114 -0.07508596727782266" xyz="0.129307355539367 -0.12237728273757201 -0.005238577401690441" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/kuka_fortec_support/meshes/kr560_r3100_2/visual/link_3.dae" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+    </visual>
+  </link>
+  <link name="link_4">
+    <collision>
+      <geometry>
+        <mesh filename="resources/kuka_fortec_support/meshes/kr560_r3100_2/collision/link_4.stl" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+    </collision>
+    <inertial>
+      <inertia ixx="0.693678008600892" ixy="0.0" ixz="0.0" iyy="2.78506557610754" iyz="0.0" izz="2.86251005408283" />
+      <mass value="9.7442E1" />
+      <origin rpy="1.570932272091058 -1.2743253802401948 -1.570766714386286" xyz="-5.43869794830743E-7 0.042293334372276704 -0.18193497897866" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/kuka_fortec_support/meshes/kr560_r3100_2/visual/link_4.dae" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+    </visual>
+  </link>
+  <link name="link_5">
+    <collision>
+      <geometry>
+        <mesh filename="resources/kuka_fortec_support/meshes/kr560_r3100_2/collision/link_5.stl" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+    </collision>
+    <inertial>
+      <inertia ixx="1.10203832546012" ixy="0.0" ixz="0.0" iyy="0.783938692397306" iyz="0.0" izz="1.20828474699799" />
+      <mass value="5.36088E1" />
+      <origin rpy="-1.5642278602027897 -0.8175710147649964 -0.011709797778755686" xyz="0.06813413576091991 -4.9894728477414005E-5 -0.0893390051226664" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/kuka_fortec_support/meshes/kr560_r3100_2/visual/link_5.dae" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+    </visual>
+  </link>
+  <link name="link_6">
+    <collision>
+      <geometry>
+        <mesh filename="resources/kuka_fortec_support/meshes/kr560_r3100_2/collision/link_6.stl" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+    </collision>
+    <inertial>
+      <inertia ixx="0.154627253223927" ixy="0.0" ixz="0.0" iyy="0.154759872890913" iyz="0.0" izz="0.18961138268388" />
+      <mass value="3.202E1" />
+      <origin rpy="0.0020471651340902924 7.476904024900575E-5 -1.5692303732486164" xyz="-4.86570893191755E-5 -2.5301686445971304E-6 -0.0203013397876327" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/kuka_fortec_support/meshes/kr560_r3100_2/visual/link_6.dae" />
+      </geometry>
+      <origin rpy="-0.0 0.0 -0.0" xyz="0.0 0.0 0.0" />
+    </visual>
+  </link>
+  <joint name="joint_1" type="revolute">
+    <axis xyz="0.0 0.0 1.0" />
+    <child link="link_1" />
+    <limit effort="15000.0E0" lower="-3.2288591161895095E0" upper="3.2288591161895095E0" velocity="1.5707963267948966" />
+    <origin rpy="-3.141592653589793 0.0 -0.0" xyz="0.0 0.0 0.0" />
+    <parent link="base_link" />
+  </joint>
+  <joint name="joint_2" type="revolute">
+    <axis xyz="0.0 0.0 1.0" />
+    <child link="link_2" />
+    <limit effort="17880.0E0" lower="-2.2689280275926285E0" upper="3.490658503988659E-1" velocity="1.3962634015954636" />
+    <origin rpy="1.5707963267948966 0.0 -0.0" xyz="0.5 0.0 -0.86" />
+    <parent link="link_1" />
+  </joint>
+  <joint name="joint_3" type="revolute">
+    <axis xyz="0.0 0.0 1.0" />
+    <child link="link_3" />
+    <limit effort="15315.272850848E0" lower="-1.7453292519943295E0" upper="2.8797932657906435E0" velocity="1.3089969389957472" />
+    <origin rpy="0.0 0.0 -1.5707963267948966" xyz="1.55 0.0 0.0" />
+    <parent link="link_2" />
+  </joint>
+  <joint name="joint_4" type="revolute">
+    <axis xyz="0.0 0.0 1.0" />
+    <child link="link_4" />
+    <limit effort="4847.11596436905E0" lower="-6.1086523819801535E0" upper="6.1086523819801535E0" velocity="1.5707963267948966" />
+    <origin rpy="1.5707963267948966 0.0 -0.0" xyz="0.18 0.0 0.0" />
+    <parent link="link_3" />
+  </joint>
+  <joint name="joint_5" type="revolute">
+    <axis xyz="0.0 0.0 1.0" />
+    <child link="link_5" />
+    <limit effort="4852.96953685247E0" lower="-2.0943951023931953E0" upper="2.0943951023931953E0" velocity="1.5707963267948966" />
+    <origin rpy="-1.5707963267948966 0.0 -0.0" xyz="0.0 0.0 -1.0345" />
+    <parent link="link_4" />
+  </joint>
+  <joint name="joint_6" type="revolute">
+    <axis xyz="0.0 0.0 1.0" />
+    <child link="link_6" />
+    <limit effort="2675.4449432041E0" lower="-6.1086523819801535E0" upper="6.1086523819801535E0" velocity="2.2689280275926285" />
+    <origin rpy="1.5707963267948966 0.0 -0.0" xyz="0.0 0.0 0.0" />
+    <parent link="link_5" />
+  </joint>
+  <link name="base" />
+  <joint name="base_link-base" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="base_link" />
+    <child link="base" />
+  </joint>
+  <link name="flange" />
+  <joint name="link6-flange" type="fixed">
+    <child link="flange" />
+    <origin rpy="0 1.5707963267948966 -0.0" xyz="0.0 0.0 -0.305" />
+    <parent link="link_6" />
+  </joint>
+  <link name="tool0" />
+  <joint name="link6-tool0" type="fixed">
+    <child link="tool0" />
+    <origin rpy="0 3.141592653589793 -0.0" xyz="0.0 0.0 -0.305" />
+    <parent link="link_6" />
+  </joint>
+  <joint name="world-base_link" type="fixed">
+    <parent link="world" />
+    <child link="base_link" />
+    <origin rpy="0 0 0" xyz="0 0 0" />
+  </joint>
+</robot>

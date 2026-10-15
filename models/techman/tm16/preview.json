@@ -1,0 +1,34 @@
+{
+  "entry": "models/techman/tm16/urdf/tm16.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "joint_1": 0.0,
+    "joint_2": 0.0,
+    "joint_3": 0.0,
+    "joint_4": 0.0,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 2.0947599389854776,
+    "lookat": [
+      0.0030604162588006023,
+      -0.16259117218863517,
+      0.6924406736064289
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    281,
+    95,
+    364,
+    350
+  ]
+}

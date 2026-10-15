@@ -1,0 +1,27 @@
+{
+  "entry": "models/franka/panda/mjcf/menagerie/panda.xml",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "Native MJCF loaded in MuJoCo",
+  "pose": "keyframe: home",
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 1.2884240531259115,
+    "lookat": [
+      0.36003721696225177,
+      -0.038526583097330924,
+      0.5129499806478576
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    208,
+    91,
+    436,
+    330
+  ]
+}

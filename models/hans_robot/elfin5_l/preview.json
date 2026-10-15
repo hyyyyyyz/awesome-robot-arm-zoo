@@ -1,0 +1,34 @@
+{
+  "entry": "models/hans_robot/elfin5_l/urdf/elfin5_l.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "elfin_joint1": 0.0,
+    "elfin_joint2": 0.0,
+    "elfin_joint3": 0.0,
+    "elfin_joint4": 0.0,
+    "elfin_joint5": 0.0,
+    "elfin_joint6": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 2.277761027952771,
+    "lookat": [
+      0.0087952309528192,
+      -0.05682911679322866,
+      0.7559617457525735
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    295,
+    80,
+    345,
+    357
+  ]
+}

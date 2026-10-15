@@ -1,0 +1,302 @@
+<?xml version="1.0"?>
+<!-- Static URDF prepared from the upstream model; mesh and texture references use local relative paths. -->
+<robot name="nj60">
+  <link name="base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.038 0.001 0.188" />
+      <mass value="175.435" />
+      <inertia ixx="5.299" ixy="0.042" ixz="-0.224" iyy="6.319" iyz="0.006" izz="8.709" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj60_description/meshes/nj60/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj60_description/meshes/nj60/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.218 -0.166 -0.016" />
+      <mass value="214.629" />
+      <inertia ixx="4.438" ixy="1.779" ixz="1.136" iyy="12.684" iyz="-0.177" izz="12.821" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj60_description/meshes/nj60/link_1.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj60_description/meshes/nj60/link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_1" type="revolute">
+    <origin rpy="-1.5708 0 0" xyz="0 0 0.344" />
+    <parent link="base_link" />
+    <child link="link_1" />
+    <axis xyz="0 1 0" />
+    <limit effort="0" lower="-3.142" upper="3.142" velocity="2.968" />
+  </joint>
+  <link name="link_2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.422 0.007 -0.01" />
+      <mass value="81.603" />
+      <inertia ixx="1.018" ixy="0.098" ixz="-0.041" iyy="7.357" iyz="0.022" izz="7.742" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj60_description/meshes/nj60/link_2.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj60_description/meshes/nj60/link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_2" type="revolute">
+    <origin rpy="0 0 -1.5708" xyz="0.4 -0.206 -0.1835" />
+    <parent link="link_1" />
+    <child link="link_2" />
+    <axis xyz="0 0 1" />
+    <limit effort="0" lower="-1.047" upper="2.182" velocity="2.618" />
+  </joint>
+  <link name="link_3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.101 -0.169 0.011" />
+      <mass value="121.564" />
+      <inertia ixx="3.229" ixy="0.431" ixz="-0.142" iyy="3.707" iyz="0.151" izz="3.059" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj60_description/meshes/nj60/link_3.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.25098 0.25098 0.25098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj60_description/meshes/nj60/link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_3" type="revolute">
+    <origin rpy="-1.5708 0 -1.5708" xyz="0.86 0 0" />
+    <parent link="link_2" />
+    <child link="link_3" />
+    <axis xyz="0 1 0" />
+    <limit effort="0" lower="-2.88" upper="0" velocity="2.88" />
+  </joint>
+  <link name="link_4">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0.567 -0.018" />
+      <mass value="27.005" />
+      <inertia ixx="3.846" ixy="0.001" ixz="0" iyy="0.15" iyz="0.209" izz="3.821" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj60_description/meshes/nj60/link_4.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.56863 0.59608 0.62353 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj60_description/meshes/nj60/link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_4" type="revolute">
+    <origin rpy="1.5708 0 0" xyz="0.21 -0.1835 0" />
+    <parent link="link_3" />
+    <child link="link_4" />
+    <axis xyz="0 -1 0" />
+    <limit effort="1115.7" lower="-47.124" upper="47.124" velocity="4.626" />
+  </joint>
+  <link name="link_5">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0.008 0.079" />
+      <mass value="7.97" />
+      <inertia ixx="0.06" ixy="0" ixz="0" iyy="0.033" iyz="0.005" izz="0.042" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj60_description/meshes/nj60/link_5.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.8 0.23922 0.22353 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj60_description/meshes/nj60/link_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_5" type="revolute">
+    <origin rpy="-1.5708 0 0" xyz="0 0.9755 0" />
+    <parent link="link_4" />
+    <child link="link_5" />
+    <axis xyz="0 -1 0" />
+    <limit effort="935.73" lower="-2.147" upper="2.147" velocity="4.363" />
+  </joint>
+  <link name="link_6">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0.001 0.164" />
+      <mass value="1.477" />
+      <inertia ixx="0.002" ixy="0" ixz="0" iyy="0.002" iyz="0" izz="0.003" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj60_description/meshes/nj60/link_6.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.25098 0.25098 0.25098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/nj60_description/meshes/nj60/link_6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_6" type="revolute">
+    <origin rpy="0 0 3.1416" xyz="0 0 0.175" />
+    <parent link="link_5" />
+    <child link="link_6" />
+    <axis xyz="0 0 -1" />
+    <limit effort="644.69" lower="-47.124" upper="47.124" velocity="5.934" />
+  </joint>
+  <link name="ee_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.001" radius="0.001" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="joint_ee_link" type="fixed">
+    <origin rpy="0 0 0.0" xyz="0.0 0.0 0.0" />
+    <parent link="link_6" />
+    <child link="ee_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <ros2_control name="nj60" type="system">
+    <hardware>
+      <plugin>comau_hardware_interface/ComauHardwareInterface</plugin>
+    </hardware>
+    <joint name="joint_1">
+      <command_interface name="position">
+        <param name="min">{-2*pi}</param>
+        <param name="max">{2*pi}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.15</param>
+        <param name="max">3.15</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint_2">
+      <command_interface name="position">
+        <param name="min">{-2*pi}</param>
+        <param name="max">{2*pi}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.15</param>
+        <param name="max">3.15</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint_3">
+      <command_interface name="position">
+        <param name="min">{-pi}</param>
+        <param name="max">{pi}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.15</param>
+        <param name="max">3.15</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint_4">
+      <command_interface name="position">
+        <param name="min">{-2*pi}</param>
+        <param name="max">{2*pi}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.2</param>
+        <param name="max">3.2</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint_5">
+      <command_interface name="position">
+        <param name="min">{-2*pi}</param>
+        <param name="max">{2*pi}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.2</param>
+        <param name="max">3.2</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint_6">
+      <command_interface name="position">
+        <param name="min">{-2*pi}</param>
+        <param name="max">{2*pi}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.2</param>
+        <param name="max">3.2</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+    </joint>
+  </ros2_control>
+</robot>

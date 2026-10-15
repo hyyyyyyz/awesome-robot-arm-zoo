@@ -1,0 +1,35 @@
+{
+  "entry": "models/realman/rm75/urdf/rm75.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "joint1": 0.0,
+    "joint2": 0.0,
+    "joint3": 0.0,
+    "joint4": 0.0,
+    "joint5": 0.0,
+    "joint6": 0.0,
+    "joint7": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 1.468114450451278,
+    "lookat": [
+      0.010799948662012504,
+      -0.025094228966823784,
+      0.48183412187354124
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    300,
+    79,
+    340,
+    357
+  ]
+}

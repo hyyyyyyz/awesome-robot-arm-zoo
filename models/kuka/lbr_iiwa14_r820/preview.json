@@ -1,0 +1,27 @@
+{
+  "entry": "models/kuka/lbr_iiwa14_r820/mjcf/menagerie/iiwa14.xml",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "Native MJCF loaded in MuJoCo",
+  "pose": "keyframe: home",
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 1.0072285052189611,
+    "lookat": [
+      0.4146975120066264,
+      -0.08327950066234213,
+      0.4889631451998463
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    189,
+    76,
+    463,
+    348
+  ]
+}

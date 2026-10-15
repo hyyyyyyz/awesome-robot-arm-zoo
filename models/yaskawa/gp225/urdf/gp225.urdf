@@ -1,0 +1,224 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="motoman_gp225">
+  <!-- Resource filenames are local paths relative to this entry. -->
+  <!-- link list -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <mesh filename="resources/motoman_gp225_support/meshes/gp225/visual/base_link.dae" />
+      </geometry>
+      <material name="">
+        <color rgba="0.12941176470588237 0.14901960784313725 0.7490196078431373 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="resources/motoman_gp225_support/meshes/gp225/collision/base_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_1">
+    <visual>
+      <geometry>
+        <mesh filename="resources/motoman_gp225_support/meshes/gp225/visual/link_1.dae" />
+      </geometry>
+      <material name="">
+        <color rgba="0.12941176470588237 0.14901960784313725 0.7490196078431373 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="resources/motoman_gp225_support/meshes/gp225/collision/link_1.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_2">
+    <visual>
+      <geometry>
+        <mesh filename="resources/motoman_gp225_support/meshes/gp225/visual/link_2.dae" />
+      </geometry>
+      <material name="">
+        <color rgba="0.12941176470588237 0.14901960784313725 0.7490196078431373 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="resources/motoman_gp225_support/meshes/gp225/collision/link_2.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_3">
+    <visual>
+      <geometry>
+        <mesh filename="resources/motoman_gp225_support/meshes/gp225/visual/link_3.dae" />
+      </geometry>
+      <material name="">
+        <color rgba="0.12941176470588237 0.14901960784313725 0.7490196078431373 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="resources/motoman_gp225_support/meshes/gp225/collision/link_3.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="resources/motoman_gp225_support/meshes/gp225/collision/link_3_u_2.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_4">
+    <visual>
+      <geometry>
+        <mesh filename="resources/motoman_gp225_support/meshes/gp225/visual/link_4.dae" />
+      </geometry>
+      <material name="">
+        <color rgba="0.12941176470588237 0.14901960784313725 0.7490196078431373 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="resources/motoman_gp225_support/meshes/gp225/collision/link_4.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_5">
+    <visual>
+      <geometry>
+        <mesh filename="resources/motoman_gp225_support/meshes/gp225/visual/link_5.dae" />
+      </geometry>
+      <material name="">
+        <color rgba="0.12941176470588237 0.14901960784313725 0.7490196078431373 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="resources/motoman_gp225_support/meshes/gp225/collision/link_5.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_6">
+    <visual>
+      <geometry>
+        <mesh filename="resources/motoman_gp225_support/meshes/gp225/visual/link_6.dae" />
+      </geometry>
+      <material name="">
+        <color rgba="0.12941176470588237 0.14901960784313725 0.7490196078431373 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="resources/motoman_gp225_support/meshes/gp225/collision/link_6.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <!-- end of link list -->
+  <!-- joint list -->
+  <joint name="joint_1" type="revolute">
+    <parent link="base_link" />
+    <child link="link_1" />
+    <origin rpy="0 0 0" xyz="0 0 0.650" />
+    <axis xyz="0 0 1" />
+    <limit effort="7845.3" lower="-3.141592653589793" upper="3.141592653589793" velocity="2.0943951023931953" />
+  </joint>
+  <joint name="joint_2" type="revolute">
+    <parent link="link_1" />
+    <child link="link_2" />
+    <origin rpy="0 0 0" xyz="0.325 0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="11522.8" lower="-1.0471975511965976" upper="1.3264502315156905" velocity="1.6929693744344996" />
+  </joint>
+  <joint name="joint_3" type="revolute">
+    <parent link="link_2" />
+    <child link="link_3" />
+    <origin rpy="0 0 0" xyz="0 0 1.150" />
+    <axis xyz="0 -1 0" />
+    <limit effort="12258.3" lower="-1.5009831567151235" upper="1.5707963267948966" velocity="2.007128639793479" />
+  </joint>
+  <joint name="joint_4" type="revolute">
+    <parent link="link_3" />
+    <child link="link_4" />
+    <origin rpy="0 0 0" xyz="1.225 0 0.300" />
+    <axis xyz="-1 0 0" />
+    <limit effort="3064.5" lower="-6.283185307179586" upper="6.283185307179586" velocity="2.530727415391778" />
+  </joint>
+  <joint name="joint_5" type="revolute">
+    <parent link="link_4" />
+    <child link="link_5" />
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <axis xyz="0 -1 0" />
+    <limit effort="3432.3" lower="-2.181661564992912" upper="2.181661564992912" velocity="2.530727415391778" />
+  </joint>
+  <joint name="joint_6" type="revolute">
+    <parent link="link_5" />
+    <child link="link_6" />
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <axis xyz="-1 0 0" />
+    <limit effort="2250.6" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.839724354387525" />
+  </joint>
+  <!-- balancer -->
+  <link name="balancer_link_1">
+    <visual>
+      <geometry>
+        <mesh filename="resources/motoman_gp225_support/meshes/gp225/visual/balancer_link_1.dae" />
+      </geometry>
+      <material name="">
+        <color rgba="0.12941176470588237 0.14901960784313725 0.7490196078431373 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="resources/motoman_gp225_support/meshes/gp225/collision/balancer_link_1.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="balancer_link_2">
+    <visual>
+      <geometry>
+        <mesh filename="resources/motoman_gp225_support/meshes/gp225/visual/balancer_link_2.dae" />
+      </geometry>
+      <material name="">
+        <color rgba="0.12941176470588237 0.14901960784313725 0.7490196078431373 1.0" />
+      </material>
+    </visual>
+    <!-- collision mesh is fully contained within link_2 -->
+  </link>
+  <joint name="balancer_joint_1" type="revolute">
+    <parent link="link_1" />
+    <child link="balancer_link_1" />
+    <origin rpy="0 0 0" xyz="0.3989 0 -0.2576" />
+    <axis xyz="0 1 0" />
+    <limit effort="11522.8" lower="-1.0471975511965976" upper="1.3264502315156905" velocity="1.6929693744344996" />
+    <mimic joint="joint_2" multiplier="0.7634" />
+  </joint>
+  <joint name="balancer_joint_2" type="revolute">
+    <parent link="link_2" />
+    <child link="balancer_link_2" />
+    <origin rpy="0 0 0" xyz="0 0 0.720" />
+    <axis xyz="0 1 0" />
+    <limit effort="11522.8" lower="-1.0471975511965976" upper="1.3264502315156905" velocity="1.6929693744344996" />
+    <mimic joint="joint_2" multiplier="-0.2366" />
+  </joint>
+  <!-- end of joint list -->
+  <!-- ROS base_link to Robot Manufacturer World Coordinates transform -->
+  <link name="base" />
+  <joint name="base_link-base" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0.650" />
+    <parent link="base_link" />
+    <child link="base" />
+  </joint>
+  <!-- ROS-Industrial 'flange' frame, attachment point for EEF models -->
+  <link name="flange" />
+  <joint name="joint_6-flange" type="fixed">
+    <origin rpy="0 0 0" xyz="0.250 0 0" />
+    <parent link="link_6" />
+    <child link="flange" />
+  </joint>
+  <!-- ROS-Industrial 'tool0' frame, all-zeros tool frame -->
+  <link name="tool0" />
+  <joint name="flange-tool0" type="fixed">
+    <origin rpy="3.141592653589793 -1.5707963267948966 0" xyz="0 0 0" />
+    <parent link="flange" />
+    <child link="tool0" />
+  </joint>
+</robot>

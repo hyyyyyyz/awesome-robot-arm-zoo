@@ -1,0 +1,32 @@
+{
+  "entry": "models/epson/gx4_c351s_r/urdf/gx4_c351s_r.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "j1_joint": 0.0,
+    "j2_joint": 0.0,
+    "j3_joint": 0.0,
+    "j4_joint": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 0.9976016441398443,
+    "lookat": [
+      0.1866751613051395,
+      -0.05633654635630425,
+      0.2284309491260314
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    210,
+    80,
+    429,
+    349
+  ]
+}

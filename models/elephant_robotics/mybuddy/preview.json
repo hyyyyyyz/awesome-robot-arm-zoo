@@ -1,0 +1,41 @@
+{
+  "entry": "models/elephant_robotics/mybuddy/urdf/arm/mybuddy.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "joint1_L": 0.0,
+    "joint2_L": 0.0,
+    "joint3_L": 0.0,
+    "joint4_L": 0.0,
+    "joint5_L": 0.0,
+    "joint6_L": 0.0,
+    "joint1_R": 0.0,
+    "joint2_R": 0.0,
+    "joint3_R": 0.0,
+    "joint4_R": 0.0,
+    "joint5_R": 0.0,
+    "joint6_R": 0.0,
+    "base_link1": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 1.0539717748761177,
+    "lookat": [
+      -0.002164149916183411,
+      -0.05797265126781215,
+      0.18801689824796058
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    164,
+    124,
+    475,
+    310
+  ]
+}

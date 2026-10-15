@@ -4,3 +4,6 @@ Desktop.ini
 *~
 *.swp
 *.swo
+.venv/
+__pycache__/
+*.pyc

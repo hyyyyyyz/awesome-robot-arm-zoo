@@ -1,0 +1,27 @@
+{
+  "entry": "models/arx/l5/mjcf/menagerie/arx_l5.xml",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "Native MJCF loaded in MuJoCo",
+  "pose": "keyframe: home",
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 0.6997932850502033,
+    "lookat": [
+      0.06043837420857512,
+      -0.0036196808737559705,
+      0.19181515620085232
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    170,
+    100,
+    480,
+    328
+  ]
+}

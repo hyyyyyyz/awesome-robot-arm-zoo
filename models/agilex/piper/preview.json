@@ -1,0 +1,27 @@
+{
+  "entry": "models/agilex/piper/mjcf/with_gripper/piper.xml",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "Native MJCF loaded in MuJoCo",
+  "pose": "default qpos0",
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 0.6303404048085213,
+    "lookat": [
+      -0.003264435500988816,
+      -0.015468635419564059,
+      0.12247215445120962
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    162,
+    115,
+    485,
+    321
+  ]
+}

@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="hsr065a1_n32">
+  <!-- Resource filenames are local paths relative to this entry. -->
+  <!--
+    Base Denso robot xacro macro.
+
+    NOTE this is NOT a URDF. It cannot directly be loaded by consumers
+    expecting a flattened '.urdf' file. See the top-level '.xacro' for that
+    (but note that .xacro must still be processed by the xacro command).
+
+    This file models the base kinematic chain of a Denso robot.
+
+    Author DENSO WAVE INCORPORATED
+  -->
+  <!--
+    NOTE the macro defined in this file is NOT part of the public API of this
+          package. Users CANNOT rely on this file being available, or stored in
+          this location. Nor can they rely on the existence of the macro.
+  -->
+  <!-- node_name="$(arg node_name)" -->
+  <transmission name="trans_1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_1">
+      <hardwareInterface />
+    </joint>
+    <actuator name="motor_1">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="trans_2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_2">
+      <hardwareInterface />
+    </joint>
+    <actuator name="motor_2">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="trans_3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_3">
+      <hardwareInterface />
+    </joint>
+    <actuator name="motor_3">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="trans_4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_4">
+      <hardwareInterface />
+    </joint>
+    <actuator name="motor_4">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- Placeholder for ros2_control transmission which don't yet exist -->
+  <link name="world" />
+  <joint name="joint_w" type="fixed">
+    <parent link="world" />
+    <child link="base_link" />
+  </joint>
+  <link name="base_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/denso_robot_descriptions/robots/hsr065a1_n32/meshes/base_link.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/denso_robot_descriptions/robots/hsr065a1_n32/meshes/base_link.dae" scale="1 1 1" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1" />
+      <origin rpy="0.000000 0.000000 0.000000" xyz="0.000000 0.000000 0.000000" />
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+    </inertial>
+  </link>
+  <link name="J1">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/denso_robot_descriptions/robots/hsr065a1_n32/meshes/J1.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/denso_robot_descriptions/robots/hsr065a1_n32/meshes/J1.dae" scale="1 1 1" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1" />
+      <origin rpy="0.000000 0.000000 0.000000" xyz="0.000000 0.000000 0.000000" />
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+    </inertial>
+  </link>
+  <joint name="joint_1" type="revolute">
+    <parent link="base_link" />
+    <child link="J1" />
+    <origin rpy="0.000000 0.000000 0.000000" xyz="0.000000 0.000000 0.000000" />
+    <axis xyz="-0.000000 -0.000000 1.000000" />
+    <limit effort="1" lower="-2.26892802759263" upper="2.26892802759263" velocity="3.08615226990019" />
+    <dynamics damping="0" friction="0" />
+  </joint>
+  <link name="J2">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/denso_robot_descriptions/robots/hsr065a1_n32/meshes/J2.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/denso_robot_descriptions/robots/hsr065a1_n32/meshes/J2.dae" scale="1 1 1" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1" />
+      <origin rpy="0.000000 0.000000 0.000000" xyz="0.000000 0.000000 0.000000" />
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+    </inertial>
+  </link>
+  <joint name="joint_2" type="revolute">
+    <parent link="J1" />
+    <child link="J2" />
+    <origin rpy="0.000000 0.000000 0.000000" xyz="0.375000 0.000000 0.000000" />
+    <axis xyz="-0.000000 -0.000000 1.000000" />
+    <limit effort="1" lower="-2.61799387799149" upper="2.61799387799149" velocity="5.41357500737341" />
+    <dynamics damping="0" friction="0" />
+  </joint>
+  <link name="J3">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/denso_robot_descriptions/robots/hsr065a1_n32/meshes/J3.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/denso_robot_descriptions/robots/hsr065a1_n32/meshes/J3.dae" scale="1 1 1" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1" />
+      <origin rpy="0.000000 0.000000 0.000000" xyz="0.000000 0.000000 0.000000" />
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+    </inertial>
+  </link>
+  <joint name="joint_3" type="prismatic">
+    <parent link="J2" />
+    <child link="J3" />
+    <origin rpy="0.000000 0.000000 0.000000" xyz="-0.375000 0.000000 0.000000" />
+    <axis xyz="0.000000 0.000000 1.000000" />
+    <limit effort="1" lower="-0.1" upper="0.22" velocity="1.9" />
+    <dynamics damping="0" friction="0" />
+  </joint>
+  <link name="J4">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/denso_robot_descriptions/robots/hsr065a1_n32/meshes/J4.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/denso_robot_descriptions/robots/hsr065a1_n32/meshes/J4.dae" scale="1 1 1" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1" />
+      <origin rpy="0.000000 0.000000 0.000000" xyz="0.000000 0.000000 0.000000" />
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+    </inertial>
+  </link>
+  <joint name="joint_4" type="revolute">
+    <parent link="J3" />
+    <child link="J4" />
+    <origin rpy="0.000000 0.000000 0.000000" xyz="0.650000 0.000000 0.000000" />
+    <axis xyz="-0.000000 -0.000000 1.000000" />
+    <limit effort="1" lower="-6.28318530717959" upper="6.28318530717959" velocity="25.2968981715147" />
+    <dynamics damping="0" friction="0" />
+  </joint>
+</robot>

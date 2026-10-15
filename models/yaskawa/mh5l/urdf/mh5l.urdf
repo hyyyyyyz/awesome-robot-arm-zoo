@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="motoman_mh5l">
+  <!-- Resource filenames are local paths relative to this entry. -->
+  <!-- link list -->
+  <link name="base_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/motoman_mh5_support/meshes/mh5/visual/base_link.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.99 0.99 0.99 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/motoman_mh5_support/meshes/mh5/collision/base_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_1">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/motoman_mh5_support/meshes/mh5/visual/link_1.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.99 0.99 0.99 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/motoman_mh5_support/meshes/mh5/collision/link_1.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_2">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/motoman_mh5_support/meshes/mh5l/visual/link_2.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.99 0.99 0.99 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/motoman_mh5_support/meshes/mh5l/collision/link_2.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_3">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/motoman_mh5_support/meshes/mh5/visual/link_3.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.99 0.99 0.99 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/motoman_mh5_support/meshes/mh5/collision/link_3.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_4">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/motoman_mh5_support/meshes/mh5l/visual/link_4.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.99 0.99 0.99 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/motoman_mh5_support/meshes/mh5l/collision/link_4.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_5">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/motoman_mh5_support/meshes/mh5/visual/link_5.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.99 0.99 0.99 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/motoman_mh5_support/meshes/mh5/collision/link_5.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_6">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/motoman_mh5_support/meshes/mh5/visual/link_6.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.99 0.99 0.99 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/motoman_mh5_support/meshes/mh5/collision/link_6.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <!-- end of link list -->
+  <!-- joint list -->
+  <joint name="joint_1" type="revolute">
+    <parent link="base_link" />
+    <child link="link_1" />
+    <origin rpy="0 0 0" xyz="0 0 0.330" />
+    <axis xyz="0 0 1" />
+    <limit effort="303.8" lower="-2.9670597283903604" upper="2.9670597283903604" velocity="4.71238898038469" />
+  </joint>
+  <joint name="joint_2" type="revolute">
+    <parent link="link_1" />
+    <child link="link_2" />
+    <origin rpy="0 0 0" xyz="0.088 0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="205.8" lower="-1.1344640137963142" upper="2.6179938779914944" velocity="4.886921905584122" />
+  </joint>
+  <joint name="joint_3" type="revolute">
+    <parent link="link_2" />
+    <child link="link_3" />
+    <origin rpy="0 0 0" xyz="0 0 0.400" />
+    <axis xyz="0 -1 0" />
+    <limit effort="85.5" lower="-1.2217304763960306" upper="3.3161255787892263" velocity="5.235987755982989" />
+  </joint>
+  <joint name="joint_4" type="revolute">
+    <parent link="link_3" />
+    <child link="link_4" />
+    <origin rpy="0 0 0" xyz="0 0 0.040" />
+    <axis xyz="-1 0 0" />
+    <limit effort="44.7" lower="-3.3161255787892263" upper="3.3161255787892263" velocity="7.853981633974483" />
+  </joint>
+  <joint name="joint_5" type="revolute">
+    <parent link="link_4" />
+    <child link="link_5" />
+    <origin rpy="0 0 0" xyz="0.405 0 0" />
+    <axis xyz="0 -1 0" />
+    <limit effort="18.0" lower="-2.356194490192345" upper="2.356194490192345" velocity="7.853981633974483" />
+  </joint>
+  <joint name="joint_6" type="revolute">
+    <parent link="link_5" />
+    <child link="link_6" />
+    <origin rpy="0 0 0" xyz="0.080 0 0" />
+    <axis xyz="-1 0 0" />
+    <limit effort="18.0" lower="-6.283185307179586" upper="6.283185307179586" velocity="12.566370614359172" />
+  </joint>
+  <!-- end of joint list -->
+  <!-- ROS base_link to Robot Manufacturer (Motoman) World Coordinates transform -->
+  <link name="base" />
+  <joint name="base_link-base" type="fixed">
+    <parent link="base_link" />
+    <child link="base" />
+    <origin rpy="0 0 0" xyz="0 0 0.330" />
+  </joint>
+  <!-- ROS-Industrial 'flange' frame, attachment point for EEF models -->
+  <link name="flange" />
+  <joint name="joint_6-flange" type="fixed">
+    <parent link="link_6" />
+    <child link="flange" />
+    <origin rpy="0 0 0" xyz="0 0 0" />
+  </joint>
+  <!-- ROS-Industrial 'tool0' frame, all-zeros tool frame -->
+  <link name="tool0" />
+  <joint name="joint_6-tool0" type="fixed">
+    <parent link="link_6" />
+    <child link="tool0" />
+    <origin rpy="3.141592653589793 -1.5707963267948966 0" xyz="0 0 0" />
+  </joint>
+</robot>

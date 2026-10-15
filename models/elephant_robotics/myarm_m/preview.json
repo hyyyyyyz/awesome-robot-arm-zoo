@@ -1,0 +1,35 @@
+{
+  "entry": "models/elephant_robotics/myarm_m/urdf/arm/myarm_m.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "joint1": 0.0,
+    "joint2": 0.0,
+    "joint3": 0.0,
+    "joint4": 0.0,
+    "joint5": 0.0,
+    "joint6": 0.0,
+    "gripper": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 1.1339019009145936,
+    "lookat": [
+      0.23431117786192357,
+      0.08720858327415626,
+      0.2996579809010497
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    184,
+    110,
+    451,
+    317
+  ]
+}

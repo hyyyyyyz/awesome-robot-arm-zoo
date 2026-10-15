@@ -1,0 +1,34 @@
+{
+  "entry": "models/elite_robots/cs66/urdf/cs66.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "shoulder_pan_joint": 0.0,
+    "shoulder_lift_joint": -1.57,
+    "elbow_joint": 0.0,
+    "wrist_1_joint": -1.57,
+    "wrist_2_joint": 1.57,
+    "wrist_3_joint": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 1.9628819256039804,
+    "lookat": [
+      0.01092671794242528,
+      -0.10545118938378706,
+      0.6548667347513595
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    289,
+    93,
+    353,
+    352
+  ]
+}

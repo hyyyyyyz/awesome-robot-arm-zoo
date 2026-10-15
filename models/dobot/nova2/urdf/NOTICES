@@ -1,0 +1,4 @@
+Source: https://github.com/Dobot-Arm/TCP-IP-ROS-6AXis.git
+Version: 0924e785f1827b7125ba4ba2bc3325811ed21c18
+Scope: dobot_description/urdf/nova2_robot.urdf and its referenced model resources.
+Changes: resource paths made relative; mechanical definitions retained.

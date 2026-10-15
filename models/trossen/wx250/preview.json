@@ -1,0 +1,35 @@
+{
+  "entry": "models/trossen/wx250/urdf/wx250.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "waist": 0.0,
+    "shoulder": 0.0,
+    "elbow": 0.0,
+    "wrist_angle": 0.0,
+    "wrist_rotate": 0.0,
+    "gripper": 0.0,
+    "left_finger": 0.015
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 0.8648572042584419,
+    "lookat": [
+      0.19872737799790252,
+      0.04500025124947371,
+      0.23313543691884375
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    177,
+    109,
+    464,
+    319
+  ]
+}

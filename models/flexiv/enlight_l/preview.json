@@ -1,0 +1,35 @@
+{
+  "entry": "models/flexiv/enlight_l/urdf/enlight_l.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "joint1": 0.0,
+    "joint2": 0.0,
+    "joint3": 0.0,
+    "joint4": 0.0,
+    "joint5": 0.0,
+    "joint6": 0.0,
+    "joint7": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 1.7229671698416211,
+    "lookat": [
+      0.029883675888421446,
+      -0.033023298098467824,
+      0.5804502254683279
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    296,
+    79,
+    344,
+    359
+  ]
+}

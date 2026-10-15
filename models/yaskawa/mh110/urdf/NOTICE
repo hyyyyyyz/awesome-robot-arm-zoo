@@ -1,0 +1,4 @@
+Upstream project: https://github.com/Yaskawa-Global/motoman_ros2_support_packages
+Upstream commit: a77f186048bd3c35fc3bb5142f9d9270dbebe69f
+Package: motoman_mh110_support
+The upstream package license declaration and authors are preserved in source_package.xml.

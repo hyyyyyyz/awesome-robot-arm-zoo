@@ -1,0 +1,34 @@
+{
+  "entry": "models/yaskawa/mh12/urdf/mh12.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "joint_1": 0.0,
+    "joint_2": 0.0,
+    "joint_3": 0.0,
+    "joint_4": 0.0,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 2.5033600150986954,
+    "lookat": [
+      0.4393652188310482,
+      0.0033656905235381895,
+      0.8078223990282296
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    222,
+    97,
+    411,
+    337
+  ]
+}

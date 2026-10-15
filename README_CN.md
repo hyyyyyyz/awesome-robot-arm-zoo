@@ -8,7 +8,43 @@
 
 ## 模型目录
 
-当前仓库已提供收录规范和文档模板，尚未收录模型。模型入口将在实际文件加入后列入此处。
+收录 **31 个品牌、482 个型号或装配、541 个入口**，包含 505 个 URDF 与 36 个 MJCF 入口。来源、许可、装配和加载记录见各型号说明。
+
+点击品牌进入模型图库。每行包含标注型号的 MuJoCo 预览图、模型说明和可直接使用的原生入口文件链接。详见[渲染方式](docs/PREVIEWS.md)。
+
+| 品牌图库 | 型号 / 装配数 | 格式 |
+|---|---:|---|
+| [ABB](models/abb/README.md) | 27 | URDF |
+| [AgileX](models/agilex/README.md) | 3 | URDF, MJCF |
+| [ARX](models/arx/README.md) | 1 | MJCF |
+| [AUBO](models/aubo/README.md) | 11 | URDF |
+| [Comau](models/comau/README.md) | 14 | URDF |
+| [DENSO](models/denso/README.md) | 3 | URDF |
+| [Dobot](models/dobot/README.md) | 10 | URDF |
+| [Elephant Robotics](models/elephant_robotics/README.md) | 21 | URDF |
+| [Elite Robots](models/elite_robots/README.md) | 5 | URDF |
+| [Epson](models/epson/README.md) | 64 | URDF |
+| [FANUC](models/fanuc/README.md) | 71 | URDF |
+| [Flexiv](models/flexiv/README.md) | 23 | URDF, MJCF |
+| [Franka Robotics](models/franka/README.md) | 7 | URDF, MJCF |
+| [Han’s / Huayan Robotics](models/hans_robot/README.md) | 6 | URDF |
+| [JAKA](models/jaka/README.md) | 1 | URDF |
+| [Kinova](models/kinova/README.md) | 17 | URDF, MJCF |
+| [KUKA](models/kuka/README.md) | 47 | URDF, MJCF |
+| [Lebai](models/lebai/README.md) | 3 | URDF |
+| [Mitsubishi Electric](models/mitsubishi/README.md) | 10 | URDF |
+| [Pollen Robotics](models/pollen_robotics/README.md) | 1 | URDF |
+| [RealMan](models/realman/README.md) | 11 | URDF |
+| [Rethink Robotics](models/rethink_robotics/README.md) | 2 | URDF, MJCF |
+| [ROBOTIS](models/robotis/README.md) | 6 | URDF |
+| [ROKAE](models/rokae/README.md) | 14 | URDF |
+| [Stäubli](models/staubli/README.md) | 12 | URDF |
+| [Techman Robot](models/techman/README.md) | 10 | URDF |
+| [Trossen / Interbotix](models/trossen/README.md) | 10 | URDF |
+| [UFACTORY](models/ufactory/README.md) | 7 | URDF, MJCF |
+| [Unitree](models/unitree/README.md) | 1 | URDF, MJCF |
+| [Universal Robots](models/universal_robots/README.md) | 14 | URDF, MJCF |
+| [Yaskawa Motoman](models/yaskawa/README.md) | 50 | URDF |
 
 ## 使用方式
 
@@ -20,12 +56,12 @@ git clone https://github.com/hyyyyyyz/awesome-robot-arm-zoo.git
 
 在模型目录中选择适合目标环境的格式，并查阅该型号的 README。模型说明会列出相对仓库根目录的入口路径、具体装配、适用环境和必要加载选项。
 
-将入口文件的本地绝对路径填入现有项目。下面仅示意 MuJoCo 的原生加载方式，路径需替换为实际模型文件：
+将入口文件的本地绝对路径填入现有项目。下面使用已收录的 Panda MJCF 入口，路径需替换为本地 checkout 的实际位置：
 
 ```python
 import mujoco
 
-model = mujoco.MjModel.from_xml_path("/absolute/path/to/model.xml")
+model = mujoco.MjModel.from_xml_path("/absolute/path/to/awesome-robot-arm-zoo/models/franka/panda/mjcf/menagerie/panda.xml")
 ```
 
 也可以使用项目自己的路径配置，将模型仓库根目录与入口相对路径拼接。目标项目负责安装其仿真器和相关依赖。
@@ -39,8 +75,11 @@ model = mujoco.MjModel.from_xml_path("/absolute/path/to/model.xml")
 ```text
 models/
   <manufacturer>/
+    README.md
     <model>/
       README.md
+      preview.png
+      preview.json
       mjcf/
         <model>.xml
         assets/
@@ -68,9 +107,11 @@ models/
 - [单模型 README 模板](docs/templates/MODEL_README.md)：每个型号随附的使用资料。
 - [AGENTS.md](AGENTS.md)：仓库维护约定。
 
-各模型及其网格、纹理的许可由对应目录中的许可证和来源说明确定。
+厂商官方来源优先；ROS-Industrial、大学维护模型与 Google DeepMind Menagerie 整理模型均在各目录中明确标注。格式子目录中的许可证分别覆盖对应资源，部分网格使用厂商专用条款。
 
 ## 使用范围
+
+[来源覆盖与未收录范围](docs/SOURCE_COVERAGE.md)记录来源类别、型号覆盖和许可或资源缺口。
 
 仓库负责提供可定位、资源完整的模型文件和使用说明。关节控制、场景装配、任务定义与训练配置由使用项目管理。
 

@@ -1,0 +1,44 @@
+{
+  "entry": "models/abb/yumi_irb14000/urdf/yumi_irb14000.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "yumi_joint_1_r": 0.0,
+    "yumi_joint_2_r": 0.0,
+    "yumi_joint_7_r": 0.0,
+    "yumi_joint_3_r": 0.0,
+    "yumi_joint_4_r": 0.0,
+    "yumi_joint_5_r": 0.0,
+    "yumi_joint_6_r": 0.0,
+    "yumi_joint_1_l": 0.0,
+    "yumi_joint_2_l": 0.0,
+    "yumi_joint_7_l": 0.0,
+    "yumi_joint_3_l": 0.0,
+    "yumi_joint_4_l": 0.0,
+    "yumi_joint_5_l": 0.0,
+    "yumi_joint_6_l": 0.0,
+    "gripper_r_joint": 0.0,
+    "gripper_l_joint": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 1.5271416907447848,
+    "lookat": [
+      0.1317459870704749,
+      0.04085871694464638,
+      0.36334183871882253
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    179,
+    96,
+    494,
+    322
+  ]
+}

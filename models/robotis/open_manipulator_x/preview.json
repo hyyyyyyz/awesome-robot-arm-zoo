@@ -1,0 +1,33 @@
+{
+  "entry": "models/robotis/open_manipulator_x/urdf/open_manipulator_x.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "joint1": 0.0,
+    "joint2": 0.0,
+    "joint3": 0.0,
+    "joint4": 0.0,
+    "gripper_left_joint": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 0.3470910985155829,
+    "lookat": [
+      0.21158593922122637,
+      -0.025732142321125306,
+      0.17259544062024687
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    164,
+    104,
+    497,
+    306
+  ]
+}

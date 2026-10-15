@@ -1,0 +1,35 @@
+{
+  "entry": "models/robotis/omy_l100/urdf/omy_l100.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "joint1": 0.0,
+    "joint2": 0.0,
+    "joint3": 0.0,
+    "joint4": 0.0,
+    "joint5": 0.0,
+    "joint6": 0.0,
+    "rh_r1_joint": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 1.3760392051880008,
+    "lookat": [
+      -0.042844560224880035,
+      -0.02701335019716511,
+      0.3263820795577077
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    273,
+    101,
+    370,
+    341
+  ]
+}

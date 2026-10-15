@@ -1,0 +1,4 @@
+Source: https://github.com/agilexrobotics/piper_ros.git
+Version: ac41fcbcdda598f01b51cf6175ed9a24d0dacadc
+Scope: src/piper_description/urdf/piper_no_gripper_description.urdf and its referenced model resources.
+Changes: resource paths made relative; mechanical definitions retained.

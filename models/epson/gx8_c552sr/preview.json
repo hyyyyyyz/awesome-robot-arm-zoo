@@ -1,0 +1,32 @@
+{
+  "entry": "models/epson/gx8_c552sr/urdf/gx8_c552sr.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "j1_joint": 0.0,
+    "j2_joint": 0.0,
+    "j3_joint": 0.0,
+    "j4_joint": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 1.080713465503214,
+    "lookat": [
+      0.31347482360655543,
+      -0.06286285126288738,
+      0.21567681297512065
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    178,
+    91,
+    459,
+    340
+  ]
+}

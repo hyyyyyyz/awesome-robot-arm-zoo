@@ -1,0 +1,34 @@
+{
+  "entry": "models/staubli/rx160l/urdf/rx160l.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "joint_1": 0.0,
+    "joint_2": 0.0,
+    "joint_3": 0.0,
+    "joint_4": 0.0,
+    "joint_5": 0.0,
+    "joint_6": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 4.507739749710256,
+    "lookat": [
+      0.08101041106583162,
+      0.08249728329291806,
+      1.3263035918229522
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    283,
+    92,
+    358,
+    353
+  ]
+}

@@ -7,6 +7,8 @@ Public model entries use stable paths and resolve their complete resources withi
 ```text
 models/<manufacturer>/<model>/
   README.md
+  preview.png
+  preview.json
   <format>/
     <entry-file>
     <resource-directories>/
@@ -62,7 +64,9 @@ Source records include the project URL, version identifier, and upstream file pa
 
 ## Entries and support records
 
-Write entry paths relative to the repository root in the model README and link them to actual files. The catalogs in `README.md` and `README_CN.md` link to the corresponding model documentation and available entries. Keep the two catalogs synchronized.
+Write entry paths relative to the repository root in the model README and link them to actual files. The catalogs in `README.md` and `README_CN.md` link to manufacturer READMEs. Each manufacturer README contains a preview gallery linking every model's documentation and native entries. Keep the two root catalogs synchronized.
+
+Each model includes `preview.png` and `preview.json`, which records the entry, renderer, pose, and camera used for that preview. See [Model previews](PREVIEWS.md) for the rendering method. Keep model and manufacturer names visible beside gallery images.
 
 Each support record identifies an actual entry, assembly, loading options, and simulator version. Record resource loading and affected joint motion results, with reproducible native commands or minimal examples.
 

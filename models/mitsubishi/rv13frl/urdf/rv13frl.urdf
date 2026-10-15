@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="rv13frl">
+  <!-- Resource filenames are local paths relative to this entry. -->
+  <material name="white">
+    <color rgba="1.0 1.0 1.0 1.0" />
+  </material>
+  <link name="world" />
+  <link name="rv13frl_base">
+    <visual>
+      <material name="white" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv13frl/base.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv13frl/base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rv13frl_shoulder">
+    <visual>
+      <material name="white" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv13frl/shoulder.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv13frl/shoulder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rv13frl_upper_arm">
+    <visual>
+      <material name="white" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv13frl/upper_arm.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv13frl/upper_arm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rv13frl_elbow">
+    <visual>
+      <material name="white" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv13frl/elbow.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv13frl/elbow.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rv13frl_forearm">
+    <visual>
+      <material name="white" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv13frl/forearm.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv13frl/forearm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rv13frl_wrist">
+    <visual>
+      <material name="white" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv13frl/wrist.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv13frl/wrist.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rv13frl_hand_flange">
+    <visual>
+      <material name="white" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv13frl/hand_flange.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv13frl/hand_flange.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rv13frl_default_tcp" />
+  <joint name="rv13frl_world_to_base" type="fixed">
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+    <parent link="world" />
+    <child link="rv13frl_base" />
+  </joint>
+  <joint name="rv13frl_joint_1" type="revolute">
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+    <parent link="rv13frl_base" />
+    <child link="rv13frl_shoulder" />
+    <axis xyz="0 0 1" />
+    <limit effort="1" lower="-3.3161255787892263" upper="3.3161255787892263" velocity="4.084070449666731" />
+  </joint>
+  <joint name="rv13frl_joint_2" type="revolute">
+    <origin rpy="0 0 0" xyz="0.13 0.0 0.45" />
+    <parent link="rv13frl_shoulder" />
+    <child link="rv13frl_upper_arm" />
+    <axis xyz="0 1 0" />
+    <limit effort="1" lower="-1.5707963267948966" upper="2.6179938779914944" velocity="2.8623399732707" />
+  </joint>
+  <joint name="rv13frl_joint_3" type="revolute">
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.565" />
+    <parent link="rv13frl_upper_arm" />
+    <child link="rv13frl_elbow" />
+    <axis xyz="0 1 0" />
+    <limit effort="1" lower="-0.17453292519943295" upper="2.748893571891069" velocity="3.822271061867582" />
+  </joint>
+  <joint name="rv13frl_joint_4" type="revolute">
+    <origin rpy="0 0 0" xyz="-0.065 0.0 0.0" />
+    <parent link="rv13frl_elbow" />
+    <child link="rv13frl_forearm" />
+    <axis xyz="0 0 1" />
+    <limit effort="1" lower="-3.490658503988659" upper="3.490658503988659" velocity="6.544984694978735" />
+  </joint>
+  <joint name="rv13frl_joint_5" type="revolute">
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.69" />
+    <parent link="rv13frl_forearm" />
+    <child link="rv13frl_wrist" />
+    <axis xyz="0 1 0" />
+    <limit effort="1" lower="-2.0943951023931953" upper="2.0943951023931953" velocity="6.544984694978735" />
+  </joint>
+  <joint name="rv13frl_joint_6" type="revolute">
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.097" />
+    <parent link="rv13frl_wrist" />
+    <child link="rv13frl_hand_flange" />
+    <axis xyz="0 0 1" />
+    <limit effort="1" lower="-6.283185307179586" upper="6.283185307179586" velocity="12.566370614359172" />
+  </joint>
+  <joint name="rv13frl_hand_tcp" type="fixed">
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+    <parent link="rv13frl_hand_flange" />
+    <child link="rv13frl_default_tcp" />
+  </joint>
+</robot>

@@ -1,0 +1,42 @@
+{
+  "entry": "models/kinova/dual_gen3_7dof/urdf/dual_gen3_7dof.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "left_joint_1": 0.0,
+    "left_joint_2": 0.0,
+    "left_joint_3": 0.0,
+    "left_joint_4": 0.0,
+    "left_joint_5": 0.0,
+    "left_joint_6": 0.0,
+    "left_joint_7": 0.0,
+    "right_joint_1": 0.0,
+    "right_joint_2": 0.0,
+    "right_joint_3": 0.0,
+    "right_joint_4": 0.0,
+    "right_joint_5": 0.0,
+    "right_joint_6": 0.0,
+    "right_joint_7": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 2.7130567214371246,
+    "lookat": [
+      0.5216702816103262,
+      -0.2949705499149333,
+      0.754250678608098
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    189,
+    82,
+    450,
+    353
+  ]
+}

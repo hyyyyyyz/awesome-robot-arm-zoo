@@ -18,6 +18,8 @@ Inspect resource references and make them local relative references supported by
 
 Create `models/<manufacturer>/<model>/README.md` from the [model README template](docs/templates/MODEL_README.md), replacing template fields with actual information in English. Use paths relative to the repository root in the entry table so users can join them with their local checkout path.
 
+Include a MuJoCo-rendered `preview.png` and its `preview.json` rendering record for the model gallery. The [preview documentation](docs/PREVIEWS.md) describes the rendering method and distinguishes native MJCF previews from static URDF visualizations.
+
 ## Validate the model
 
 Choose checks that can directly detect problems in the contribution:
@@ -35,7 +37,9 @@ Validate changes to physical behavior in the relevant target environment. Keep v
 
 ## Submission contents
 
-A model contribution includes complete resources, sources and licenses, a model README, and entries in both root README files. Catalog entries should list the manufacturer, model or assembly, format, entry path, and model documentation link. List only files that actually exist.
+A model contribution includes complete resources, sources and licenses, a model README, a preview, and a row in its manufacturer's gallery. The root README files link to manufacturer galleries and list their model counts and formats. Gallery rows include the model or assembly name, preview, native entry links, and model documentation. List only files that actually exist.
+
+Run `python scripts/build_catalog.py` after updating model entry tables. It refreshes manufacturer galleries and both root indexes from those tables while preserving source notes.
 
 Write repository documentation in English. Keep `README.md` as the primary README and update its Simplified Chinese translation, `README_CN.md`, in the same change. The two files must describe the same contents, model entries, examples, and limitations, and link to each other.
 

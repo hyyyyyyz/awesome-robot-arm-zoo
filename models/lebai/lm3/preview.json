@@ -1,0 +1,35 @@
+{
+  "entry": "models/lebai/lm3/urdf/with_gripper/lm3.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "joint_1": 0.0,
+    "joint_2": 0.0,
+    "joint_3": 0.0,
+    "joint_4": 0.0,
+    "joint_5": 0.0,
+    "joint_6": 0.0,
+    "gripper_r_joint1": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 0.9633111229964665,
+    "lookat": [
+      -0.20686869294573884,
+      -0.191249284985337,
+      0.16710556367711887
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    132,
+    118,
+    510,
+    316
+  ]
+}

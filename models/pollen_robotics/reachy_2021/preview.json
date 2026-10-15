@@ -1,0 +1,49 @@
+{
+  "entry": "models/pollen_robotics/reachy_2021/urdf/reachy_2021.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "r_antenna": 0.0,
+    "l_antenna": 0.0,
+    "r_shoulder_pitch": 0.0,
+    "r_shoulder_roll": 0.0,
+    "r_arm_yaw": 0.0,
+    "r_elbow_pitch": 0.0,
+    "r_forearm_yaw": 0.0,
+    "r_wrist_pitch": 0.0,
+    "r_wrist_roll": 0.0,
+    "r_gripper": 0.0,
+    "l_shoulder_pitch": 0.0,
+    "l_shoulder_roll": 0.0,
+    "l_arm_yaw": 0.0,
+    "l_elbow_pitch": 0.0,
+    "l_forearm_yaw": 0.0,
+    "l_wrist_pitch": 0.0,
+    "l_wrist_roll": 0.0,
+    "l_gripper": 0.0,
+    "neck_roll": 0.0,
+    "neck_pitch": 0.0,
+    "neck_yaw": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 1.9810040668419608,
+    "lookat": [
+      0.025856405405916605,
+      -0.049121269128269196,
+      0.9113065262132543
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    276,
+    80,
+    366,
+    359
+  ]
+}

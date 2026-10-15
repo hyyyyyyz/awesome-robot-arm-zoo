@@ -1,0 +1,35 @@
+{
+  "entry": "models/flexiv/rizon10/urdf/rizon10.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "joint1": 0.0,
+    "joint2": 0.0,
+    "joint3": 0.0,
+    "joint4": 0.0,
+    "joint5": 0.0,
+    "joint6": 0.0,
+    "joint7": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 2.4818886536568283,
+    "lookat": [
+      0.03382320668257188,
+      -0.11675525444621493,
+      0.8508195748467563
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    293,
+    84,
+    349,
+    356
+  ]
+}

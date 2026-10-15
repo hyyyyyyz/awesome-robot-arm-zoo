@@ -1,0 +1,902 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Resource paths are relative to this model entry. -->
+<robot name="DUAL_UF_ROBOT">
+  <!-- Insert at the beginning of xarm_device_macro.xacro -->
+  <material name="L_Black">
+    <color rgba="0.0 0.0 0.0 1.0"/>
+  </material>
+  <material name="L_Red">
+    <color rgba="0.8 0.0 0.0 1.0"/>
+  </material>
+  <material name="L_White">
+    <color rgba="1.0 1.0 1.0 1.0"/>
+  </material>
+  <material name="L_Silver">
+    <color rgba="0.753 0.753 0.753 1.0"/>
+  </material>
+  <link name="world"/>
+  <joint name="L_world_joint" type="fixed">
+    <parent link="world"/>
+    <child link="L_link_base"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <ros2_control name="L_uf_robot_hardware/UFRobotSystemHardware" type="system">
+    <hardware>
+      <plugin>uf_robot_hardware/UFRobotSystemHardware</plugin>
+      <param name="hw_ns">L_xarm</param>
+      <param name="velocity_control">False</param>
+      <param name="prefix">PL_</param>
+      <param name="robot_ip">R</param>
+      <param name="report_type">normal</param>
+      <param name="dof">7</param>
+      <param name="baud_checkset">True</param>
+      <param name="default_gripper_baud">2000000</param>
+      <param name="robot_type">xarm</param>
+      <param name="add_gripper">False</param>
+      <param name="add_bio_gripper">False</param>
+    </hardware>
+    <joint name="L_joint1">
+      <command_interface name="position">
+        <param name="min">-6.283185307179586</param>
+        <param name="max">6.283185307179586</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <!-- <state_interface name="effort"/> -->
+    </joint>
+    <joint name="L_joint2">
+      <command_interface name="position">
+        <param name="min">-2.059</param>
+        <param name="max">2.0944</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <!-- <state_interface name="effort"/> -->
+    </joint>
+    <joint name="L_joint3">
+      <command_interface name="position">
+        <param name="min">-6.283185307179586</param>
+        <param name="max">6.283185307179586</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <!-- <state_interface name="effort"/> -->
+    </joint>
+    <joint name="L_joint4">
+      <command_interface name="position">
+        <param name="min">-0.19198</param>
+        <param name="max">3.927</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <!-- <state_interface name="effort"/> -->
+    </joint>
+    <joint name="L_joint5">
+      <command_interface name="position">
+        <param name="min">-6.283185307179586</param>
+        <param name="max">6.283185307179586</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <!-- <state_interface name="effort"/> -->
+    </joint>
+    <joint name="L_joint6">
+      <command_interface name="position">
+        <param name="min">-1.69297</param>
+        <param name="max">3.141592653589793</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <!-- <state_interface name="effort"/> -->
+    </joint>
+    <joint name="L_joint7">
+      <command_interface name="position">
+        <param name="min">-6.283185307179586</param>
+        <param name="max">6.283185307179586</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <!-- <state_interface name="effort"/> -->
+    </joint>
+  </ros2_control>
+  <link name="L_link_base">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.021131 -0.0016302 0.056488"/>
+      <mass value="0.88556"/>
+      <inertia ixx="0.0030595" ixy="0.00012259" ixz="-0.00062705" iyy="0.0037783" iyz="0.00027023" izz="0.0020125"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link_base.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="L_White"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link_base.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <link name="L_link1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0002 0.02905 -0.01233"/>
+      <mass value="2.382"/>
+      <inertia ixx="0.0056905" ixy="-1.579e-05" ixz="5.125e-06" iyy="0.0049566" iyz="-0.000873378" izz="0.003316654"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link1.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="L_White"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link1.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <joint name="L_joint1" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0.267"/>
+    <parent link="L_link_base"/>
+    <child link="L_link1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="50" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.14"/>
+    <dynamics damping="10" friction="1"/>
+  </joint>
+  <link name="L_link2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00022 -0.12856 0.01735"/>
+      <mass value="1.869"/>
+      <inertia ixx="0.0095989" ixy="1.541e-06" ixz="5.56e-06" iyy="0.00382472" iyz="-0.00317156" izz="0.007565669"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link2.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="L_White"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link2.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <joint name="L_joint2" type="revolute">
+    <origin rpy="-1.5708 0 0" xyz="0 0 0"/>
+    <parent link="L_link1"/>
+    <child link="L_link2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="50" lower="-2.059" upper="2.0944" velocity="3.14"/>
+    <dynamics damping="10" friction="1"/>
+  </joint>
+  <link name="L_link3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0466 -0.02463 -0.00768"/>
+      <mass value="1.6383"/>
+      <inertia ixx="0.00310955" ixy="0.00030837" ixz="-0.00058453" iyy="0.00264483" iyz="0.000338893" izz="0.0026624"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link3.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="L_White"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link3.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <joint name="L_joint3" type="revolute">
+    <origin rpy="1.5708 0 0" xyz="0 -0.293 0"/>
+    <parent link="L_link2"/>
+    <child link="L_link3"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="30" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.14"/>
+    <dynamics damping="5" friction="1"/>
+  </joint>
+  <link name="L_link4">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.07047 -0.11575 0.012"/>
+      <mass value="1.7269"/>
+      <inertia ixx="0.005889" ixy="0.00137112" ixz="0.00088143" iyy="0.00359703" iyz="-0.001762155" izz="0.00543244"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link4.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="L_White"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link4.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <joint name="L_joint4" type="revolute">
+    <origin rpy="1.5708 0 0" xyz="0.0525 0 0"/>
+    <parent link="L_link3"/>
+    <child link="L_link4"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="30" lower="-0.19198" upper="3.927" velocity="3.14"/>
+    <dynamics damping="5" friction="1"/>
+  </joint>
+  <link name="L_link5">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00032 0.01604 -0.026"/>
+      <mass value="1.3203"/>
+      <inertia ixx="0.00534665" ixy="1.5117e-05" ixz="-3.69e-07" iyy="0.0049779" iyz="-0.00022132" izz="0.0013624"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link5.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="L_White"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link5.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <joint name="L_joint5" type="revolute">
+    <origin rpy="1.5708 0 0" xyz="0.0775 -0.3425 0"/>
+    <parent link="L_link4"/>
+    <child link="L_link5"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="30" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.14"/>
+    <dynamics damping="5" friction="1"/>
+  </joint>
+  <link name="L_link6">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.06469 0.03278 0.02141"/>
+      <mass value="1.325"/>
+      <inertia ixx="0.0014745" ixy="-0.000488" ixz="0.0002953" iyy="0.0019037" iyz="0.00014749" izz="0.0023652"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link6.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="L_White"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link6.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <joint name="L_joint6" type="revolute">
+    <origin rpy="1.5708 0 0" xyz="0 0 0"/>
+    <parent link="L_link5"/>
+    <child link="L_link6"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="20" lower="-1.69297" upper="3.141592653589793" velocity="3.14"/>
+    <dynamics damping="2" friction="1"/>
+  </joint>
+  <link name="L_link7">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 -0.00677 -0.01098"/>
+      <mass value="0.17"/>
+      <inertia ixx="9.3e-05" ixy="-0.0" ixz="-0.0" iyy="5.87e-05" iyz="-3.6e-06" izz="0.000132"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link7.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="L_Silver"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/end_tool/collision/end_tool.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <joint name="L_joint7" type="revolute">
+    <origin rpy="-1.5708 0 0" xyz="0.076 0.097 0"/>
+    <parent link="L_link6"/>
+    <child link="L_link7"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="20" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.14"/>
+    <dynamics damping="2" friction="1"/>
+  </joint>
+  <!-- <link name="${prefix}link_eef" />
+    <joint name="${prefix}joint_eef" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <parent link="${prefix}link7" />
+      <child link="${prefix}link_eef" />
+    </joint> -->
+  <transmission name="L_tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="L_joint1">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="L_motor1">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>100</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="L_tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="L_joint2">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="L_motor2">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>100</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="L_tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="L_joint3">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="L_motor3">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>100</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="L_tran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="L_joint4">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="L_motor4">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>100</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="L_tran5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="L_joint5">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="L_motor5">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>100</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="L_tran6">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="L_joint6">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="L_motor6">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>100</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="L_tran7">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="L_joint7">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="L_motor7">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>100</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <gazebo reference="L_link_base">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="L_link1">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="L_link2">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="L_link3">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="L_link4">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="L_link5">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="L_link6">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="L_link7">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <link name="L_link_eef"/>
+  <joint name="L_joint_eef" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="L_link7"/>
+    <child link="L_link_eef"/>
+  </joint>
+  <!-- Insert at the end of xarm_device_macro.xacro -->
+  <!-- Insert at the beginning of xarm_device_macro.xacro -->
+  <material name="R_Black">
+    <color rgba="0.0 0.0 0.0 1.0"/>
+  </material>
+  <material name="R_Red">
+    <color rgba="0.8 0.0 0.0 1.0"/>
+  </material>
+  <material name="R_White">
+    <color rgba="1.0 1.0 1.0 1.0"/>
+  </material>
+  <material name="R_Silver">
+    <color rgba="0.753 0.753 0.753 1.0"/>
+  </material>
+  <joint name="R_world_joint" type="fixed">
+    <parent link="world"/>
+    <child link="R_link_base"/>
+    <origin rpy="0 0 0" xyz="0 1 0"/>
+  </joint>
+  <ros2_control name="R_uf_robot_hardware/UFRobotSystemHardware" type="system">
+    <hardware>
+      <plugin>uf_robot_hardware/UFRobotSystemHardware</plugin>
+      <param name="hw_ns">R_xarm</param>
+      <param name="velocity_control">False</param>
+      <param name="prefix">PR_</param>
+      <param name="robot_ip">R</param>
+      <param name="report_type">normal</param>
+      <param name="dof">7</param>
+      <param name="baud_checkset">True</param>
+      <param name="default_gripper_baud">2000000</param>
+      <param name="robot_type">xarm</param>
+      <param name="add_gripper">False</param>
+      <param name="add_bio_gripper">False</param>
+    </hardware>
+    <joint name="R_joint1">
+      <command_interface name="position">
+        <param name="min">-6.283185307179586</param>
+        <param name="max">6.283185307179586</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <!-- <state_interface name="effort"/> -->
+    </joint>
+    <joint name="R_joint2">
+      <command_interface name="position">
+        <param name="min">-2.059</param>
+        <param name="max">2.0944</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <!-- <state_interface name="effort"/> -->
+    </joint>
+    <joint name="R_joint3">
+      <command_interface name="position">
+        <param name="min">-6.283185307179586</param>
+        <param name="max">6.283185307179586</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <!-- <state_interface name="effort"/> -->
+    </joint>
+    <joint name="R_joint4">
+      <command_interface name="position">
+        <param name="min">-0.19198</param>
+        <param name="max">3.927</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <!-- <state_interface name="effort"/> -->
+    </joint>
+    <joint name="R_joint5">
+      <command_interface name="position">
+        <param name="min">-6.283185307179586</param>
+        <param name="max">6.283185307179586</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <!-- <state_interface name="effort"/> -->
+    </joint>
+    <joint name="R_joint6">
+      <command_interface name="position">
+        <param name="min">-1.69297</param>
+        <param name="max">3.141592653589793</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <!-- <state_interface name="effort"/> -->
+    </joint>
+    <joint name="R_joint7">
+      <command_interface name="position">
+        <param name="min">-6.283185307179586</param>
+        <param name="max">6.283185307179586</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <!-- <state_interface name="effort"/> -->
+    </joint>
+  </ros2_control>
+  <link name="R_link_base">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.021131 -0.0016302 0.056488"/>
+      <mass value="0.88556"/>
+      <inertia ixx="0.0030595" ixy="0.00012259" ixz="-0.00062705" iyy="0.0037783" iyz="0.00027023" izz="0.0020125"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link_base.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="R_White"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link_base.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <link name="R_link1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0002 0.02905 -0.01233"/>
+      <mass value="2.382"/>
+      <inertia ixx="0.0056905" ixy="-1.579e-05" ixz="5.125e-06" iyy="0.0049566" iyz="-0.000873378" izz="0.003316654"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link1.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="R_White"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link1.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <joint name="R_joint1" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0.267"/>
+    <parent link="R_link_base"/>
+    <child link="R_link1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="50" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.14"/>
+    <dynamics damping="10" friction="1"/>
+  </joint>
+  <link name="R_link2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00022 -0.12856 0.01735"/>
+      <mass value="1.869"/>
+      <inertia ixx="0.0095989" ixy="1.541e-06" ixz="5.56e-06" iyy="0.00382472" iyz="-0.00317156" izz="0.007565669"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link2.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="R_White"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link2.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <joint name="R_joint2" type="revolute">
+    <origin rpy="-1.5708 0 0" xyz="0 0 0"/>
+    <parent link="R_link1"/>
+    <child link="R_link2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="50" lower="-2.059" upper="2.0944" velocity="3.14"/>
+    <dynamics damping="10" friction="1"/>
+  </joint>
+  <link name="R_link3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0466 -0.02463 -0.00768"/>
+      <mass value="1.6383"/>
+      <inertia ixx="0.00310955" ixy="0.00030837" ixz="-0.00058453" iyy="0.00264483" iyz="0.000338893" izz="0.0026624"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link3.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="R_White"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link3.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <joint name="R_joint3" type="revolute">
+    <origin rpy="1.5708 0 0" xyz="0 -0.293 0"/>
+    <parent link="R_link2"/>
+    <child link="R_link3"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="30" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.14"/>
+    <dynamics damping="5" friction="1"/>
+  </joint>
+  <link name="R_link4">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.07047 -0.11575 0.012"/>
+      <mass value="1.7269"/>
+      <inertia ixx="0.005889" ixy="0.00137112" ixz="0.00088143" iyy="0.00359703" iyz="-0.001762155" izz="0.00543244"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link4.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="R_White"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link4.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <joint name="R_joint4" type="revolute">
+    <origin rpy="1.5708 0 0" xyz="0.0525 0 0"/>
+    <parent link="R_link3"/>
+    <child link="R_link4"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="30" lower="-0.19198" upper="3.927" velocity="3.14"/>
+    <dynamics damping="5" friction="1"/>
+  </joint>
+  <link name="R_link5">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00032 0.01604 -0.026"/>
+      <mass value="1.3203"/>
+      <inertia ixx="0.00534665" ixy="1.5117e-05" ixz="-3.69e-07" iyy="0.0049779" iyz="-0.00022132" izz="0.0013624"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link5.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="R_White"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link5.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <joint name="R_joint5" type="revolute">
+    <origin rpy="1.5708 0 0" xyz="0.0775 -0.3425 0"/>
+    <parent link="R_link4"/>
+    <child link="R_link5"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="30" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.14"/>
+    <dynamics damping="5" friction="1"/>
+  </joint>
+  <link name="R_link6">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.06469 0.03278 0.02141"/>
+      <mass value="1.325"/>
+      <inertia ixx="0.0014745" ixy="-0.000488" ixz="0.0002953" iyy="0.0019037" iyz="0.00014749" izz="0.0023652"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link6.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="R_White"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link6.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <joint name="R_joint6" type="revolute">
+    <origin rpy="1.5708 0 0" xyz="0 0 0"/>
+    <parent link="R_link5"/>
+    <child link="R_link6"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="20" lower="-1.69297" upper="3.141592653589793" velocity="3.14"/>
+    <dynamics damping="2" friction="1"/>
+  </joint>
+  <link name="R_link7">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 -0.00677 -0.01098"/>
+      <mass value="0.17"/>
+      <inertia ixx="9.3e-05" ixy="-0.0" ixz="-0.0" iyy="5.87e-05" iyz="-3.6e-06" izz="0.000132"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/xarm7/visual/link7.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="R_Silver"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="resources/xarm_description/meshes/end_tool/collision/end_tool.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <joint name="R_joint7" type="revolute">
+    <origin rpy="-1.5708 0 0" xyz="0.076 0.097 0"/>
+    <parent link="R_link6"/>
+    <child link="R_link7"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="20" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.14"/>
+    <dynamics damping="2" friction="1"/>
+  </joint>
+  <!-- <link name="${prefix}link_eef" />
+    <joint name="${prefix}joint_eef" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <parent link="${prefix}link7" />
+      <child link="${prefix}link_eef" />
+    </joint> -->
+  <transmission name="R_tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="R_joint1">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="R_motor1">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>100</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="R_tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="R_joint2">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="R_motor2">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>100</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="R_tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="R_joint3">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="R_motor3">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>100</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="R_tran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="R_joint4">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="R_motor4">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>100</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="R_tran5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="R_joint5">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="R_motor5">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>100</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="R_tran6">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="R_joint6">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="R_motor6">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>100</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="R_tran7">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="R_joint7">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="R_motor7">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>100</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <gazebo reference="R_link_base">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="R_link1">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="R_link2">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="R_link3">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="R_link4">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="R_link5">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="R_link6">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="R_link7">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <link name="R_link_eef"/>
+  <joint name="R_joint_eef" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="R_link7"/>
+    <child link="R_link_eef"/>
+  </joint>
+  <!-- Insert at the end of xarm_device_macro.xacro -->
+</robot>
+

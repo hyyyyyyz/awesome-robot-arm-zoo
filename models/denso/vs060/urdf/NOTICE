@@ -1,0 +1,4 @@
+Upstream project: https://github.com/DENSORobot/denso_robot_ros2
+Upstream commit: 2805694999b0375861e632426b5abc484d9a9936
+Package: denso_robot_descriptions
+The upstream package license declaration and authors are preserved in source_package.xml.

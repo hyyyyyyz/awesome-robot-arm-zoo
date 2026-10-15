@@ -1,0 +1,27 @@
+{
+  "entry": "models/franka/fr3/mjcf/menagerie/fr3.xml",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "Native MJCF loaded in MuJoCo",
+  "pose": "keyframe: home",
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 1.3774827675502979,
+    "lookat": [
+      0.32245517808687685,
+      0.000986536702806351,
+      0.49376155187117987
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    210,
+    96,
+    432,
+    330
+  ]
+}

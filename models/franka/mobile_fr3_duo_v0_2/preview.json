@@ -1,0 +1,54 @@
+{
+  "entry": "models/franka/mobile_fr3_duo_v0_2/urdf/mobile_fr3_duo_v0_2.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "caster_front_left_steering_joint": 0.0,
+    "caster_front_left_joint": 0.0,
+    "tmrv0_2_joint_0": 0.0,
+    "tmrv0_2_joint_1": 0.0,
+    "rocker_arm_joint": 0.0,
+    "caster_rear_right_steering_joint": 0.0,
+    "caster_rear_right_joint": 0.0,
+    "tmrv0_2_joint_2": 0.0,
+    "tmrv0_2_joint_3": 0.0,
+    "franka_spine_vertical_joint": 0.0,
+    "left_fr3v2_1_joint1": 0.0,
+    "left_fr3v2_1_joint2": 0.0,
+    "left_fr3v2_1_joint3": 0.0,
+    "left_fr3v2_1_joint4": -0.11693708333333333,
+    "left_fr3v2_1_joint5": 0.0,
+    "left_fr3v2_1_joint6": 0.43982265,
+    "left_fr3v2_1_joint7": 0.0,
+    "left_fr3v2_1_finger_joint1": 0.0,
+    "right_fr3v2_1_joint1": 0.0,
+    "right_fr3v2_1_joint2": 0.0,
+    "right_fr3v2_1_joint3": 0.0,
+    "right_fr3v2_1_joint4": -0.11693708333333333,
+    "right_fr3v2_1_joint5": 0.0,
+    "right_fr3v2_1_joint6": 0.43982265,
+    "right_fr3v2_1_joint7": 0.0,
+    "right_fr3v2_1_finger_joint1": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 3.6048713054186035,
+    "lookat": [
+      0.4414145097159021,
+      0.13165000087358703,
+      0.759245650551398
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    208,
+    108,
+    435,
+    324
+  ]
+}

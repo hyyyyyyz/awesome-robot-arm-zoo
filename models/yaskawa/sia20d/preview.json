@@ -1,0 +1,35 @@
+{
+  "entry": "models/yaskawa/sia20d/urdf/sia20d.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "joint_1": 0.0,
+    "joint_2": 0.0,
+    "joint_3": 0.0,
+    "joint_4": 0.0,
+    "joint_5": 0.0,
+    "joint_6": 0.0,
+    "joint_7": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 2.765619112385644,
+    "lookat": [
+      0.004936304823915716,
+      -0.04003062744062591,
+      0.8234137575381059
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    285,
+    84,
+    355,
+    358
+  ]
+}

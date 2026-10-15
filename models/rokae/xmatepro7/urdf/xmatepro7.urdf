@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Resource paths are relative to this model entry. -->
+<!-- xmate3 manipulator -->
+<!--  Attention!!! inertia in the model is not correct!!! -->
+<robot name="xMatePro7">
+  <!-- Constants for robot dimensions -->
+  <material name="black">
+    <color rgba="0.0 0.0 0.0 1.0"/>
+  </material>
+  <material name="blue">
+    <color rgba="0.0 0.0 0.8 1.0"/>
+  </material>
+  <material name="green">
+    <color rgba="0.0 0.8 0.0 1.0"/>
+  </material>
+  <material name="grey">
+    <color rgba="0.2 0.2 0.2 1.0"/>
+  </material>
+  <material name="orange">
+    <color rgba="1.0 0.4235294117647059 0.0392156862745098 1.0"/>
+  </material>
+  <material name="brown">
+    <color rgba="0.8705882352941177 0.8117647058823529 0.7647058823529411 1.0"/>
+  </material>
+  <material name="red">
+    <color rgba="0.8 0.0 0.0 1.0"/>
+  </material>
+  <material name="white">
+    <color rgba="1.0 1.0 1.0 1.0"/>
+  </material>
+  <material name="Beige">
+    <color rgba="1.0 0.784 0.5765 1.0"/>
+  </material>
+  <!-- Used for fixing robot to Gazebo 'base_link' -->
+  <link name="world"/>
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="xMatePro7_base"/>
+  </joint>
+  <!--base-->
+  <link name="xMatePro7_base">
+    <visual>
+      <geometry>
+        <mesh filename="resources/rokae_description/meshes/xMatePro7/visual/xMatePro7_base.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <material name="white"/>
+    </visual>
+    <inertial>
+      <mass value="5.48267"/>
+      <inertia ixx="0.026" ixy="0" ixz="0" iyy="0.0266" iyz="0" izz="0.0235"/>
+      <origin rpy="0 0 0" xyz="-0.0183 0 0.067"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <mesh filename="resources/rokae_description/meshes/xMatePro7/collision/xMatePro7_base.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+    </collision>
+  </link>
+  <joint name="joint1" type="revolute">
+    <parent link="xMatePro7_base"/>
+    <child link="xMatePro7_link1"/>
+    <limit effort="217" lower="-2.9671" upper="2.9671" velocity="1.5707963267948966"/>
+    <axis xyz="0 0 1"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <transmission name="tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--link 1-->
+  <link name="xMatePro7_link1">
+    <visual>
+      <geometry>
+        <mesh filename="resources/rokae_description/meshes/xMatePro7/visual/xMatePro7_link1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="white"/>
+    </visual>
+    <inertial>
+      <mass value="5.96204"/>
+      <inertia ixx="0.0251" ixy="0" ixz="0" iyy="0.0249" iyz="0" izz="0.027176"/>
+      <origin rpy="0 0 0" xyz="0 -0.017 0.320"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <mesh filename="resources/rokae_description/meshes/xMatePro7/collision/xMatePro7_link1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <joint name="joint2" type="revolute">
+    <parent link="xMatePro7_link1"/>
+    <child link="xMatePro7_link2"/>
+    <limit effort="217" lower="-2.0944" upper="2.0944" velocity="1.5707963267948966"/>
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0 0 0.404"/>
+  </joint>
+  <transmission name="tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--link 2-->
+  <link name="xMatePro7_link2">
+    <visual>
+      <geometry>
+        <mesh filename="resources/rokae_description/meshes/xMatePro7/visual/xMatePro7_link2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0"/>
+      <material name="white"/>
+    </visual>
+    <inertial>
+      <mass value="5.40302"/>
+      <inertia ixx="0.0270" ixy="0" ixz="0" iyy="0.027230" iyz="0" izz="0.0211"/>
+      <origin rpy="0 0 0" xyz="0 0.032 0.093"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <mesh filename="resources/rokae_description/meshes/xMatePro7/collision/xMatePro7_link2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0"/>
+    </collision>
+  </link>
+  <joint name="joint3" type="revolute">
+    <parent link="xMatePro7_link2"/>
+    <child link="xMatePro7_link3"/>
+    <limit effort="102" lower="-2.9671" upper="2.9671" velocity="2.0943951023931953"/>
+    <axis xyz="0 0 1"/>
+    <origin rpy="0 0 0" xyz="0 0 0.23743878"/>
+  </joint>
+  <transmission name="tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--${nameofManipulator}_link 3-->
+  <link name="xMatePro7_link3">
+    <visual>
+      <geometry>
+        <mesh filename="resources/rokae_description/meshes/xMatePro7/visual/xMatePro7_link3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.15549959"/>
+      <material name="white"/>
+    </visual>
+    <inertial>
+      <mass value="3.95735"/>
+      <inertia ixx="0.022" ixy="0" ixz="0" iyy="0.021" iyz="0" izz="0.02112"/>
+      <origin rpy="0 0 0" xyz="0 -0.013 -0.067"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <mesh filename="resources/rokae_description/meshes/xMatePro7/collision/xMatePro7_link3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.15549959"/>
+    </collision>
+  </link>
+  <joint name="joint4" type="revolute">
+    <parent link="xMatePro7_link3"/>
+    <child link="xMatePro7_link4"/>
+    <limit effort="102" lower="-2.0944" upper="2.0944" velocity="2.0943951023931953"/>
+    <!--     lower="-2.79" upper="2.79" -->
+    <axis xyz="0 1 0"/>
+    <!--     <origin rpy="0 0 0" xyz="0.585 0.0 0.035"/> -->
+    <origin rpy="0 0 0" xyz="0 0 0.15549959"/>
+  </joint>
+  <transmission name="tran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint4">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor4">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--link 4-->
+  <link name="xMatePro7_link4">
+    <visual>
+      <geometry>
+        <mesh filename="resources/rokae_description/meshes/xMatePro7/visual/xMatePro7_link4.stl" scale=".001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <material name="white"/>
+    </visual>
+    <inertial>
+      <mass value="2.91217"/>
+      <inertia ixx="0.024" ixy="0" ixz="0" iyy="0.021138" iyz="0" izz="0.0205"/>
+      <origin rpy="0 0 0" xyz="0 0.026 0.068"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <mesh filename="resources/rokae_description/meshes/xMatePro7/collision/xMatePro7_link4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+    </collision>
+  </link>
+  <joint name="joint5" type="revolute">
+    <parent link="xMatePro7_link4"/>
+    <child link="xMatePro7_link5"/>
+    <limit effort="66" lower="-2.9671" upper="2.9671" velocity="2.0943951023931953"/>
+    <axis xyz="0 0 1"/>
+    <origin rpy="0 0 0" xyz="0 0 0.22044633"/>
+  </joint>
+  <transmission name="tran5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint5">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor5">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--link 5-->
+  <link name="xMatePro7_link5">
+    <visual>
+      <geometry>
+        <mesh filename="resources/rokae_description/meshes/xMatePro7/visual/xMatePro7_link5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.14512568"/>
+      <material name="white"/>
+    </visual>
+    <inertial>
+      <mass value="2.47056"/>
+      <inertia ixx="0.019" ixy="0" ixz="0" iyy="0.018" iyz="0" izz="0.02339"/>
+      <origin rpy="0 0 0" xyz="0 -0.014 -0.079"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <mesh filename="resources/rokae_description/meshes/xMatePro7/collision/xMatePro7_link5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.14512568"/>
+    </collision>
+  </link>
+  <joint name="joint6" type="revolute">
+    <parent link="xMatePro7_link5"/>
+    <child link="xMatePro7_link6"/>
+    <limit effort="66" lower="-2.0944" upper="2.0944" velocity="2.0943951023931953"/>
+    <axis xyz="0 1 0"/>
+    <origin rpy="0.0 0.0 0" xyz="0 0 0.14512568"/>
+  </joint>
+  <transmission name="tran6">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint6">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor6">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--link 6-->
+  <link name="xMatePro7_link6">
+    <visual>
+      <geometry>
+        <mesh filename="resources/rokae_description/meshes/xMatePro7/visual/xMatePro7_link6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <material name="white"/>
+    </visual>
+    <inertial>
+      <mass value="2.16053"/>
+      <inertia ixx="0.016" ixy="0" ixz="0" iyy="0.02351" iyz="-0" izz="0.0203"/>
+      <origin rpy="0 0 0" xyz="0 0.020 0.085"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <mesh filename="resources/rokae_description/meshes/xMatePro7/collision/xMatePro7_link6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+    </collision>
+  </link>
+  <joint name="joint7" type="revolute">
+    <parent link="xMatePro7_link6"/>
+    <child link="xMatePro7_link7"/>
+    <limit effort="66" lower="-6.2832" upper="6.2832" velocity="2.0943951023931953"/>
+    <axis xyz="0 0 1"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0 0 0.25090877"/>
+  </joint>
+  <transmission name="tran7">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="xmate_joint_7">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor7">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--link 7-->
+  <link name="xMatePro7_link7">
+    <visual>
+      <geometry>
+        <mesh filename="resources/rokae_description/meshes/xMatePro7/visual/xMatePro7_link7.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="white"/>
+    </visual>
+    <inertial>
+      <mass value="1.26834"/>
+      <inertia ixx="0.02" ixy="0" ixz="0" iyy="0.0201" iyz="0" izz="0.02337"/>
+      <origin rpy="0 0 0" xyz="0 0.012 -0.052"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <mesh filename="resources/rokae_description/meshes/xMatePro7/collision/xMatePro7_link7.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+</robot>
+

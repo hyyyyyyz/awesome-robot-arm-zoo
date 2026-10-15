@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="rv80fr">
+  <!-- Resource filenames are local paths relative to this entry. -->
+  <material name="white">
+    <color rgba="1.0 1.0 1.0 1.0" />
+  </material>
+  <link name="world" />
+  <link name="rv80fr_base">
+    <visual>
+      <material name="white" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv355080fr/base.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv355080fr/base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rv80fr_shoulder">
+    <visual>
+      <material name="white" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv355080fr/shoulder.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv355080fr/shoulder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rv80fr_upper_arm">
+    <visual>
+      <material name="white" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv355080fr/upper_arm.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv355080fr/upper_arm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rv80fr_elbow">
+    <visual>
+      <material name="white" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv355080fr/elbow.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv355080fr/elbow.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rv80fr_forearm">
+    <visual>
+      <material name="white" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv355080fr/forearm.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv355080fr/forearm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rv80fr_wrist">
+    <visual>
+      <material name="white" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv355080fr/wrist.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv355080fr/wrist.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rv80fr_hand_flange">
+    <visual>
+      <material name="white" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv355080fr/hand_flange.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/melfa_description/meshes/rv355080fr/hand_flange.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rv80fr_default_tcp" />
+  <joint name="rv80fr_world_to_base" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="world" />
+    <child link="rv80fr_base" />
+  </joint>
+  <joint name="rv80fr_joint_1" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="rv80fr_base" />
+    <child link="rv80fr_shoulder" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.141592" upper="3.141592" effort="1" velocity="3.141592" />
+  </joint>
+  <joint name="rv80fr_joint_2" type="revolute">
+    <origin rpy="0 0 0" xyz="0.15 0 0.68" />
+    <parent link="rv80fr_shoulder" />
+    <child link="rv80fr_upper_arm" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.832596" upper="2.443461" effort="1" velocity="3.141592" />
+  </joint>
+  <joint name="rv80fr_joint_3" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0.87" />
+    <parent link="rv80fr_upper_arm" />
+    <child link="rv80fr_elbow" />
+    <axis xyz="0 1 0" />
+    <limit lower="-2.356194" upper="2.70526" effort="1" velocity="2.792527" />
+  </joint>
+  <joint name="rv80fr_joint_4" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="rv80fr_elbow" />
+    <child link="rv80fr_forearm" />
+    <axis xyz="0 0 1" />
+    <limit lower="-6.283185" upper="6.283185" effort="1" velocity="3.228859" />
+  </joint>
+  <joint name="rv80fr_joint_5" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 1.08" />
+    <parent link="rv80fr_forearm" />
+    <child link="rv80fr_wrist" />
+    <axis xyz="0 1 0" />
+    <limit lower="-2.530727" upper="2.530727" effort="1" velocity="2.879793" />
+  </joint>
+  <joint name="rv80fr_joint_6" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0.165" />
+    <parent link="rv80fr_wrist" />
+    <child link="rv80fr_hand_flange" />
+    <axis xyz="0 0 1" />
+    <limit lower="-7.853982" upper="7.853982" effort="1" velocity="4.886922" />
+  </joint>
+  <joint name="rv80fr_hand_tcp" type="fixed">
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+    <parent link="rv80fr_hand_flange" />
+    <child link="rv80fr_default_tcp" />
+  </joint>
+</robot>

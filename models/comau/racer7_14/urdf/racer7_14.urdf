@@ -1,0 +1,308 @@
+<?xml version="1.0"?>
+<!-- Static URDF prepared from the upstream model; mesh and texture references use local relative paths. -->
+<robot name="racer7-14">
+  <link name="base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.059 0 0.129" />
+      <mass value="36.64" />
+      <inertia ixx="0.404" ixy="0.001" ixz="-0.104" iyy="0.64" iyz="0.001" izz="0.69" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/racer7-14_description/meshes/racer7-14/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/racer7-14_description/meshes/racer7-14/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.032 -0.16 0.049" />
+      <mass value="75.831" />
+      <inertia ixx="1.406" ixy="0.162" ixz="0.337" iyy="1.825" iyz="0.035" izz="1.803" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/racer7-14_description/meshes/racer7-14/link_1.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/racer7-14_description/meshes/racer7-14/link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_1" type="revolute">
+    <origin rpy="-1.5708 0 0" xyz="0 0 0.201" />
+    <parent link="base_link" />
+    <child link="link_1" />
+    <axis xyz="0 1 0" />
+    <limit effort="720" lower="-2.88" upper="2.88" velocity="4.363" />
+  </joint>
+  <link name="link_2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.273 0.001 -0.044" />
+      <mass value="22.495" />
+      <inertia ixx="0.093" ixy="0" ixz="0.016" iyy="0.87" iyz="0.001" izz="0.862" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/racer7-14_description/meshes/racer7-14/link_2.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/racer7-14_description/meshes/racer7-14/link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_2" type="revolute">
+    <origin rpy="0 0 -1.5708" xyz="0.15 -0.229 -0.09" />
+    <parent link="link_1" />
+    <child link="link_2" />
+    <axis xyz="0 0 1" />
+    <limit effort="1237" lower="-1.484" upper="2.705" velocity="4.363" />
+  </joint>
+  <link name="link_3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.063 -0.103 -0.02" />
+      <mass value="23.396" />
+      <inertia ixx="0.21" ixy="0.015" ixz="0.035" iyy="0.224" iyz="-0.015" izz="0.29" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/racer7-14_description/meshes/racer7-14/link_3.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/racer7-14_description/meshes/racer7-14/link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_3" type="revolute">
+    <origin rpy="-1.5708 0 -1.5708" xyz="0.59 0 0" />
+    <parent link="link_2" />
+    <child link="link_3" />
+    <axis xyz="0 1 0" />
+    <limit effort="670" lower="-2.932" upper="0" velocity="5.236" />
+  </joint>
+  <link name="link_4">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.001 0.29 -0.003" />
+      <mass value="12.029" />
+      <inertia ixx="0.795" ixy="0.002" ixz="0" iyy="0.028" iyz="0.022" izz="0.784" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/racer7-14_description/meshes/racer7-14/link_4.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/racer7-14_description/meshes/racer7-14/link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_4" type="revolute">
+    <origin rpy="1.5708 0 0" xyz="0.13 -0.09 0" />
+    <parent link="link_3" />
+    <child link="link_4" />
+    <axis xyz="0 -1 0" />
+    <limit effort="48" lower="-3.665" upper="3.665" velocity="10.473" />
+  </joint>
+  <link name="link_5">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.005 -0.002 0.003" />
+      <mass value="3.229" />
+      <inertia ixx="0.007" ixy="0" ixz="0" iyy="0.006" iyz="0" izz="0.004" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/racer7-14_description/meshes/racer7-14/link_5.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/racer7-14_description/meshes/racer7-14/link_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_5" type="revolute">
+    <origin rpy="-1.5708 0 0" xyz="0 0.684 0" />
+    <parent link="link_4" />
+    <child link="link_5" />
+    <axis xyz="0 -1 0" />
+    <limit effort="44" lower="-2.356" upper="2.356" velocity="10.472" />
+  </joint>
+  <link name="link_6">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.001 0 0.092" />
+      <mass value="0.267" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/racer7-14_description/meshes/racer7-14/link_6.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="resources/racer7-14_description/meshes/racer7-14/link_6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_6" type="revolute">
+    <origin rpy="0 0 3.1416" xyz="0 0 0.1" />
+    <parent link="link_5" />
+    <child link="link_6" />
+    <axis xyz="0 0 -1" />
+    <limit effort="34" lower="-47.124" upper="47.124" velocity="11.345" />
+  </joint>
+  <link name="ee_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.001" radius="0.001" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="joint_ee_link" type="fixed">
+    <origin rpy="3.141592653589793 0 1.5707963267948966" xyz="0 0 0" />
+    <parent link="link_6" />
+    <child link="ee_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <ros2_control name="racer7-14" type="system">
+    <hardware>
+      <plugin>comau_hardware_interface/ComauHardwareInterface</plugin>
+    </hardware>
+    <joint name="joint_1">
+      <command_interface name="position">
+        <param name="min">{-2*pi}</param>
+        <param name="max">{2*pi}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.15</param>
+        <param name="max">3.15</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint_2">
+      <command_interface name="position">
+        <param name="min">{-2*pi}</param>
+        <param name="max">{2*pi}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.15</param>
+        <param name="max">3.15</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint_3">
+      <command_interface name="position">
+        <param name="min">{-pi}</param>
+        <param name="max">{pi}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.15</param>
+        <param name="max">3.15</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint_4">
+      <command_interface name="position">
+        <param name="min">{-2*pi}</param>
+        <param name="max">{2*pi}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.2</param>
+        <param name="max">3.2</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint_5">
+      <command_interface name="position">
+        <param name="min">{-2*pi}</param>
+        <param name="max">{2*pi}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.2</param>
+        <param name="max">3.2</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint_6">
+      <command_interface name="position">
+        <param name="min">{-2*pi}</param>
+        <param name="max">{2*pi}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.2</param>
+        <param name="max">3.2</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+    </joint>
+  </ros2_control>
+  <link name="world" />
+  <joint name="world_joint" type="fixed">
+    <parent link="world" />
+    <child link="base_link" />
+    <origin rpy="0 0 0" xyz="0 0 0" />
+  </joint>
+</robot>

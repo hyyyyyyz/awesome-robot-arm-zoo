@@ -1,0 +1,36 @@
+{
+  "entry": "models/trossen/vx300s/urdf/vx300s.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "waist": 0.0,
+    "shoulder": 0.0,
+    "elbow": 0.0,
+    "forearm_roll": 0.0,
+    "wrist_angle": 0.0,
+    "wrist_rotate": 0.0,
+    "gripper": 0.0,
+    "left_finger": 0.021
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 1.0442626055862223,
+    "lookat": [
+      0.23556790316223142,
+      0.05585639219583105,
+      0.27152338020452765
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    177,
+    110,
+    462,
+    319
+  ]
+}

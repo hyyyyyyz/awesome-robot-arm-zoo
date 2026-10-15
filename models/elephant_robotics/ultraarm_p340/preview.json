@@ -1,0 +1,31 @@
+{
+  "entry": "models/elephant_robotics/ultraarm_p340/urdf/arm/ultraarm_p340.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "joint1_to_base": 0.0,
+    "joint2_to_joint1": 0.0,
+    "joint3_to_joint2": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 0.6252401939788719,
+    "lookat": [
+      0.061980569788827655,
+      0.005535111176356744,
+      0.12108433459927537
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    217,
+    102,
+    412,
+    333
+  ]
+}

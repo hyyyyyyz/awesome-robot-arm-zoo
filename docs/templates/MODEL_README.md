@@ -1,5 +1,11 @@
 # [Manufacturer, model, and assembly]
 
+[Manufacturer gallery](../README.md) · [All manufacturers](../../../README.md)
+
+<img src="preview.png" width="480" alt="[Manufacturer, model, and assembly] model preview">
+
+MuJoCo preview · [Rendering record](preview.json) · [Rendering method](../../../docs/PREVIEWS.md)
+
 [Describe the hardware revision, arm and gripper configuration, and the model's primary use.]
 
 ## Model entries

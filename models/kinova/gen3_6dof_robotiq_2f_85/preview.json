@@ -1,0 +1,35 @@
+{
+  "entry": "models/kinova/gen3_6dof_robotiq_2f_85/urdf/gen3_6dof_robotiq_2f_85.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "joint_1": 0.0,
+    "joint_2": 0.0,
+    "joint_3": 0.0,
+    "joint_4": 0.0,
+    "joint_5": 0.0,
+    "joint_6": 0.0,
+    "finger_joint": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 2.233895182609558,
+    "lookat": [
+      0.016861447874355617,
+      -0.028455489690733415,
+      0.75824407434857
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    302,
+    78,
+    337,
+    357
+  ]
+}
