@@ -155,4 +155,6 @@ mujoco.viewer.launch(model)
 
 ## 参与贡献
 
-想补充一款模型、修复加载问题，或分享更好的使用示例？欢迎[提 Issue](https://github.com/hyyyyyyz/awesome-robot-arm-zoo/issues) 或提交 Pull Request。模型文件、来源和许可要求见[贡献指南](CONTRIBUTING.md)。
+这份目录还在持续扩充，尚未覆盖所有品牌、型号和配置。如果你常用的机械臂还没有收录，欢迎[提 Issue](https://github.com/hyyyyyyz/awesome-robot-arm-zoo/issues) 告诉我们，或直接提交 PR 补充模型。官方模型仓库和下载链接也很有帮助。
+
+也欢迎修复加载问题、补充模型格式，或分享使用示例。提交模型文件时，请注明来源并保留许可证，具体要求见[贡献指南](CONTRIBUTING.md)。

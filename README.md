@@ -155,4 +155,6 @@ See [source coverage and loading details](docs/SOURCE_COVERAGE.md) for the teste
 
 ## Contributing
 
-Have a model to add, a loading fix, or a better usage example? [Open an issue](https://github.com/hyyyyyyz/awesome-robot-arm-zoo/issues) or send a pull request. The [contribution guide](CONTRIBUTING.md) covers model files, sources and licenses.
+This collection is still growing and does not yet cover every brand, model or configuration. If an arm you use is missing, [open an issue](https://github.com/hyyyyyyz/awesome-robot-arm-zoo/issues) or send a pull request to add it. Links to official model repositories or downloads are welcome too.
+
+Loading fixes, additional model formats and usage examples are also welcome. Please include the model's source and license when contributing files; see the [contribution guide](CONTRIBUTING.md) for details.
