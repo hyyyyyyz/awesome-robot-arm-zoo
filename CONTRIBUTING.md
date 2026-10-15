@@ -1,42 +1,44 @@
-# 贡献指南
+# Contributing
 
-贡献的目标是让使用者取得完整模型后，能够通过清楚的文件路径在自己的工程中加载。欢迎新增模型、补全依赖资源、修正加载问题以及改进模型说明。
+Contributions help users load complete robot models in their own projects through clear file paths. New models, resource completion, loading fixes, and documentation improvements are welcome.
 
-## 准备来源
+## Prepare the sources
 
-选择具体厂商、型号、硬件版本和装配，确认上游模型及配套资源的来源与分发许可。按格式记录来源 URL、tag 或 commit、上游文件位置及许可文件。
+Identify the manufacturer, model, hardware revision, and assembly. Confirm the sources and redistribution permissions of the upstream model and its resources. For each format, record the source URL, tag or commit, upstream file locations, and license files.
 
-在仓库外读取上游源码与模型。已有本地 checkout 可以直接复用；新增参考项目放在工作区的 `sources/<project>/`。整理后，将需要发布的模型与资源复制到本仓库。
+Read upstream code and models outside this repository. Reuse an existing local checkout when available; place new reference projects under the workspace's `sources/<project>/` directory. Copy the model and resources to be published into this repository after reviewing and organizing them.
 
-同一型号的不同格式可以来自不同上游，分别记录来源和许可范围。上游缺少分发许可的文件，待取得授权后再收录。
+Different formats for the same model may come from different upstream projects. Record their sources and license scopes separately. Include files lacking redistribution permission only after obtaining authorization.
 
-## 整理文件
+## Organize the files
 
-按照 [模型文件规范](docs/MODEL_LAYOUT.md) 放置入口、网格、纹理、子文件和许可证。已有格式保持完整；新增格式在具备实际文件时加入。
+Follow the [model file specification](docs/MODEL_LAYOUT.md) for entry files, meshes, textures, included files, and licenses. Keep each included format complete, and add a format when its actual files are available.
 
-检查模型的资源引用，整理为目标加载器支持的本地相对引用。保留机械结构、惯性、碰撞和驱动关系。需要不同夹爪、硬件版本或仿真配置时，提供有明确名称的变体。
+Inspect resource references and make them local relative references supported by the target loader. Preserve mechanical structure, inertial properties, collisions, and drive relationships. Use clearly named variants for different grippers, hardware revisions, or simulation configurations.
 
-从 [单模型 README 模板](docs/templates/MODEL_README.md) 创建 `models/<manufacturer>/<model>/README.md`，将模板字段替换为实际内容。入口表使用相对仓库根目录的路径，便于使用者拼接本地仓库位置。
+Create `models/<manufacturer>/<model>/README.md` from the [model README template](docs/templates/MODEL_README.md), replacing template fields with actual information in English. Use paths relative to the repository root in the entry table so users can join them with their local checkout path.
 
-## 验证模型
+## Validate the model
 
-根据贡献内容选择能直接发现问题的验证：
+Choose checks that can directly detect problems in the contribution:
 
-| 改动 | 验证目的 | 发现问题后的处理 |
+| Change | Verification purpose | Action if a problem is found |
 |---|---|---|
-| 新模型或新增格式 | 原生加载器能读取入口，并解析所有依赖 | 补齐文件或修正入口、格式与加载选项 |
-| 资源路径或目录调整 | 搬移完整模型目录、改变工作目录后仍可加载 | 修正绝对路径、缺失依赖或错误的相对引用 |
-| 关节、驱动、夹爪与约束 | 受影响关节和夹爪按模型说明运动 | 修正对应的模型关系或物理定义 |
-| 文档 | 入口、链接及操作步骤与当前文件一致 | 修正文档或遗漏的文件 |
+| New model or format | The native loader reads the entry and resolves all dependencies | Supply missing files or correct the entry, format, or loading options |
+| Resource paths or layout | Loading succeeds after relocating the complete model and changing the working directory | Fix absolute paths, missing dependencies, or incorrect relative references |
+| Joints, actuators, grippers, or constraints | Affected joints and grippers move as documented | Correct the relevant relationships or physical definitions |
+| Documentation | Entries, links, and steps match the current files | Correct the documentation or supply missing files |
 
-在型号 README 中记录实际环境、仿真器版本、入口、加载参数、可重现的命令或步骤及结果。基础加载结果与运动结果分别说明；未执行的环境集中记入“已知限制”。
+Record the actual environment, simulator version, entry, loading parameters, reproducible commands or steps, and results in the model README. Report basic loading and motion results separately. Collect untested environments under Known limitations.
 
-涉及模型物理行为的验证在对应目标环境运行。以当前贡献声明的用途为范围，使用必要的简单场景即可。
+Validate changes to physical behavior in the relevant target environment. Keep verification within the contribution's stated purpose and use the simple scenes needed to establish it.
 
-## 提交内容
+## Submission contents
 
-一次模型贡献应包含完整模型资源、来源与许可证、型号 README，以及首页中的模型入口。首页条目建议列出厂商、型号/装配、格式、入口路径和说明链接；仅列入实际存在的文件。
+A model contribution includes complete resources, sources and licenses, a model README, and entries in both root README files. Catalog entries should list the manufacturer, model or assembly, format, entry path, and model documentation link. List only files that actually exist.
 
-提交说明写明新增或修正的型号、文件入口、行为变化和实际验证。已有模型的目录调整同时指出受影响路径。原模型的整理或修改以当前有效差异记录在型号 README 中。
+Write repository documentation in English. Keep `README.md` as the primary README and update its Simplified Chinese translation, `README_CN.md`, in the same change. The two files must describe the same contents, model entries, examples, and limitations, and link to each other.
 
-仓库自身的使用文档随仓库发布；开发计划、调研报告和临时验证输出保存在仓库外的工作区。
+Commit descriptions identify the model added or corrected, entry files, behavior changes, and actual verification. When moving an existing model, identify affected paths. Describe the model's current effective differences from upstream in its README.
+
+Published usage documentation belongs in this repository. Keep development plans, research reports, and temporary verification output in the external workspace.

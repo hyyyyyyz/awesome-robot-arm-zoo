@@ -1,50 +1,52 @@
-# 仓库维护约定
+# Repository Maintenance Conventions
 
-## 产品目标
+## Product goal
 
-本仓库是全量机器人模型文件仓库。使用者 clone 后，复制模型入口的本地路径到现有工程，即可通过目标仿真器的原生接口加载。
+This repository stores complete robot model files. After cloning it, users copy a model entry file's local path into an existing project and load it through their simulator's native API.
 
-“全量”指每个收录模型的运行资源完整随仓库提供。稳定的文件路径、完整的依赖资源和准确的模型说明构成公共接口。
+Complete means that every included model ships with all of its runtime resources. Stable file paths, complete dependencies, and accurate model documentation form the public interface.
 
-默认工作范围是模型文件、配套资源、使用文档及有实际用途的维护脚本。场景运行、控制器和训练逻辑由使用工程负责。
+The default scope covers model files, accompanying resources, usage documentation, and maintenance scripts with a concrete purpose. Consuming projects own scene execution, controllers, and training logic.
 
-## 修改边界
+## Change boundaries
 
-- 保持任务范围明确。优先完成当前模型的收录、加载或路径问题，以实际输入和支持环境判断需要处理的情况。
-- 使用现有目录结构，保留清楚的职责边界。入口脚本只负责协调；确有维护脚本时，按功能组织实现。
-- 文档描述当前有效内容。模型目录、支持环境和验证结果必须与实际文件及执行记录一致。
-- 用户已有修改与本次任务一起保留。提交前核对改动范围，只提交本次准备的内容。
+- Keep the task focused. Prioritize the current model's inclusion, loading, or path issue, and use actual inputs and supported environments to determine the cases that need handling.
+- Follow the existing layout and maintain clear responsibilities. Entry scripts coordinate calls; organize substantial maintenance logic by function.
+- Document the current delivered state. The model catalog, supported environments, and validation results must match actual files and execution records.
+- Preserve existing user changes. Review the change scope before committing and include only the files prepared for the current task.
 
-## 模型文件
+## Model files
 
-- 遵循 [模型文件规范](docs/MODEL_LAYOUT.md)，按厂商、型号、格式组织。
-- 收录真实文件及完整依赖。公开入口能够从本地 checkout 加载，其资源引用遵循对应格式与加载器的相对路径规则。
-- 保留原生模型已有的惯性、限位、碰撞、驱动和约束定义。修改物理参数时，说明修改后的定义及适用用途。
-- 机器人本体、完整装配和展示场景分别标明。硬件版本、夹爪或物理配置发生有意义变化时，使用明确的变体路径。
-- 保持已发布入口稳定。确需移动或重命名时，同步更新模型说明、首页目录及仓库内引用，并在提交说明中指出受影响入口。
-- 每个型号维护 README，使用 [模板](docs/templates/MODEL_README.md) 提供来源、入口、模型信息和加载记录。模板占位内容只存在于模板文件。
+- Follow the [model file specification](docs/MODEL_LAYOUT.md), organizing files by manufacturer, model, and format.
+- Include actual files and complete dependencies. Public entries must load from a local checkout, with resource references following the relative path rules of the format and loader.
+- Preserve native inertial properties, limits, collision definitions, actuators, and constraints. When changing physical parameters, describe the resulting definitions and their intended use.
+- Identify robot models, complete assemblies, and demonstration scenes separately. Use explicit variant paths for meaningful differences in hardware, grippers, or physical configuration.
+- Keep published entry paths stable. When a move or rename is necessary, update model documentation, both root README catalogs, and internal references together, and identify affected entries in the commit description.
+- Maintain a README for each model using the [template](docs/templates/MODEL_README.md). Include sources, entries, mechanical information, and loading records. Keep template placeholders confined to template files.
 
-## 来源与许可
+## Sources and licensing
 
-- 采用具有明确来源、版本和分发许可的模型。核实模型、网格、纹理及其他附带资源各自适用的许可。
-- 随文件保留上游许可证、版权声明和必要署名。按来源记录适用文件范围。
-- 上游版本使用 tag 或已有 commit 标识定位。额外摘要、校验文件或指纹只在能够省去实质性开销并影响后续操作时采用。
-- 借鉴上游实现前，读取相关文件。参考仓库放在本仓库外的工作区中；复用已有 checkout，新增参考项目使用工作区的 `sources/<project>/`。
+- Include models with clear sources, versions, and redistribution permissions. Verify the applicable terms for models, meshes, textures, and other accompanying resources.
+- Preserve upstream licenses, copyright notices, and required attribution alongside the files. Record the file scope covered by each source.
+- Identify upstream versions with a tag or existing commit identifier. Add digests, checksums, or fingerprints only when they avoid a materially more expensive operation and change what happens next.
+- Read relevant upstream files before drawing on an implementation. Keep reference repositories outside this repository in the local workspace. Reuse existing checkouts; place new references under the workspace's `sources/<project>/` directory.
 
-## 验证
+## Verification
 
-运行每项检查前，明确它会发现什么具体问题，以及发现后需要修改什么。
+Before running a check, identify the specific failure it can detect and what you would change if it failed.
 
-- 文档修改核对内部链接、文件路径和描述的一致性。
-- 模型收录核对依赖是否齐全，并使用所声明环境的原生加载器加载入口。
-- 路径修改需在模型整体搬移、调用工作目录改变后验证，以发现依赖作者机器路径或当前目录的引用。
-- 关节、夹爪或约束修改需验证受影响的运动，以确认模型定义仍符合所述装配。
-- 记录实际使用的仿真器版本、入口、加载选项、步骤和结果。尚未运行的环境写入模型的“已知限制”。
+- For documentation changes, check internal links, file paths, and consistency of descriptions.
+- For model additions, confirm resource completeness and load the entry with the native loader in the declared environment.
+- For path changes, relocate the complete model and change the caller's working directory to detect references tied to an author's machine or the current directory.
+- For joint, gripper, or constraint changes, verify the affected motion against the documented assembly.
+- Record the simulator version, entry, loading options, steps, and actual results. List environments that have not been tested under the model's Known limitations section.
 
-检查通过后，只有新的修改、失败或尚未解决的具体问题才触发追加验证。
+After checks pass, run additional verification only for new changes, failures, or unresolved concrete concerns.
 
-## 文档与提交
+## Documentation and commits
 
-根目录 README 提供仓库介绍和实际模型目录；`docs/` 保存随仓库发布的使用规范和模板。开发阶段的研究、设计、计划和进度记录保存在仓库外的本地工作区 `docs/`，参考项目资料留在其 checkout 中。
+The root README files introduce the repository and list actual models. The repository's `docs/` directory contains published usage conventions and templates. Keep development research, designs, plans, and progress records in the local workspace's `docs/` directory outside this repository. Keep reference project materials with their checkouts.
 
-文档使用简明中文，文件标识、上游名称和代码保持原文。说明当前内容、具体行为与使用方法，限制集中在相应文档的“使用范围”或“已知限制”。提交说明描述最终改动和相关验证。
+Write repository documentation in plain English. `README.md` is the primary README; maintain `README_CN.md` as its synchronized Simplified Chinese translation. Update both in the same change whenever content, model entries, examples, or links change. Keep reciprocal language links near the top of both files. Other repository documentation and templates use English.
+
+Describe current contents, concrete behavior, and usage. Collect limitations in the relevant Scope or Known limitations section. Commit descriptions state the final changes and relevant verification.

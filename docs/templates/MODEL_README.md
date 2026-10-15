@@ -1,49 +1,49 @@
-# <厂商、型号与装配名称>
+# [Manufacturer, model, and assembly]
 
-<简述硬件版本、机械臂与夹爪配置，以及模型的主要用途。>
+[Describe the hardware revision, arm and gripper configuration, and the model's primary use.]
 
-## 模型入口
+## Model entries
 
-入口路径相对仓库根目录。
+Entry paths are relative to the repository root.
 
-| 用途 / 装配 | 格式 | 入口路径 | 适用环境与必要加载选项 |
+| Purpose / assembly | Format | Entry path | Target environment and required loading options |
 |---|---|---|---|
-| <机器人本体、完整装配或展示场景> | <格式> | <实际入口路径及文件链接> | <环境、固定基座或其他必要参数> |
+| [Robot model, complete assembly, or demonstration scene] | [Format] | [Actual entry path and file link] | [Environment, fixed base, or other required options] |
 
-## 模型信息
+## Mechanical information
 
-| 项目 | 定义 |
+| Item | Definition |
 |---|---|
-| 硬件版本与夹爪 | <准确型号与装配> |
-| 单位 | <长度、质量、角度等单位> |
-| 基座 | <link/body 名称、固定方式> |
-| 机械臂关节顺序 | <按名称列出的关节序列> |
-| 夹爪 | <主动/从动关系、开闭对应值及单位> |
-| 末端 / TCP | <link/site 名称，或相对基准及变换约定> |
-| 自带姿态 | <模型中已有的姿态名称与用途，或实际情况> |
+| Hardware revision and gripper | [Exact model and assembly] |
+| Units | [Units for length, mass, angles, and other quantities] |
+| Base | [Link or body name and attachment] |
+| Arm joint order | [Ordered sequence of joint names] |
+| Gripper | [Active and passive relationships, open/close values, and units] |
+| End effector / TCP | [Link or site name, or reference frame and transform convention] |
+| Included poses | [Names and uses of poses supplied by the model, or the actual situation] |
 
-## 加载示例
+## Loading example
 
-<提供已执行过的原生加载命令或最小示例，说明入口路径的填写方式与必要参数。>
+[Provide a native loading command or minimal example that has been executed, explaining the entry path and required options.]
 
-## 来源与许可
+## Sources and licensing
 
-| 格式或文件范围 | 上游项目 | 版本定位 | 上游文件路径 | 许可文件 |
+| Format or file scope | Upstream project | Version | Upstream file path | License file |
 |---|---|---|---|---|
-| <实际范围> | <来源链接> | <tag 或 commit> | <上游路径> | <本地许可证链接> |
+| [Actual scope] | [Source link] | [Tag or commit] | [Upstream path] | [Local license link] |
 
-<保留必要的版权与署名说明；多个来源分别说明适用范围。>
+[Include required copyright and attribution information. Explain the file scope of each source.]
 
-## 模型整理
+## Model preparation
 
-<描述当前文件相对上游的有效整理或修改，例如资源引用、转换参数、模型入口或物理定义。未修改时说明模型保持上游内容。>
+[Describe the current effective organization or modifications relative to upstream, such as resource references, conversion options, entry files, or physical definitions. For unmodified files, state that they retain upstream contents.]
 
-## 加载验证
+## Loading verification
 
-| 入口 | 环境与仿真器版本 | 验证步骤 | 结果 |
+| Entry | Environment and simulator version | Verification steps | Result |
 |---|---|---|---|
-| <实际入口> | <操作系统、仿真器与版本> | <命令、示例或可重现步骤> | <实际加载、搬移及运动结果> |
+| [Actual entry] | [Operating system, simulator, and version] | [Command, example, or reproducible steps] | [Actual loading, relocation, and motion results] |
 
-## 已知限制
+## Known limitations
 
-<集中列出当前限制、来源未提供的信息及尚未执行验证的环境；以实际情况填写。>
+[Collect current limitations, information missing from the source, and environments that have not been tested. Describe the actual state.]

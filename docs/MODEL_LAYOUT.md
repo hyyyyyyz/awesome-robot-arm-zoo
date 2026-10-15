@@ -1,8 +1,8 @@
-# 模型文件规范
+# Model File Specification
 
-公开模型入口通过稳定路径定位，其依赖资源在本地仓库内完整解析。目录按厂商、型号、格式分层，使用者直接选择适合目标环境的文件。
+Public model entries use stable paths and resolve their complete resources within a local checkout. Organize files by manufacturer, model, and format so users can choose the entry appropriate for their environment.
 
-## 目录与命名
+## Directories and naming
 
 ```text
 models/<manufacturer>/<model>/
@@ -13,9 +13,9 @@ models/<manufacturer>/<model>/
     LICENSE
 ```
 
-厂商和型号目录使用简短、稳定的小写英文名称；单词之间使用下划线。格式目录采用 `urdf`、`mjcf`、`usd` 或 `sdf`。已有上游文件名、网格名和资源层级尽量保留，以保持模型内部引用清楚。
+Use short, stable lowercase English names for manufacturer and model directories, with underscores between words. Format directories use `urdf`, `mjcf`, `usd`, or `sdf`. Preserve upstream filenames, mesh names, and resource hierarchy where practical to keep internal references clear.
 
-每个型号只创建实际需要的目录。不同夹爪、硬件版本或物理配置需要独立资源时，在格式目录下使用具名变体目录：
+Create only directories needed by actual files. When grippers, hardware revisions, or physical configurations require distinct resources, use named variant directories within the format directory:
 
 ```text
 models/<manufacturer>/<model>/
@@ -27,43 +27,43 @@ models/<manufacturer>/<model>/
       LICENSE
 ```
 
-型号 README 中的入口表区分完整装配、机械臂本体和展示场景。展示场景中的地板、灯光、相机等内容属于该场景的依赖；用于接入已有场景的入口应与展示入口分开列出。
+The model README's entry table distinguishes complete assemblies, robot models, and demonstration scenes. Floors, lights, cameras, and other scene elements belong to a demonstration scene's dependencies. List entries for integration into an existing scene separately from demonstration entries.
 
-## 资源引用
+## Resource references
 
-资源包括入口直接或间接使用的网格、纹理、材料、子模型及其他文件。每个格式或变体目录默认独立携带自身依赖，使用该目录作为搬移单位。
+Resources include meshes, textures, materials, submodels, and all other files referenced directly or indirectly by an entry. Each format or variant directory carries its own dependencies by default and serves as the unit for relocation.
 
-| 格式 | 需要随入口保存和核对的引用 |
+| Format | References to include and verify |
 |---|---|
-| URDF | visual/collision mesh、纹理及相关文件 |
-| MJCF | XML include、mesh、texture、子模型及 compiler 的资源目录设置 |
-| USD | sublayer、reference、payload、材质与纹理等外部依赖 |
-| SDF | mesh、material、include 及嵌套模型的资源路径 |
+| URDF | Visual and collision meshes, textures, and associated files |
+| MJCF | XML includes, meshes, textures, submodels, and compiler resource directory settings |
+| USD | Sublayers, references, payloads, materials, textures, and other external dependencies |
+| SDF | Meshes, materials, includes, and nested model resource paths |
 
-资源相对路径依据对应格式和目标加载器的解析规则填写。验收以整体搬移后、从其他工作目录通过绝对入口路径加载成功为准。
+Write relative references according to the format and target loader's resolution rules. Verify that loading by absolute entry path succeeds after relocating the complete directory and running from another working directory.
 
-面向直接文件加载的 URDF 应提供静态 URDF 入口。Xacro 等上游生成源可作为补充资料保留，使用者直接引用已整理的入口文件。
+URDF models intended for direct file loading provide a static URDF entry. Upstream generation sources such as Xacro may accompany it as supplementary files; users reference the prepared entry directly.
 
-模型中的 `package://`、`model://` 或网络引用需要整理为目标加载器能够从本地资源解析的形式。确实面向 ROS package 或特定资源搜索机制的独立版本，在入口说明中列出必要设置和使用环境。
+Resolve `package://`, `model://`, and network references through local resources supported by the target loader. For variants intended for ROS packages or a specific resource search mechanism, document required settings and environments alongside their entries.
 
-## 模型内容
+## Model contents
 
-模型保留其本身已有的关节类型、运动范围、惯性、碰撞几何、执行器和机械约束。修改这些定义时，在型号说明中记录当前有效差异与用途。
+Preserve the model's existing joint types, motion limits, inertial properties, collision geometry, actuators, and mechanical constraints. When changing these definitions, document the effective differences and their intended use.
 
-型号 README 提供使用者需要的机械信息：准确装配、单位、基座名称与固定方式、机械臂关节顺序、夹爪关系、末端或 TCP 定义，以及模型自带的初始姿态。资料以来源和模型实际内容为准，无法确认的信息明确列入“已知限制”。
+The model README supplies the mechanical information users need: exact assembly, units, base name and attachment, arm joint order, gripper relationships, end effector or TCP definition, and any poses included in the model. Use the actual sources and model contents as evidence; collect unconfirmed information under Known limitations.
 
-运行时的关节索引可能由加载器决定。模型说明优先使用关节和 link 名称描述接口。
+Runtime joint indices may depend on the loader. Describe interfaces primarily through joint and link names.
 
-## 来源与许可
+## Sources and licensing
 
-各格式或变体保留对应上游许可证及必要版权声明。多个来源共同构成模型时，保留每份许可，并在型号 README 中说明它适用的文件。
+Each format or variant preserves its upstream licenses and required copyright notices. When multiple sources make up a model, keep each license and explain which files it covers in the model README.
 
-来源记录包含项目 URL、版本定位和上游文件路径。格式转换产生的模型还应记录输入来源、转换工具版本及影响模型内容的选项。
+Source records include the project URL, version identifier, and upstream file paths. For converted formats, also record the input source, conversion tool version, and options affecting model contents.
 
-## 入口与支持记录
+## Entries and support records
 
-型号 README 的入口路径相对仓库根目录书写，并链接到实际文件。根 README 的模型目录链接到对应型号说明和可用入口。
+Write entry paths relative to the repository root in the model README and link them to actual files. The catalogs in `README.md` and `README_CN.md` link to the corresponding model documentation and available entries. Keep the two catalogs synchronized.
 
-每个支持记录对应实际的入口、装配、加载选项和仿真器版本。记录资源加载与受影响关节运动的结果，并给出可重现的原生命令或最小示例。
+Each support record identifies an actual entry, assembly, loading options, and simulator version. Record resource loading and affected joint motion results, with reproducible native commands or minimal examples.
 
-已发布路径作为使用接口维护。路径调整时，同步更新仓库内的入口表、示例和资源引用。
+Maintain published paths as a usage interface. When adjusting paths, update entry tables, examples, and resource references together.

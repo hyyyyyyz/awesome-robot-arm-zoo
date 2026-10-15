@@ -1,24 +1,26 @@
-# awesome-robot-arm-zoo
+# Awesome-Robot-Arm-Zoo
 
-面向仿真与训练项目的机器人模型文件仓库。每个收录模型随附完整资源，使用者 clone 仓库后，找到对应入口，把本地文件路径填入项目原有的模型加载代码。
+**English** | [简体中文](README_CN.md)
 
-**clone → 选择模型与格式 → 复制入口路径 → 使用仿真器原生接口加载。**
+A repository of robot model files for simulation and training projects. Each included model comes with its complete resources. Clone the repository, find the appropriate entry file, and pass its local path to your project's existing model loader.
 
-## 模型目录
+**Clone → choose a model and format → copy the entry path → load with your simulator's native API.**
 
-当前仓库已提供收录规范和文档模板，尚未收录模型。模型入口将在实际文件加入后列入此处。
+## Models
 
-## 使用方式
+The repository currently contains contribution guidelines and documentation templates. Model files have not been added yet. Entries will appear here as models are included.
 
-克隆仓库到本地：
+## Usage
+
+Clone the repository:
 
 ```sh
 git clone https://github.com/hyyyyyyz/awesome-robot-arm-zoo.git
 ```
 
-在模型目录中选择适合目标环境的格式，并查阅该型号的 README。模型说明会列出相对仓库根目录的入口路径、具体装配、适用环境和必要加载选项。
+Choose a format for your target environment and read the model's README. Each model README lists entry paths relative to the repository root, the specific assembly, supported environments, and required loading options.
 
-将入口文件的本地绝对路径填入现有项目。下面仅示意 MuJoCo 的原生加载方式，路径需替换为实际模型文件：
+Pass the entry file's absolute local path to your existing project. The following example illustrates native MuJoCo loading; replace the path with an actual model file:
 
 ```python
 import mujoco
@@ -26,13 +28,13 @@ import mujoco
 model = mujoco.MjModel.from_xml_path("/absolute/path/to/model.xml")
 ```
 
-也可以使用项目自己的路径配置，将模型仓库根目录与入口相对路径拼接。目标项目负责安装其仿真器和相关依赖。
+You can also use your project's path configuration to join the repository root with a relative entry path. The consuming project installs its simulator and dependencies.
 
-仓库可放在使用项目旁边，也可放在项目自己的依赖目录。模型通过配套的相对资源引用定位网格、纹理和子文件；复制模型到其他位置时，应一起保留其依赖目录。
+Place this repository beside your project or in its dependency directory. Models locate meshes, textures, and included files through relative resource references. When copying a model elsewhere, keep its dependency directories together.
 
-## 文件组织
+## Repository layout
 
-模型按厂商、型号和格式组织。以下是目录约定示意：
+Models are organized by manufacturer, model, and format. The following tree illustrates the directory convention:
 
 ```text
 models/
@@ -53,23 +55,23 @@ models/
         LICENSE
 ```
 
-每个型号只列出实际收录的格式。不同硬件版本、夹爪装配或仿真用途的变体，使用明确的路径区分。机器人本体和包含地板、灯光等内容的展示场景分别标明入口。
+Each model lists only the formats actually included. Distinct hardware revisions, gripper assemblies, and simulation variants use explicit paths. Robot models and demonstration scenes containing floors, lights, or other scene elements have separate entry files.
 
-完整约定见 [模型文件规范](docs/MODEL_LAYOUT.md)。
+See the [model file specification](docs/MODEL_LAYOUT.md) for the full convention.
 
-## 贡献
+## Contributing
 
-欢迎提交具有明确来源和分发许可的机器人模型、资源补全、加载修正及使用说明。
+Contributions are welcome for robot models with clear sources and redistribution permissions, missing resources, loading fixes, and documentation.
 
-- [贡献指南](CONTRIBUTING.md)：来源、收录步骤、验证和提交内容。
-- [模型文件规范](docs/MODEL_LAYOUT.md)：目录、入口、资源引用和变体。
-- [单模型 README 模板](docs/templates/MODEL_README.md)：每个型号随附的使用资料。
-- [AGENTS.md](AGENTS.md)：仓库维护约定。
+- [Contribution guide](CONTRIBUTING.md): sources, inclusion steps, validation, and submission contents.
+- [Model file specification](docs/MODEL_LAYOUT.md): directories, entry files, resource references, and variants.
+- [Model README template](docs/templates/MODEL_README.md): usage information accompanying each model.
+- [AGENTS.md](AGENTS.md): repository maintenance conventions.
 
-各模型及其网格、纹理的许可由对应目录中的许可证和来源说明确定。
+Licenses and source information in each model directory specify the terms for that model and its meshes and textures.
 
-## 使用范围
+## Scope
 
-仓库负责提供可定位、资源完整的模型文件和使用说明。关节控制、场景装配、任务定义与训练配置由使用项目管理。
+The repository provides model files with complete resources, clear paths, and usage documentation. Consuming projects manage joint control, scene assembly, task definitions, and training configuration.
 
-模型是否适用于某个环境，以该模型 README 中记录的入口、加载选项和实际验证版本为准。文件格式可以被导入，并不代表不同仿真器具有相同的控制和物理行为。
+A model's applicability to an environment is determined by the entry file, loading options, and tested versions documented in its README. Importing a file format does not establish equivalent control or physical behavior across simulators.
