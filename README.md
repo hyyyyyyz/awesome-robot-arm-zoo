@@ -1,18 +1,89 @@
-# Awesome-Robot-Arm-Zoo
+<h1 align="center">Awesome Robot Arm Zoo</h1>
 
-**English** | [简体中文](README_CN.md)
+<p align="center">
+  <strong>Robot arm models for your next simulation project.</strong><br>
+  Industrial arms, cobots, SCARAs and dual-arm robots. Browse the models, choose a format, and load one in your project.
+</p>
 
-A repository of robot model files for simulation and training projects. Each included model comes with its complete resources. Clone the repository, find the appropriate entry file, and pass its local path to your project's existing model loader.
+<p align="center">
+  <a href="#models"><img src="https://img.shields.io/badge/Models-482-0F766E?style=flat-square" alt="482 models"></a>
+  <a href="#models"><img src="https://img.shields.io/badge/Brands-31-334155?style=flat-square" alt="31 brands"></a>
+  <img src="https://img.shields.io/badge/URDF-505-2563EB?style=flat-square" alt="505 URDF files">
+  <img src="https://img.shields.io/badge/MJCF-36-D97706?style=flat-square" alt="36 MJCF files">
+</p>
 
-**Clone → choose a model and format → copy the entry path → load with your simulator's native API.**
+<p align="center">
+  <b>English</b> · <a href="README_CN.md">简体中文</a><br>
+  <a href="#quick-start">Quick start</a> · <a href="#models">Browse models</a> · <a href="#using-models-in-your-project">Use in your project</a> · <a href="#contributing">Contribute</a>
+</p>
+
+<table align="center">
+  <tr>
+    <td align="center" width="33%">
+      <a href="models/franka/panda/README.md"><img src="models/franka/panda/preview.png" width="240" alt="Franka Panda"><br><b>Franka Panda</b></a>
+      <br><sub>URDF · MJCF</sub>
+    </td>
+    <td align="center" width="33%">
+      <a href="models/universal_robots/ur5e/README.md"><img src="models/universal_robots/ur5e/preview.png" width="240" alt="Universal Robots UR5e"><br><b>Universal Robots UR5e</b></a>
+      <br><sub>URDF · MJCF</sub>
+    </td>
+    <td align="center" width="33%">
+      <a href="models/agilex/piper/README.md"><img src="models/agilex/piper/preview.png" width="240" alt="AgileX PiPER"><br><b>AgileX PiPER</b></a>
+      <br><sub>URDF · MJCF</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="33%">
+      <a href="models/fanuc/crx10ia/README.md"><img src="models/fanuc/crx10ia/preview.png" width="240" alt="FANUC CRX-10iA"><br><b>FANUC CRX-10iA</b></a>
+      <br><sub>URDF</sub>
+    </td>
+    <td align="center" width="33%">
+      <a href="models/abb/yumi_irb14000/README.md"><img src="models/abb/yumi_irb14000/preview.png" width="240" alt="ABB YuMi"><br><b>ABB YuMi</b></a>
+      <br><sub>URDF</sub>
+    </td>
+    <td align="center" width="33%">
+      <a href="models/franka/fr3_duo/README.md"><img src="models/franka/fr3_duo/preview.png" width="240" alt="Franka FR3 Duo"><br><b>Franka FR3 Duo</b></a>
+      <br><sub>URDF</sub>
+    </td>
+  </tr>
+</table>
+
+<p align="center"><sub>Click a robot to see its files, variants and usage notes. <a href="docs/PREVIEWS.md">About the previews</a></sub></p>
+
+## Quick start
+
+Open a Panda scene in MuJoCo:
+
+```sh
+git clone --depth 1 https://github.com/hyyyyyyz/awesome-robot-arm-zoo.git
+cd awesome-robot-arm-zoo
+python -m pip install mujoco
+```
+
+The model files occupy about **6 GB**.
+
+Run this Python snippet from the repository root:
+
+```python
+from pathlib import Path
+
+import mujoco
+import mujoco.viewer
+
+scene = Path("models/franka/panda/mjcf/menagerie/scene.xml").resolve()
+model = mujoco.MjModel.from_xml_path(str(scene))
+mujoco.viewer.launch(model)
+```
+
+This opens the Panda with a floor and lighting. To add the robot to your own MuJoCo scene, use [`panda.xml`](models/franka/panda/mjcf/menagerie/panda.xml) in the same directory.
 
 ## Models
 
-**31 manufacturers, 482 models or assemblies, and 541 entry files**: 505 URDF and 36 MJCF entries. Model notes identify the exact assembly, source, license and loading records.
+**482 models and assemblies across 31 brands.** Pick a brand to see its gallery, available formats and model files. The collection includes single arms, dual arms, gripper variants and mobile manipulators.
 
-Choose a manufacturer to browse its model gallery. Each row shows a labeled MuJoCo preview, links to the model documentation, and direct native entry files. See the [rendering method](docs/PREVIEWS.md).
+<!-- MODEL_CATALOG:START -->
 
-| Manufacturer gallery | Models / assemblies | Formats |
+| Brand | Models | Formats |
 |---|---:|---|
 | [ABB](models/abb/README.md) | 27 | URDF |
 | [AgileX](models/agilex/README.md) | 3 | URDF, MJCF |
@@ -46,73 +117,42 @@ Choose a manufacturer to browse its model gallery. Each row shows a labeled MuJo
 | [Universal Robots](models/universal_robots/README.md) | 14 | URDF, MJCF |
 | [Yaskawa Motoman](models/yaskawa/README.md) | 50 | URDF |
 
-## Usage
+<!-- MODEL_CATALOG:END -->
 
-Clone the repository:
+## Using models in your project
 
-```sh
-git clone https://github.com/hyyyyyyz/awesome-robot-arm-zoo.git
-```
+Keep this repository wherever you store your project's assets. Find your robot in the catalog, open its README, and copy the path for the format you need. For example:
 
-Choose a format for your target environment and read the model's README. Each model README lists entry paths relative to the repository root, the specific assembly, supported environments, and required loading options.
+| Model | Format | File path from the repository root |
+|---|---|---|
+| Franka Panda | MJCF | [`models/franka/panda/mjcf/menagerie/panda.xml`](models/franka/panda/mjcf/menagerie/panda.xml) |
+| Franka Panda | URDF | [`models/franka/panda/urdf/panda.urdf`](models/franka/panda/urdf/panda.urdf) |
+| ABB YuMi | URDF | [`models/abb/yumi_irb14000/urdf/yumi_irb14000.urdf`](models/abb/yumi_irb14000/urdf/yumi_irb14000.urdf) |
 
-Pass the entry file's absolute local path to your existing project. The following example uses the included Panda MJCF entry; replace the checkout prefix with its actual local path:
+Join the file path with your local checkout location and pass it to your simulator's model loader. **Keep the meshes, textures and included files together when moving a model**—copy its complete `urdf/` or `mjcf/` directory.
 
-```python
-import mujoco
+### Which format should I use?
 
-model = mujoco.MjModel.from_xml_path("/absolute/path/to/awesome-robot-arm-zoo/models/franka/panda/mjcf/menagerie/panda.xml")
-```
+| Your project | Start with |
+|---|---|
+| MuJoCo | An available MJCF model; `scene.xml` files include a demonstration environment |
+| ROS or a simulator with a URDF importer | The model's URDF; check its notes for grippers, fixed-base settings and importer requirements |
 
-You can also use your project's path configuration to join the repository root with a relative entry path. The consuming project installs its simulator and dependencies.
+Formats vary by model. Each model README lists the exact files, joint information and loading examples.
 
-Place this repository beside your project or in its dependency directory. Models locate meshes, textures, and included files through relative resource references. When copying a model elsewhere, keep its dependency directories together.
+## Sources and licenses
 
-## Repository layout
+Models come primarily from manufacturer repositories, with additional descriptions from ROS-Industrial, universities and [MuJoCo Menagerie](https://github.com/google-deepmind/mujoco_menagerie). Thank you to the authors and maintainers who make these resources available.
 
-Models are organized by manufacturer, model, and format. The following tree illustrates the directory convention:
+**Licenses vary by model and format.** Read the source and license links in the model README before reusing or redistributing its assets. The original license texts and notices are included alongside the files.
 
-```text
-models/
-  <manufacturer>/
-    README.md
-    <model>/
-      README.md
-      preview.png
-      preview.json
-      mjcf/
-        <model>.xml
-        assets/
-        LICENSE
-      urdf/
-        <model>.urdf
-        meshes/
-        LICENSE
-      usd/
-        <model>.usd
-        assets/
-        LICENSE
-```
+## Known limitations
 
-Each model lists only the formats actually included. Distinct hardware revisions, gripper assemblies, and simulation variants use explicit paths. Robot models and demonstration scenes containing floors, lights, or other scene elements have separate entry files.
+- Simulator support varies by model and format; check the model page for loading requirements. URDF thumbnails are static views of the geometry. Controllers, dynamics and training behavior need validation in your own setup.
+- Some COLLADA files use millimetres or inches. Your importer needs to honor the units declared in those files; affected model pages have details.
 
-See the [model file specification](docs/MODEL_LAYOUT.md) for the full convention.
+See [source coverage and loading details](docs/SOURCE_COVERAGE.md) for the tested environments and models still missing from the collection.
 
 ## Contributing
 
-Contributions are welcome for robot models with clear sources and redistribution permissions, missing resources, loading fixes, and documentation.
-
-- [Contribution guide](CONTRIBUTING.md): sources, inclusion steps, validation, and submission contents.
-- [Model file specification](docs/MODEL_LAYOUT.md): directories, entry files, resource references, and variants.
-- [Model README template](docs/templates/MODEL_README.md): usage information accompanying each model.
-- [AGENTS.md](AGENTS.md): repository maintenance conventions.
-
-Manufacturer sources are prioritized. ROS-Industrial, university-maintained and Google DeepMind Menagerie models are identified in their model directories. Format-level licenses cover their respective resources; some manufacturer meshes carry specific usage terms.
-
-## Scope
-
-[Source coverage](docs/SOURCE_COVERAGE.md) records source families, model coverage and permission or resource gaps.
-
-The repository provides model files with complete resources, clear paths, and usage documentation. Consuming projects manage joint control, scene assembly, task definitions, and training configuration.
-
-A model's applicability to an environment is determined by the entry file, loading options, and tested versions documented in its README. Importing a file format does not establish equivalent control or physical behavior across simulators.
+Have a model to add, a loading fix, or a better usage example? [Open an issue](https://github.com/hyyyyyyz/awesome-robot-arm-zoo/issues) or send a pull request. The [contribution guide](CONTRIBUTING.md) covers model files, sources and licenses.

@@ -1,18 +1,89 @@
-# Awesome-Robot-Arm-Zoo
+<h1 align="center">Awesome Robot Arm Zoo</h1>
 
-[English](README.md) | **简体中文**
+<p align="center">
+  <strong>为你的下一个仿真项目，找一款机械臂。</strong><br>
+  工业机械臂、协作臂、SCARA、双臂机器人，按品牌浏览，选好型号即可接入自己的项目。
+</p>
 
-面向仿真与训练项目的机器人模型文件仓库。每个收录模型随附完整资源，使用者 clone 仓库后，找到对应入口，把本地文件路径填入项目原有的模型加载代码。
+<p align="center">
+  <a href="#模型目录"><img src="https://img.shields.io/badge/Models-482-0F766E?style=flat-square" alt="482 models"></a>
+  <a href="#模型目录"><img src="https://img.shields.io/badge/Brands-31-334155?style=flat-square" alt="31 brands"></a>
+  <img src="https://img.shields.io/badge/URDF-505-2563EB?style=flat-square" alt="505 URDF files">
+  <img src="https://img.shields.io/badge/MJCF-36-D97706?style=flat-square" alt="36 MJCF files">
+</p>
 
-**clone → 选择模型与格式 → 复制入口路径 → 使用仿真器原生接口加载。**
+<p align="center">
+  <a href="README.md">English</a> · <b>简体中文</b><br>
+  <a href="#快速开始">快速开始</a> · <a href="#模型目录">浏览模型</a> · <a href="#接入你的项目">接入项目</a> · <a href="#参与贡献">参与贡献</a>
+</p>
+
+<table align="center">
+  <tr>
+    <td align="center" width="33%">
+      <a href="models/franka/panda/README.md"><img src="models/franka/panda/preview.png" width="240" alt="Franka Panda"><br><b>Franka Panda</b></a>
+      <br><sub>URDF · MJCF</sub>
+    </td>
+    <td align="center" width="33%">
+      <a href="models/universal_robots/ur5e/README.md"><img src="models/universal_robots/ur5e/preview.png" width="240" alt="Universal Robots UR5e"><br><b>Universal Robots UR5e</b></a>
+      <br><sub>URDF · MJCF</sub>
+    </td>
+    <td align="center" width="33%">
+      <a href="models/agilex/piper/README.md"><img src="models/agilex/piper/preview.png" width="240" alt="AgileX PiPER"><br><b>AgileX PiPER</b></a>
+      <br><sub>URDF · MJCF</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="33%">
+      <a href="models/fanuc/crx10ia/README.md"><img src="models/fanuc/crx10ia/preview.png" width="240" alt="FANUC CRX-10iA"><br><b>FANUC CRX-10iA</b></a>
+      <br><sub>URDF</sub>
+    </td>
+    <td align="center" width="33%">
+      <a href="models/abb/yumi_irb14000/README.md"><img src="models/abb/yumi_irb14000/preview.png" width="240" alt="ABB YuMi"><br><b>ABB YuMi</b></a>
+      <br><sub>URDF</sub>
+    </td>
+    <td align="center" width="33%">
+      <a href="models/franka/fr3_duo/README.md"><img src="models/franka/fr3_duo/preview.png" width="240" alt="Franka FR3 Duo"><br><b>Franka FR3 Duo</b></a>
+      <br><sub>URDF</sub>
+    </td>
+  </tr>
+</table>
+
+<p align="center"><sub>点击图片查看模型文件、配置变体和使用说明。<a href="docs/PREVIEWS.md">了解预览图</a></sub></p>
+
+## 快速开始
+
+先在 MuJoCo 中打开一个 Panda 场景：
+
+```sh
+git clone --depth 1 https://github.com/hyyyyyyz/awesome-robot-arm-zoo.git
+cd awesome-robot-arm-zoo
+python -m pip install mujoco
+```
+
+完整模型文件在克隆后约占 **6 GB** 磁盘空间。
+
+在仓库根目录运行下面的 Python 代码：
+
+```python
+from pathlib import Path
+
+import mujoco
+import mujoco.viewer
+
+scene = Path("models/franka/panda/mjcf/menagerie/scene.xml").resolve()
+model = mujoco.MjModel.from_xml_path(str(scene))
+mujoco.viewer.launch(model)
+```
+
+这会打开带地板和灯光的 Panda 场景。在自己的 MuJoCo 场景中使用机器人时，选择同目录下的 [`panda.xml`](models/franka/panda/mjcf/menagerie/panda.xml)。
 
 ## 模型目录
 
-收录 **31 个品牌、482 个型号或装配、541 个入口**，包含 505 个 URDF 与 36 个 MJCF 入口。来源、许可、装配和加载记录见各型号说明。
+**31 个品牌，482 个型号与装配。** 点击品牌查看模型图库、可用格式和模型文件，包含单臂、双臂、不同夹爪配置及移动操作机器人。
 
-点击品牌进入模型图库。每行包含标注型号的 MuJoCo 预览图、模型说明和可直接使用的原生入口文件链接。详见[渲染方式](docs/PREVIEWS.md)。
+<!-- MODEL_CATALOG:START -->
 
-| 品牌图库 | 型号 / 装配数 | 格式 |
+| 品牌 | 模型数 | 格式 |
 |---|---:|---|
 | [ABB](models/abb/README.md) | 27 | URDF |
 | [AgileX](models/agilex/README.md) | 3 | URDF, MJCF |
@@ -46,73 +117,42 @@
 | [Universal Robots](models/universal_robots/README.md) | 14 | URDF, MJCF |
 | [Yaskawa Motoman](models/yaskawa/README.md) | 50 | URDF |
 
-## 使用方式
+<!-- MODEL_CATALOG:END -->
 
-克隆仓库到本地：
+## 接入你的项目
 
-```sh
-git clone https://github.com/hyyyyyyz/awesome-robot-arm-zoo.git
-```
+把仓库放在项目的模型资源目录，或你习惯存放资产的位置。在目录里选好机器人，打开型号说明，复制所需格式的模型路径。例如：
 
-在模型目录中选择适合目标环境的格式，并查阅该型号的 README。模型说明会列出相对仓库根目录的入口路径、具体装配、适用环境和必要加载选项。
+| 型号 | 格式 | 相对仓库根目录的文件路径 |
+|---|---|---|
+| Franka Panda | MJCF | [`models/franka/panda/mjcf/menagerie/panda.xml`](models/franka/panda/mjcf/menagerie/panda.xml) |
+| Franka Panda | URDF | [`models/franka/panda/urdf/panda.urdf`](models/franka/panda/urdf/panda.urdf) |
+| ABB YuMi | URDF | [`models/abb/yumi_irb14000/urdf/yumi_irb14000.urdf`](models/abb/yumi_irb14000/urdf/yumi_irb14000.urdf) |
 
-将入口文件的本地绝对路径填入现有项目。下面使用已收录的 Panda MJCF 入口，路径需替换为本地 checkout 的实际位置：
+将文件路径与你本地的仓库位置拼接，交给项目中已有的模型加载器。**移动模型时，请一起复制完整的 `urdf/` 或 `mjcf/` 目录**，保留配套网格、纹理和引用文件。
 
-```python
-import mujoco
+### 选哪种格式？
 
-model = mujoco.MjModel.from_xml_path("/absolute/path/to/awesome-robot-arm-zoo/models/franka/panda/mjcf/menagerie/panda.xml")
-```
+| 你的项目 | 从这里开始 |
+|---|---|
+| MuJoCo | 选择该型号提供的 MJCF；`scene.xml` 是带演示环境的场景文件 |
+| ROS，或支持导入 URDF 的仿真器 | 选择 URDF；夹爪、固定底座和导入选项见型号说明 |
 
-也可以使用项目自己的路径配置，将模型仓库根目录与入口相对路径拼接。目标项目负责安装其仿真器和相关依赖。
+各型号提供的格式不同。具体文件、关节信息和加载示例都在对应的型号 README 中。
 
-仓库可放在使用项目旁边，也可放在项目自己的依赖目录。模型通过配套的相对资源引用定位网格、纹理和子文件；复制模型到其他位置时，应一起保留其依赖目录。
+## 来源与许可
 
-## 文件组织
+模型主要来自厂商官方仓库，部分模型来自 ROS-Industrial、大学团队和 [MuJoCo Menagerie](https://github.com/google-deepmind/mujoco_menagerie)。感谢原作者和维护者公开这些资源。
 
-模型按厂商、型号和格式组织。以下是目录约定示意：
+**不同模型、不同格式的许可证可能不同。** 使用或分发模型前，请查看型号 README 中的来源和许可链接；原始许可证及署名文件随模型一起保留。
 
-```text
-models/
-  <manufacturer>/
-    README.md
-    <model>/
-      README.md
-      preview.png
-      preview.json
-      mjcf/
-        <model>.xml
-        assets/
-        LICENSE
-      urdf/
-        <model>.urdf
-        meshes/
-        LICENSE
-      usd/
-        <model>.usd
-        assets/
-        LICENSE
-```
+## 已知限制
 
-每个型号只列出实际收录的格式。不同硬件版本、夹爪装配或仿真用途的变体，使用明确的路径区分。机器人本体和包含地板、灯光等内容的展示场景分别标明入口。
+- 不同型号和格式的仿真器支持情况不同，请先查看型号说明。URDF 预览仅展示外观；控制器、动力学和训练效果需要在自己的项目里验证。
+- 部分 COLLADA 文件使用毫米或英寸。导入器需要正确读取文件声明的单位，受影响的型号页有具体说明。
 
-完整约定见 [模型文件规范](docs/MODEL_LAYOUT.md)。
+已测试的环境和暂未收录的模型见[来源覆盖与加载说明](docs/SOURCE_COVERAGE.md)。
 
-## 贡献
+## 参与贡献
 
-欢迎提交具有明确来源和分发许可的机器人模型、资源补全、加载修正及使用说明。
-
-- [贡献指南](CONTRIBUTING.md)：来源、收录步骤、验证和提交内容。
-- [模型文件规范](docs/MODEL_LAYOUT.md)：目录、入口、资源引用和变体。
-- [单模型 README 模板](docs/templates/MODEL_README.md)：每个型号随附的使用资料。
-- [AGENTS.md](AGENTS.md)：仓库维护约定。
-
-厂商官方来源优先；ROS-Industrial、大学维护模型与 Google DeepMind Menagerie 整理模型均在各目录中明确标注。格式子目录中的许可证分别覆盖对应资源，部分网格使用厂商专用条款。
-
-## 使用范围
-
-[来源覆盖与未收录范围](docs/SOURCE_COVERAGE.md)记录来源类别、型号覆盖和许可或资源缺口。
-
-仓库负责提供可定位、资源完整的模型文件和使用说明。关节控制、场景装配、任务定义与训练配置由使用项目管理。
-
-模型是否适用于某个环境，以该模型 README 中记录的入口、加载选项和实际验证版本为准。文件格式可以被导入，并不代表不同仿真器具有相同的控制和物理行为。
+想补充一款模型、修复加载问题，或分享更好的使用示例？欢迎[提 Issue](https://github.com/hyyyyyyz/awesome-robot-arm-zoo/issues) 或提交 Pull Request。模型文件、来源和许可要求见[贡献指南](CONTRIBUTING.md)。

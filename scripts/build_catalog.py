@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Build the manufacturer index and preview galleries from model READMEs."""
 
-from collections import Counter
 from dataclasses import dataclass
 from html import escape
 from pathlib import Path
@@ -109,35 +108,22 @@ def update_brand(path: Path, models: list[Model]) -> None:
 
 
 def update_root(brands: dict[str, list[Model]], names: dict[str, str]) -> None:
-    counts = Counter(fmt for models in brands.values() for model in models for _, fmt, _ in model.entries)
-    total_models = sum(map(len, brands.values()))
-    total_entries = sum(counts.values())
-    descriptions = {
-        "README.md": (
-            "## Models", "## Usage",
-            f"**{len(brands)} manufacturers, {total_models} models or assemblies, and {total_entries} entry files**: "
-            f"{counts['URDF']} URDF and {counts['MJCF']} MJCF entries. Model notes identify the exact assembly, source, license and loading records.\n\n"
-            "Choose a manufacturer to browse its model gallery. Each row shows a labeled MuJoCo preview, links to the model documentation, and direct native entry files. See the [rendering method](docs/PREVIEWS.md).\n\n"
-            "| Manufacturer gallery | Models / assemblies | Formats |\n|---|---:|---|",
-        ),
-        "README_CN.md": (
-            "## 模型目录", "## 使用方式",
-            f"收录 **{len(brands)} 个品牌、{total_models} 个型号或装配、{total_entries} 个入口**，"
-            f"包含 {counts['URDF']} 个 URDF 与 {counts['MJCF']} 个 MJCF 入口。来源、许可、装配和加载记录见各型号说明。\n\n"
-            "点击品牌进入模型图库。每行包含标注型号的 MuJoCo 预览图、模型说明和可直接使用的原生入口文件链接。详见[渲染方式](docs/PREVIEWS.md)。\n\n"
-            "| 品牌图库 | 型号 / 装配数 | 格式 |\n|---|---:|---|",
-        ),
+    headers = {
+        "README.md": "| Brand | Models | Formats |\n|---|---:|---|",
+        "README_CN.md": "| 品牌 | 模型数 | 格式 |\n|---|---:|---|",
     }
     rows = []
     for brand, models in brands.items():
         formats = sorted({fmt for model in models for fmt in model.formats}, reverse=True)
         rows.append(f"| [{names[brand]}](models/{brand}/README.md) | {len(models)} | {', '.join(formats)} |")
-    for filename, (heading, end_heading, introduction) in descriptions.items():
+    start_marker = "<!-- MODEL_CATALOG:START -->"
+    end_marker = "<!-- MODEL_CATALOG:END -->"
+    for filename, header in headers.items():
         path = ROOT / filename
         text = path.read_text()
-        before, rest = text.split(heading, 1)
-        _, after = rest.split(end_heading, 1)
-        path.write_text(f"{before}{heading}\n\n{introduction}\n" + "\n".join(rows) + f"\n\n{end_heading}{after}")
+        before, rest = text.split(start_marker, 1)
+        _, after = rest.split(end_marker, 1)
+        path.write_text(f"{before}{start_marker}\n\n{header}\n" + "\n".join(rows) + f"\n\n{end_marker}{after}")
 
 
 def main() -> None:
