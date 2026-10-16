@@ -1,4 +1,0 @@
-Source: https://github.com/xArm-Developer/xarm_ros2.git
-Version: 62936f7ea1846a85f7350de2c4c18f39e6d19715
-Scope: xarm_description/urdf/xarm_device.urdf.xacro and its referenced model resources.
-Changes: Xacro expanded to static URDF; resource paths made relative; mechanical definitions retained.

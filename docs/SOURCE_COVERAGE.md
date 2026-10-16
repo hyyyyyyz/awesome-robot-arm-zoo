@@ -1,6 +1,6 @@
 # Source coverage
 
-This collection contains model files from 31 manufacturers. Manufacturer-maintained descriptions are prioritized; ROS-Industrial, university and Google DeepMind Menagerie sources are identified separately in each model's source table. Sources are pinned to the upstream commits recorded in the model READMEs.
+This collection contains model files from 23 manufacturers. Manufacturer-maintained descriptions are prioritized; ROS-Industrial, university and Google DeepMind Menagerie sources are identified separately in each model's source table. Sources are pinned to the upstream commits recorded in the model READMEs.
 
 Each model directory lists its actual hardware or assembly, file entries, resource scope and applicable licenses. A manufacturer's presence in the catalog identifies the included models, rather than its entire product range.
 
@@ -9,7 +9,6 @@ Each model directory lists its actual hardware or assembly, file entries, resour
 | Source | Included scope | Source records |
 |---|---|---|
 | Manufacturer repositories | Prepared static URDFs and their referenced visual/collision resources; existing native files where supplied | Brand and model READMEs |
-| ROS-Industrial | ABB and Stäubli descriptions and their applicable model resources | Corresponding model source and license tables |
 | Örebro University | ABB YuMi dual-arm description | [YuMi model notes](../models/abb/yumi_irb14000/README.md) |
 | Google DeepMind MuJoCo Menagerie | Selected MJCF robot assemblies and separate demonstration scenes | Each included model's `mjcf/README.md` |
 

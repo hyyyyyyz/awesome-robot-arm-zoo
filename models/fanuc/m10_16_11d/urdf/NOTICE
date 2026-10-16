@@ -1,7 +1,0 @@
-Upstream project: https://github.com/FANUC-CORPORATION/fanuc_description
-Upstream commit: fb40c9803a826ba68c7c8e28ba904a25efa7fcd2
-Package: fanuc_m10_description
-The upstream package license declaration and authors are preserved in source_package.xml.
-
-SPDX-FileCopyrightText: 2026, FANUC America Corporation
-SPDX-FileCopyrightText: 2026, FANUC CORPORATION

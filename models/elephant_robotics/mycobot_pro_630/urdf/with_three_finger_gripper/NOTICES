@@ -1,6 +1,0 @@
-Source: https://github.com/elephantrobotics/mycobot_ros.git
-Version: c0d6fbe8f7d9b18b46a9fcb0b041e5bc2d66196b
-Scope: mycobot_description/urdf/mycobot_pro_630/pro630_three_gripper.urdf and its referenced model resources.
-Changes: resource paths made relative; mechanical definitions retained.
-
-Copyright 2020-2023 Elephant Robotics. Licensed under the standard three-clause BSD license (upstream README).

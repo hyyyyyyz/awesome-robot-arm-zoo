@@ -1,14 +1,14 @@
 <h1 align="center">Awesome Robot Arm Zoo</h1>
 
 <p align="center">
-  <strong>Robot arm models for your next simulation project.</strong><br>
-  Industrial arms, cobots, SCARAs and dual-arm robots. Browse the models, choose a format, and load one in your project.
+  <strong>Robot arm models for embodied AI projects.</strong><br>
+  Single arms, dual arms and mobile manipulators for VLA, imitation learning and simulation. Browse the models, choose a format, and load one in your project.
 </p>
 
 <p align="center">
-  <a href="#models"><img src="https://img.shields.io/badge/Models-482-0F766E?style=flat-square" alt="482 models"></a>
-  <a href="#models"><img src="https://img.shields.io/badge/Brands-31-334155?style=flat-square" alt="31 brands"></a>
-  <img src="https://img.shields.io/badge/URDF-505-2563EB?style=flat-square" alt="505 URDF files">
+  <a href="#models"><img src="https://img.shields.io/badge/Models-46-0F766E?style=flat-square" alt="46 models"></a>
+  <a href="#models"><img src="https://img.shields.io/badge/Brands-23-334155?style=flat-square" alt="23 brands"></a>
+  <img src="https://img.shields.io/badge/URDF-52-2563EB?style=flat-square" alt="52 URDF files">
   <img src="https://img.shields.io/badge/MJCF-36-D97706?style=flat-square" alt="36 MJCF files">
 </p>
 
@@ -34,7 +34,7 @@
   </tr>
   <tr>
     <td align="center" width="33%">
-      <a href="models/fanuc/crx10ia/README.md"><img src="models/fanuc/crx10ia/preview.png" width="240" alt="FANUC CRX-10iA"><br><b>FANUC CRX-10iA</b></a>
+      <a href="models/trossen/vx300s/README.md"><img src="models/trossen/vx300s/preview.png" width="240" alt="Trossen ViperX 300S"><br><b>Trossen ViperX 300S</b></a>
       <br><sub>URDF</sub>
     </td>
     <td align="center" width="33%">
@@ -60,7 +60,7 @@ cd awesome-robot-arm-zoo
 python -m pip install mujoco
 ```
 
-The model files occupy about **6 GB**.
+The model files occupy about **1.1 GB**.
 
 Run this Python snippet from the repository root:
 
@@ -79,43 +79,35 @@ This opens the Panda with a floor and lighting. To add the robot to your own MuJ
 
 ## Models
 
-**482 models and assemblies across 31 brands.** Pick a brand to see its gallery, available formats and model files. The collection includes single arms, dual arms, gripper variants and mobile manipulators.
+**46 models and assemblies across 23 brands.** Pick a brand to see its gallery, available formats and model files. The collection focuses on research platforms and representative single-arm, dual-arm and mobile-manipulator configurations.
 
 <!-- MODEL_CATALOG:START -->
 
 | Brand | Models | Formats |
 |---|---:|---|
-| [ABB](models/abb/README.md) | 27 | URDF |
-| [AgileX](models/agilex/README.md) | 3 | URDF, MJCF |
+| [ABB](models/abb/README.md) | 1 | URDF |
+| [AgileX](models/agilex/README.md) | 1 | URDF, MJCF |
 | [ARX](models/arx/README.md) | 1 | MJCF |
-| [AUBO](models/aubo/README.md) | 11 | URDF |
-| [Comau](models/comau/README.md) | 14 | URDF |
-| [DENSO](models/denso/README.md) | 3 | URDF |
-| [Dobot](models/dobot/README.md) | 10 | URDF |
-| [Elephant Robotics](models/elephant_robotics/README.md) | 21 | URDF |
-| [Elite Robots](models/elite_robots/README.md) | 5 | URDF |
-| [Epson](models/epson/README.md) | 64 | URDF |
-| [FANUC](models/fanuc/README.md) | 71 | URDF |
-| [Flexiv](models/flexiv/README.md) | 23 | URDF, MJCF |
-| [Franka Robotics](models/franka/README.md) | 7 | URDF, MJCF |
-| [Han’s / Huayan Robotics](models/hans_robot/README.md) | 6 | URDF |
+| [AUBO](models/aubo/README.md) | 1 | URDF |
+| [DENSO](models/denso/README.md) | 1 | URDF |
+| [Dobot](models/dobot/README.md) | 1 | URDF |
+| [Elephant Robotics](models/elephant_robotics/README.md) | 2 | URDF |
+| [FANUC](models/fanuc/README.md) | 1 | URDF |
+| [Flexiv](models/flexiv/README.md) | 3 | URDF, MJCF |
+| [Franka Robotics](models/franka/README.md) | 5 | URDF, MJCF |
 | [JAKA](models/jaka/README.md) | 1 | URDF |
-| [Kinova](models/kinova/README.md) | 17 | URDF, MJCF |
-| [KUKA](models/kuka/README.md) | 47 | URDF, MJCF |
-| [Lebai](models/lebai/README.md) | 3 | URDF |
-| [Mitsubishi Electric](models/mitsubishi/README.md) | 10 | URDF |
+| [Kinova](models/kinova/README.md) | 4 | URDF, MJCF |
+| [KUKA](models/kuka/README.md) | 1 | URDF, MJCF |
+| [Lebai](models/lebai/README.md) | 2 | URDF |
 | [Pollen Robotics](models/pollen_robotics/README.md) | 1 | URDF |
-| [RealMan](models/realman/README.md) | 11 | URDF |
+| [RealMan](models/realman/README.md) | 2 | URDF |
 | [Rethink Robotics](models/rethink_robotics/README.md) | 2 | URDF, MJCF |
-| [ROBOTIS](models/robotis/README.md) | 6 | URDF |
-| [ROKAE](models/rokae/README.md) | 14 | URDF |
-| [Stäubli](models/staubli/README.md) | 12 | URDF |
-| [Techman Robot](models/techman/README.md) | 10 | URDF |
-| [Trossen / Interbotix](models/trossen/README.md) | 10 | URDF |
-| [UFACTORY](models/ufactory/README.md) | 7 | URDF, MJCF |
+| [ROBOTIS](models/robotis/README.md) | 3 | URDF |
+| [ROKAE](models/rokae/README.md) | 1 | URDF |
+| [Trossen / Interbotix](models/trossen/README.md) | 2 | URDF |
+| [UFACTORY](models/ufactory/README.md) | 4 | URDF, MJCF |
 | [Unitree](models/unitree/README.md) | 1 | URDF, MJCF |
-| [Universal Robots](models/universal_robots/README.md) | 14 | URDF, MJCF |
-| [Yaskawa Motoman](models/yaskawa/README.md) | 50 | URDF |
+| [Universal Robots](models/universal_robots/README.md) | 5 | URDF, MJCF |
 
 <!-- MODEL_CATALOG:END -->
 
@@ -142,7 +134,7 @@ Formats vary by model. Each model README lists the exact files, joint informatio
 
 ## Sources and licenses
 
-Models come primarily from manufacturer repositories, with additional descriptions from ROS-Industrial, universities and [MuJoCo Menagerie](https://github.com/google-deepmind/mujoco_menagerie). Thank you to the authors and maintainers who make these resources available.
+Models come primarily from manufacturer repositories, with additional descriptions from universities and [MuJoCo Menagerie](https://github.com/google-deepmind/mujoco_menagerie). Thank you to the authors and maintainers who make these resources available.
 
 **Licenses vary by model and format.** Read the source and license links in the model README before reusing or redistributing its assets. The original license texts and notices are included alongside the files.
 
@@ -155,6 +147,6 @@ See [source coverage and loading details](docs/SOURCE_COVERAGE.md) for the teste
 
 ## Contributing
 
-This collection is still growing and does not yet cover every brand, model or configuration. If an arm you use is missing, [open an issue](https://github.com/hyyyyyyz/awesome-robot-arm-zoo/issues) or send a pull request to add it. Links to official model repositories or downloads are welcome too.
+This collection focuses on VLA and embodied manipulation and is still growing. If a research platform or hardware configuration you use is missing, [open an issue](https://github.com/hyyyyyyz/awesome-robot-arm-zoo/issues) or send a pull request to add it. Links to official model repositories or downloads are welcome too.
 
 Loading fixes, additional model formats and usage examples are also welcome. Please include the model's source and license when contributing files; see the [contribution guide](CONTRIBUTING.md) for details.

@@ -1,6 +1,0 @@
-Source: https://github.com/RokaeRobot/rokae_ros2.git
-Version: d6a508c38513d4c39b2f10f14275d0e26df7fb43
-Scope: rokae_description/urdf/xMateSR3.urdf.xacro and its referenced model resources.
-Changes: resource paths made relative; mechanical definitions retained.
-
-Copyright (C) 2026 ROKAE (Beijing) Technology Co., LTD.

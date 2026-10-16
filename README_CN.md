@@ -1,14 +1,14 @@
 <h1 align="center">Awesome Robot Arm Zoo</h1>
 
 <p align="center">
-  <strong>为你的下一个仿真项目，找一款机械臂。</strong><br>
-  工业机械臂、协作臂、SCARA、双臂机器人，按品牌浏览，选好型号即可接入自己的项目。
+  <strong>为你的具身智能项目，找一款机械臂。</strong><br>
+  面向 VLA、模仿学习和仿真的单臂、双臂与移动操作机器人。按品牌浏览，选好型号即可接入自己的项目。
 </p>
 
 <p align="center">
-  <a href="#模型目录"><img src="https://img.shields.io/badge/Models-482-0F766E?style=flat-square" alt="482 models"></a>
-  <a href="#模型目录"><img src="https://img.shields.io/badge/Brands-31-334155?style=flat-square" alt="31 brands"></a>
-  <img src="https://img.shields.io/badge/URDF-505-2563EB?style=flat-square" alt="505 URDF files">
+  <a href="#模型目录"><img src="https://img.shields.io/badge/Models-46-0F766E?style=flat-square" alt="46 models"></a>
+  <a href="#模型目录"><img src="https://img.shields.io/badge/Brands-23-334155?style=flat-square" alt="23 brands"></a>
+  <img src="https://img.shields.io/badge/URDF-52-2563EB?style=flat-square" alt="52 URDF files">
   <img src="https://img.shields.io/badge/MJCF-36-D97706?style=flat-square" alt="36 MJCF files">
 </p>
 
@@ -34,7 +34,7 @@
   </tr>
   <tr>
     <td align="center" width="33%">
-      <a href="models/fanuc/crx10ia/README.md"><img src="models/fanuc/crx10ia/preview.png" width="240" alt="FANUC CRX-10iA"><br><b>FANUC CRX-10iA</b></a>
+      <a href="models/trossen/vx300s/README.md"><img src="models/trossen/vx300s/preview.png" width="240" alt="Trossen ViperX 300S"><br><b>Trossen ViperX 300S</b></a>
       <br><sub>URDF</sub>
     </td>
     <td align="center" width="33%">
@@ -60,7 +60,7 @@ cd awesome-robot-arm-zoo
 python -m pip install mujoco
 ```
 
-完整模型文件在克隆后约占 **6 GB** 磁盘空间。
+完整模型文件在克隆后约占 **1.1 GB** 磁盘空间。
 
 在仓库根目录运行下面的 Python 代码：
 
@@ -79,43 +79,35 @@ mujoco.viewer.launch(model)
 
 ## 模型目录
 
-**31 个品牌，482 个型号与装配。** 点击品牌查看模型图库、可用格式和模型文件，包含单臂、双臂、不同夹爪配置及移动操作机器人。
+**23 个品牌，46 个型号与装配。** 点击品牌查看模型图库、可用格式和模型文件。收录以研究平台及有代表性的单臂、双臂和移动操作配置为主。
 
 <!-- MODEL_CATALOG:START -->
 
 | 品牌 | 模型数 | 格式 |
 |---|---:|---|
-| [ABB](models/abb/README.md) | 27 | URDF |
-| [AgileX](models/agilex/README.md) | 3 | URDF, MJCF |
+| [ABB](models/abb/README.md) | 1 | URDF |
+| [AgileX](models/agilex/README.md) | 1 | URDF, MJCF |
 | [ARX](models/arx/README.md) | 1 | MJCF |
-| [AUBO](models/aubo/README.md) | 11 | URDF |
-| [Comau](models/comau/README.md) | 14 | URDF |
-| [DENSO](models/denso/README.md) | 3 | URDF |
-| [Dobot](models/dobot/README.md) | 10 | URDF |
-| [Elephant Robotics](models/elephant_robotics/README.md) | 21 | URDF |
-| [Elite Robots](models/elite_robots/README.md) | 5 | URDF |
-| [Epson](models/epson/README.md) | 64 | URDF |
-| [FANUC](models/fanuc/README.md) | 71 | URDF |
-| [Flexiv](models/flexiv/README.md) | 23 | URDF, MJCF |
-| [Franka Robotics](models/franka/README.md) | 7 | URDF, MJCF |
-| [Han’s / Huayan Robotics](models/hans_robot/README.md) | 6 | URDF |
+| [AUBO](models/aubo/README.md) | 1 | URDF |
+| [DENSO](models/denso/README.md) | 1 | URDF |
+| [Dobot](models/dobot/README.md) | 1 | URDF |
+| [Elephant Robotics](models/elephant_robotics/README.md) | 2 | URDF |
+| [FANUC](models/fanuc/README.md) | 1 | URDF |
+| [Flexiv](models/flexiv/README.md) | 3 | URDF, MJCF |
+| [Franka Robotics](models/franka/README.md) | 5 | URDF, MJCF |
 | [JAKA](models/jaka/README.md) | 1 | URDF |
-| [Kinova](models/kinova/README.md) | 17 | URDF, MJCF |
-| [KUKA](models/kuka/README.md) | 47 | URDF, MJCF |
-| [Lebai](models/lebai/README.md) | 3 | URDF |
-| [Mitsubishi Electric](models/mitsubishi/README.md) | 10 | URDF |
+| [Kinova](models/kinova/README.md) | 4 | URDF, MJCF |
+| [KUKA](models/kuka/README.md) | 1 | URDF, MJCF |
+| [Lebai](models/lebai/README.md) | 2 | URDF |
 | [Pollen Robotics](models/pollen_robotics/README.md) | 1 | URDF |
-| [RealMan](models/realman/README.md) | 11 | URDF |
+| [RealMan](models/realman/README.md) | 2 | URDF |
 | [Rethink Robotics](models/rethink_robotics/README.md) | 2 | URDF, MJCF |
-| [ROBOTIS](models/robotis/README.md) | 6 | URDF |
-| [ROKAE](models/rokae/README.md) | 14 | URDF |
-| [Stäubli](models/staubli/README.md) | 12 | URDF |
-| [Techman Robot](models/techman/README.md) | 10 | URDF |
-| [Trossen / Interbotix](models/trossen/README.md) | 10 | URDF |
-| [UFACTORY](models/ufactory/README.md) | 7 | URDF, MJCF |
+| [ROBOTIS](models/robotis/README.md) | 3 | URDF |
+| [ROKAE](models/rokae/README.md) | 1 | URDF |
+| [Trossen / Interbotix](models/trossen/README.md) | 2 | URDF |
+| [UFACTORY](models/ufactory/README.md) | 4 | URDF, MJCF |
 | [Unitree](models/unitree/README.md) | 1 | URDF, MJCF |
-| [Universal Robots](models/universal_robots/README.md) | 14 | URDF, MJCF |
-| [Yaskawa Motoman](models/yaskawa/README.md) | 50 | URDF |
+| [Universal Robots](models/universal_robots/README.md) | 5 | URDF, MJCF |
 
 <!-- MODEL_CATALOG:END -->
 
@@ -142,7 +134,7 @@ mujoco.viewer.launch(model)
 
 ## 来源与许可
 
-模型主要来自厂商官方仓库，部分模型来自 ROS-Industrial、大学团队和 [MuJoCo Menagerie](https://github.com/google-deepmind/mujoco_menagerie)。感谢原作者和维护者公开这些资源。
+模型主要来自厂商官方仓库，部分模型来自大学团队和 [MuJoCo Menagerie](https://github.com/google-deepmind/mujoco_menagerie)。感谢原作者和维护者公开这些资源。
 
 **不同模型、不同格式的许可证可能不同。** 使用或分发模型前，请查看型号 README 中的来源和许可链接；原始许可证及署名文件随模型一起保留。
 
@@ -155,6 +147,6 @@ mujoco.viewer.launch(model)
 
 ## 参与贡献
 
-这份目录还在持续扩充，尚未覆盖所有品牌、型号和配置。如果你常用的机械臂还没有收录，欢迎[提 Issue](https://github.com/hyyyyyyz/awesome-robot-arm-zoo/issues) 告诉我们，或直接提交 PR 补充模型。官方模型仓库和下载链接也很有帮助。
+这份目录面向 VLA 与具身操作，仍在持续扩充。如果你常用的研究平台或硬件配置还没有收录，欢迎[提 Issue](https://github.com/hyyyyyyz/awesome-robot-arm-zoo/issues) 告诉我们，或直接提交 PR 补充模型。官方模型仓库和下载链接也很有帮助。
 
 也欢迎修复加载问题、补充模型格式，或分享使用示例。提交模型文件时，请注明来源并保留许可证，具体要求见[贡献指南](CONTRIBUTING.md)。

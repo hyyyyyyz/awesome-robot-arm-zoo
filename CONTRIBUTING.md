@@ -1,6 +1,6 @@
 # Contributing
 
-Contributions help users load complete robot models in their own projects through clear file paths. New models, resource completion, loading fixes, and documentation improvements are welcome.
+Contributions help users load complete robot models in their own projects through clear file paths. New models, resource completion, loading fixes, and documentation improvements are welcome. Prioritize platforms used in embodied manipulation research and distinct hardware configurations. Include additional product variants when they provide a concrete use beyond an existing model.
 
 ## Prepare the sources
 

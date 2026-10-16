@@ -2,7 +2,7 @@
 
 ## Product goal
 
-This repository stores complete robot model files. After cloning it, users copy a model entry file's local path into an existing project and load it through their simulator's native API.
+This repository stores complete robot model files for VLA and embodied manipulation projects, prioritizing research platforms and representative single-arm, dual-arm and mobile-manipulator configurations. After cloning it, users copy a model entry file's local path into an existing project and load it through their simulator's native API.
 
 Complete means that every included model ships with all of its runtime resources. Stable file paths, complete dependencies, and accurate model documentation form the public interface.
 

@@ -1,4 +1,0 @@
-Source: https://github.com/flexivrobotics/flexiv_description.git
-Version: 6d5145ea74bce2a7f61867a7ae3de3823ec6154f
-Scope: urdf/flexiv.urdf.xacro and its referenced model resources.
-Changes: Xacro expanded to static URDF; resource paths made relative; mechanical definitions retained.

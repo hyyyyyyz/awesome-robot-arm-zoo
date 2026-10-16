@@ -1,4 +1,0 @@
-Source: https://github.com/AuboRobot/aubo_robot.git
-Version: 32210c0b465bc4eef4de01a0917a878c3b24e799
-Scope: aubo_robot/aubo_description/urdf/aubo_e3.urdf and its referenced model resources.
-Changes: resource paths made relative; mechanical definitions retained.

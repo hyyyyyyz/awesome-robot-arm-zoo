@@ -1,4 +1,0 @@
-Source: https://github.com/Dobot-Arm/MG400_ROS.git
-Version: 2bcf6a988311096a6096a2dc4de60dc76f72e80e
-Scope: mg400_description/urdf/mg400_description.urdf and its referenced model resources.
-Changes: resource paths made relative; mechanical definitions retained.
