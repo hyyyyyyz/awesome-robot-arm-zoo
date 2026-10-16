@@ -80,9 +80,70 @@ This opens the Panda with a floor and lighting. To add the robot to your own MuJ
 
 ## Models
 
-**67 models and assemblies across 32 brands and open-source projects.** Pick a brand or project to see its gallery, available formats and model files. The collection focuses on research platforms and representative single-arm, dual-arm and mobile-manipulator configurations.
+**67 models and assemblies across 32 brands and open-source projects.** Choose a brand or project to browse robot previews and model files. The number beside each name is its model count.
 
 <!-- MODEL_CATALOG:START -->
+
+<table width="100%">
+  <tr>
+    <td width="33%"><a href="models/abb/README.md">ABB</a> <sub>·&nbsp;1</sub></td>
+    <td width="33%"><a href="models/agibot/README.md">AgiBot</a> <sub>·&nbsp;1</sub></td>
+    <td width="33%"><a href="models/agilex/README.md">AgileX</a> <sub>·&nbsp;3</sub></td>
+  </tr>
+  <tr>
+    <td width="33%"><a href="models/airbot/README.md">AIRBOT</a> <sub>·&nbsp;2</sub></td>
+    <td width="33%"><a href="models/arx/README.md">ARX</a> <sub>·&nbsp;2</sub></td>
+    <td width="33%"><a href="models/aubo/README.md">AUBO</a> <sub>·&nbsp;1</sub></td>
+  </tr>
+  <tr>
+    <td width="33%"><a href="models/denso/README.md">DENSO</a> <sub>·&nbsp;1</sub></td>
+    <td width="33%"><a href="models/dobot/README.md">Dobot</a> <sub>·&nbsp;1</sub></td>
+    <td width="33%"><a href="models/elephant_robotics/README.md">Elephant Robotics</a> <sub>·&nbsp;2</sub></td>
+  </tr>
+  <tr>
+    <td width="33%"><a href="models/enactic/README.md">Enactic</a> <sub>·&nbsp;2</sub></td>
+    <td width="33%"><a href="models/fanuc/README.md">FANUC</a> <sub>·&nbsp;1</sub></td>
+    <td width="33%"><a href="models/flexiv/README.md">Flexiv</a> <sub>·&nbsp;3</sub></td>
+  </tr>
+  <tr>
+    <td width="33%"><a href="models/franka/README.md">Franka Robotics</a> <sub>·&nbsp;5</sub></td>
+    <td width="33%"><a href="models/galaxea/README.md">Galaxea</a> <sub>·&nbsp;2</sub></td>
+    <td width="33%"><a href="models/jaka/README.md">JAKA</a> <sub>·&nbsp;1</sub></td>
+  </tr>
+  <tr>
+    <td width="33%"><a href="models/kinova/README.md">Kinova</a> <sub>·&nbsp;4</sub></td>
+    <td width="33%"><a href="models/koch/README.md">Koch</a> <sub>·&nbsp;1</sub></td>
+    <td width="33%"><a href="models/kuka/README.md">KUKA</a> <sub>·&nbsp;1</sub></td>
+  </tr>
+  <tr>
+    <td width="33%"><a href="models/lebai/README.md">Lebai</a> <sub>·&nbsp;2</sub></td>
+    <td width="33%"><a href="models/lekiwi/README.md">LeKiwi</a> <sub>·&nbsp;1</sub></td>
+    <td width="33%"><a href="models/pollen_robotics/README.md">Pollen Robotics</a> <sub>·&nbsp;2</sub></td>
+  </tr>
+  <tr>
+    <td width="33%"><a href="models/realman/README.md">RealMan</a> <sub>·&nbsp;3</sub></td>
+    <td width="33%"><a href="models/rethink_robotics/README.md">Rethink Robotics</a> <sub>·&nbsp;2</sub></td>
+    <td width="33%"><a href="models/robotis/README.md">ROBOTIS</a> <sub>·&nbsp;3</sub></td>
+  </tr>
+  <tr>
+    <td width="33%"><a href="models/rokae/README.md">ROKAE</a> <sub>·&nbsp;1</sub></td>
+    <td width="33%"><a href="models/seeed_studio/README.md">Seeed Studio</a> <sub>·&nbsp;1</sub></td>
+    <td width="33%"><a href="models/the_robot_studio/README.md">The Robot Studio</a> <sub>·&nbsp;2</sub></td>
+  </tr>
+  <tr>
+    <td width="33%"><a href="models/trossen/README.md">Trossen / Interbotix</a> <sub>·&nbsp;5</sub></td>
+    <td width="33%"><a href="models/ufactory/README.md">UFACTORY</a> <sub>·&nbsp;4</sub></td>
+    <td width="33%"><a href="models/unitree/README.md">Unitree</a> <sub>·&nbsp;1</sub></td>
+  </tr>
+  <tr>
+    <td width="33%"><a href="models/universal_robots/README.md">Universal Robots</a> <sub>·&nbsp;5</sub></td>
+    <td width="33%"><a href="models/xlerobot/README.md">XLeRobot</a> <sub>·&nbsp;1</sub></td>
+    <td width="33%"></td>
+  </tr>
+</table>
+
+<details>
+<summary>View all brands, model counts and formats</summary>
 
 | Brand / project | Models | Formats |
 |---|---:|---|
@@ -118,6 +179,8 @@ This opens the Panda with a floor and lighting. To add the robot to your own MuJ
 | [Unitree](models/unitree/README.md) | 1 | URDF, MJCF |
 | [Universal Robots](models/universal_robots/README.md) | 5 | URDF, MJCF |
 | [XLeRobot](models/xlerobot/README.md) | 1 | URDF |
+
+</details>
 
 <!-- MODEL_CATALOG:END -->
 

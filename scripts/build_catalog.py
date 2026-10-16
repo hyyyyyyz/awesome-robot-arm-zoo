@@ -112,6 +112,24 @@ def update_root(brands: dict[str, list[Model]], names: dict[str, str]) -> None:
         "README.md": "| Brand / project | Models | Formats |\n|---|---:|---|",
         "README_CN.md": "| 品牌 / 项目 | 模型数 | 格式 |\n|---|---:|---|",
     }
+    summaries = {
+        "README.md": "View all brands, model counts and formats",
+        "README_CN.md": "查看完整品牌、模型数量与格式",
+    }
+    navigation = ['<table width="100%">']
+    items = list(brands.items())
+    for start in range(0, len(items), 3):
+        navigation.append("  <tr>")
+        group = items[start:start + 3]
+        for brand, models in group:
+            name = escape(names[brand])
+            navigation.append(
+                f'    <td width="33%"><a href="models/{brand}/README.md">'
+                f'{name}</a> <sub>·&nbsp;{len(models)}</sub></td>'
+            )
+        navigation.extend('    <td width="33%"></td>' for _ in range(3 - len(group)))
+        navigation.append("  </tr>")
+    navigation.append("</table>")
     rows = []
     for brand, models in brands.items():
         formats = sorted({fmt for model in models for fmt in model.formats}, reverse=True)
@@ -123,7 +141,12 @@ def update_root(brands: dict[str, list[Model]], names: dict[str, str]) -> None:
         text = path.read_text()
         before, rest = text.split(start_marker, 1)
         _, after = rest.split(end_marker, 1)
-        path.write_text(f"{before}{start_marker}\n\n{header}\n" + "\n".join(rows) + f"\n\n{end_marker}{after}")
+        content = (
+            "\n".join(navigation)
+            + f"\n\n<details>\n<summary>{summaries[filename]}</summary>\n\n"
+            + header + "\n" + "\n".join(rows) + "\n\n</details>"
+        )
+        path.write_text(f"{before}{start_marker}\n\n{content}\n\n{end_marker}{after}")
 
 
 def main() -> None:
