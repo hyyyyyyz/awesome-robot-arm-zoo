@@ -1,0 +1,50 @@
+{
+  "entry": "models/galaxea/r1_pro/urdf/manipsim_2025/robot.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "torso_joint1": 0.0,
+    "torso_joint2": 0.0,
+    "torso_joint3": 0.0,
+    "torso_joint4": 0.0,
+    "left_arm_joint1": 0.0,
+    "left_arm_joint2": 0.0,
+    "left_arm_joint3": 0.0,
+    "left_arm_joint4": 0.0,
+    "left_arm_joint5": 0.0,
+    "left_arm_joint6": 0.0,
+    "left_arm_joint7": 0.0,
+    "left_gripper_finger_joint1": 0.0,
+    "left_gripper_finger_joint2": 0.0,
+    "right_arm_joint1": 0.0,
+    "right_arm_joint2": 0.0,
+    "right_arm_joint3": 0.0,
+    "right_arm_joint4": 0.0,
+    "right_arm_joint5": 0.0,
+    "right_arm_joint6": 0.0,
+    "right_arm_joint7": 0.0,
+    "right_gripper_finger_joint1": 0.0,
+    "right_gripper_finger_joint2": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 3.4245447474742625,
+    "lookat": [
+      0.0006917059488269484,
+      -0.012772812832965608,
+      0.8609338346917894
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    272,
+    84,
+    373,
+    354
+  ]
+}

@@ -1,0 +1,4 @@
+URDF entry and all copied mesh/material/texture dependencies from models/X5.urdf
+Source: https://github.com/real-stanford/arx5-sdk.git
+Revision: c160db7834530a3d80fec524547c74e1d4fa8035
+Resource paths are localized; physical definitions retain their upstream values.

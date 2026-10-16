@@ -18,7 +18,7 @@ Inspect resource references and make them local relative references supported by
 
 Create `models/<manufacturer>/<model>/README.md` from the [model README template](docs/templates/MODEL_README.md), replacing template fields with actual information in English. Use paths relative to the repository root in the entry table so users can join them with their local checkout path.
 
-Include a MuJoCo-rendered `preview.png` and its `preview.json` rendering record for the model gallery. The [preview documentation](docs/PREVIEWS.md) describes the rendering method and distinguishes native MJCF previews from static URDF visualizations.
+Include a MuJoCo-rendered `preview.png` and its `preview.json` rendering record for the model gallery. The [preview documentation](docs/PREVIEWS.md) describes native MJCF previews and static URDF/USD visualizations.
 
 ## Validate the model
 

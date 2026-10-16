@@ -2,14 +2,15 @@
 
 <p align="center">
   <strong>为你的具身智能项目，找一款机械臂。</strong><br>
-  面向 VLA、模仿学习和仿真的单臂、双臂与移动操作机器人。按品牌浏览，选好型号即可接入自己的项目。
+  面向 VLA、模仿学习和仿真的单臂、双臂与移动操作机器人。按品牌或开源项目浏览，选择适合自己仿真环境的模型。
 </p>
 
 <p align="center">
-  <a href="#模型目录"><img src="https://img.shields.io/badge/Models-46-0F766E?style=flat-square" alt="46 models"></a>
-  <a href="#模型目录"><img src="https://img.shields.io/badge/Brands-23-334155?style=flat-square" alt="23 brands"></a>
-  <img src="https://img.shields.io/badge/URDF-52-2563EB?style=flat-square" alt="52 URDF files">
-  <img src="https://img.shields.io/badge/MJCF-36-D97706?style=flat-square" alt="36 MJCF files">
+  <a href="#模型目录"><img src="https://img.shields.io/badge/Models-67-0F766E?style=flat-square" alt="67 models"></a>
+  <a href="#模型目录"><img src="https://img.shields.io/badge/Brands-32-334155?style=flat-square" alt="32 brands"></a>
+  <img src="https://img.shields.io/badge/URDF-70-2563EB?style=flat-square" alt="70 URDF files">
+  <img src="https://img.shields.io/badge/MJCF-54-D97706?style=flat-square" alt="54 MJCF files">
+  <img src="https://img.shields.io/badge/USD-1-7C3AED?style=flat-square" alt="1 USD file">
 </p>
 
 <p align="center">
@@ -24,26 +25,26 @@
       <br><sub>URDF · MJCF</sub>
     </td>
     <td align="center" width="33%">
-      <a href="models/universal_robots/ur5e/README.md"><img src="models/universal_robots/ur5e/preview.png" width="240" alt="Universal Robots UR5e"><br><b>Universal Robots UR5e</b></a>
+      <a href="models/agilex/piper/README.md"><img src="models/agilex/piper/preview.png" width="240" alt="AgileX PiPER"><br><b>AgileX PiPER</b></a>
       <br><sub>URDF · MJCF</sub>
     </td>
     <td align="center" width="33%">
-      <a href="models/agilex/piper/README.md"><img src="models/agilex/piper/preview.png" width="240" alt="AgileX PiPER"><br><b>AgileX PiPER</b></a>
+      <a href="models/the_robot_studio/so101/README.md"><img src="models/the_robot_studio/so101/preview.png" width="240" alt="SO-101"><br><b>SO-101</b></a>
       <br><sub>URDF · MJCF</sub>
     </td>
   </tr>
   <tr>
     <td align="center" width="33%">
-      <a href="models/trossen/vx300s/README.md"><img src="models/trossen/vx300s/preview.png" width="240" alt="Trossen ViperX 300S"><br><b>Trossen ViperX 300S</b></a>
+      <a href="models/enactic/openarm_v2_dual/README.md"><img src="models/enactic/openarm_v2_dual/preview.png" width="240" alt="OpenArm v2 dual"><br><b>OpenArm v2 dual</b></a>
+      <br><sub>URDF · MJCF</sub>
+    </td>
+    <td align="center" width="33%">
+      <a href="models/galaxea/r1_lite_2025/README.md"><img src="models/galaxea/r1_lite_2025/preview.png" width="240" alt="Galaxea R1 Lite"><br><b>Galaxea R1 Lite</b></a>
       <br><sub>URDF</sub>
     </td>
     <td align="center" width="33%">
-      <a href="models/abb/yumi_irb14000/README.md"><img src="models/abb/yumi_irb14000/preview.png" width="240" alt="ABB YuMi"><br><b>ABB YuMi</b></a>
-      <br><sub>URDF</sub>
-    </td>
-    <td align="center" width="33%">
-      <a href="models/franka/fr3_duo/README.md"><img src="models/franka/fr3_duo/preview.png" width="240" alt="Franka FR3 Duo"><br><b>Franka FR3 Duo</b></a>
-      <br><sub>URDF</sub>
+      <a href="models/trossen/aloha2/README.md"><img src="models/trossen/aloha2/preview.png" width="240" alt="Trossen ALOHA 2"><br><b>Trossen ALOHA 2</b></a>
+      <br><sub>MJCF</sub>
     </td>
   </tr>
 </table>
@@ -60,7 +61,7 @@ cd awesome-robot-arm-zoo
 python -m pip install mujoco
 ```
 
-完整模型文件在克隆后约占 **1.1 GB** 磁盘空间。
+完整模型文件在克隆后约占 **1.8 GB** 磁盘空间。
 
 在仓库根目录运行下面的 Python 代码：
 
@@ -79,35 +80,44 @@ mujoco.viewer.launch(model)
 
 ## 模型目录
 
-**23 个品牌，46 个型号与装配。** 点击品牌查看模型图库、可用格式和模型文件。收录以研究平台及有代表性的单臂、双臂和移动操作配置为主。
+**32 个品牌与开源项目，67 个型号与装配。** 点击品牌或项目查看模型图库、可用格式和模型文件。收录以研究平台及有代表性的单臂、双臂和移动操作配置为主。
 
 <!-- MODEL_CATALOG:START -->
 
-| 品牌 | 模型数 | 格式 |
+| 品牌 / 项目 | 模型数 | 格式 |
 |---|---:|---|
 | [ABB](models/abb/README.md) | 1 | URDF |
-| [AgileX](models/agilex/README.md) | 1 | URDF, MJCF |
-| [ARX](models/arx/README.md) | 1 | MJCF |
+| [AgiBot](models/agibot/README.md) | 1 | USD |
+| [AgileX](models/agilex/README.md) | 3 | URDF, MJCF |
+| [AIRBOT](models/airbot/README.md) | 2 | MJCF |
+| [ARX](models/arx/README.md) | 2 | URDF, MJCF |
 | [AUBO](models/aubo/README.md) | 1 | URDF |
 | [DENSO](models/denso/README.md) | 1 | URDF |
 | [Dobot](models/dobot/README.md) | 1 | URDF |
 | [Elephant Robotics](models/elephant_robotics/README.md) | 2 | URDF |
+| [Enactic](models/enactic/README.md) | 2 | URDF, MJCF |
 | [FANUC](models/fanuc/README.md) | 1 | URDF |
 | [Flexiv](models/flexiv/README.md) | 3 | URDF, MJCF |
 | [Franka Robotics](models/franka/README.md) | 5 | URDF, MJCF |
+| [Galaxea](models/galaxea/README.md) | 2 | URDF |
 | [JAKA](models/jaka/README.md) | 1 | URDF |
 | [Kinova](models/kinova/README.md) | 4 | URDF, MJCF |
+| [Koch](models/koch/README.md) | 1 | MJCF |
 | [KUKA](models/kuka/README.md) | 1 | URDF, MJCF |
 | [Lebai](models/lebai/README.md) | 2 | URDF |
-| [Pollen Robotics](models/pollen_robotics/README.md) | 1 | URDF |
-| [RealMan](models/realman/README.md) | 2 | URDF |
+| [LeKiwi](models/lekiwi/README.md) | 1 | URDF |
+| [Pollen Robotics](models/pollen_robotics/README.md) | 2 | URDF, MJCF |
+| [RealMan](models/realman/README.md) | 3 | URDF |
 | [Rethink Robotics](models/rethink_robotics/README.md) | 2 | URDF, MJCF |
 | [ROBOTIS](models/robotis/README.md) | 3 | URDF |
 | [ROKAE](models/rokae/README.md) | 1 | URDF |
-| [Trossen / Interbotix](models/trossen/README.md) | 2 | URDF |
+| [Seeed Studio](models/seeed_studio/README.md) | 1 | MJCF |
+| [The Robot Studio](models/the_robot_studio/README.md) | 2 | URDF, MJCF |
+| [Trossen / Interbotix](models/trossen/README.md) | 5 | URDF, MJCF |
 | [UFACTORY](models/ufactory/README.md) | 4 | URDF, MJCF |
 | [Unitree](models/unitree/README.md) | 1 | URDF, MJCF |
 | [Universal Robots](models/universal_robots/README.md) | 5 | URDF, MJCF |
+| [XLeRobot](models/xlerobot/README.md) | 1 | URDF |
 
 <!-- MODEL_CATALOG:END -->
 
@@ -119,9 +129,10 @@ mujoco.viewer.launch(model)
 |---|---|---|
 | Franka Panda | MJCF | [`models/franka/panda/mjcf/menagerie/panda.xml`](models/franka/panda/mjcf/menagerie/panda.xml) |
 | Franka Panda | URDF | [`models/franka/panda/urdf/panda.urdf`](models/franka/panda/urdf/panda.urdf) |
-| ABB YuMi | URDF | [`models/abb/yumi_irb14000/urdf/yumi_irb14000.urdf`](models/abb/yumi_irb14000/urdf/yumi_irb14000.urdf) |
+| SO-101 | URDF | [`models/the_robot_studio/so101/urdf/so101_new_calib.urdf`](models/the_robot_studio/so101/urdf/so101_new_calib.urdf) |
+| AgiBot G1 | USD | [`models/agibot/g1_120s/usd/robot.usda`](models/agibot/g1_120s/usd/robot.usda) |
 
-将文件路径与你本地的仓库位置拼接，交给项目中已有的模型加载器。**移动模型时，请一起复制完整的 `urdf/` 或 `mjcf/` 目录**，保留配套网格、纹理和引用文件。
+将文件路径与你本地的仓库位置拼接，交给项目中已有的模型加载器。**移动模型时，请一起复制完整的 `urdf/`、`mjcf/` 或 `usd/` 目录**，保留配套网格、纹理和引用文件。
 
 ### 选哪种格式？
 
@@ -129,18 +140,21 @@ mujoco.viewer.launch(model)
 |---|---|
 | MuJoCo | 选择该型号提供的 MJCF；`scene.xml` 是带演示环境的场景文件 |
 | ROS，或支持导入 URDF 的仿真器 | 选择 URDF；夹爪、固定底座和导入选项见型号说明 |
+| Isaac Sim / Genie Sim | AgiBot G1 的原生 USD；材质模块和加载要求见型号说明 |
 
 各型号提供的格式不同。具体文件、关节信息和加载示例都在对应的型号 README 中。
 
 ## 来源与许可
 
-模型主要来自厂商官方仓库，部分模型来自大学团队和 [MuJoCo Menagerie](https://github.com/google-deepmind/mujoco_menagerie)。感谢原作者和维护者公开这些资源。
+模型主要来自厂商和开源硬件项目仓库，部分模型来自大学团队和 [MuJoCo Menagerie](https://github.com/google-deepmind/mujoco_menagerie)。感谢原作者和维护者公开这些资源。
 
 **不同模型、不同格式的许可证可能不同。** 使用或分发模型前，请查看型号 README 中的来源和许可链接；原始许可证及署名文件随模型一起保留。
 
+AgiBot G1 使用 CC BY-NC-SA 4.0，包含非商业和相同方式共享要求；其资源及预览图遵循该许可。
+
 ## 已知限制
 
-- 不同型号和格式的仿真器支持情况不同，请先查看型号说明。URDF 预览仅展示外观；控制器、动力学和训练效果需要在自己的项目里验证。
+- 不同型号和格式的仿真器支持情况不同，请先查看型号说明。URDF 和 USD 预览仅展示外观；控制器、动力学和训练效果需要在自己的项目里验证。
 - 部分 COLLADA 文件使用毫米或英寸。导入器需要正确读取文件声明的单位，受影响的型号页有具体说明。
 
 已测试的环境和暂未收录的模型见[来源覆盖与加载说明](docs/SOURCE_COVERAGE.md)。

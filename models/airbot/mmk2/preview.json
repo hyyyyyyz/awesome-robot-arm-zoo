@@ -1,0 +1,27 @@
+{
+  "entry": "models/airbot/mmk2/mjcf/source/mmk2_floor.xml",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "Native MJCF loaded in MuJoCo",
+  "pose": "keyframe: home",
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 3.078713913758596,
+    "lookat": [
+      0.13242705277134426,
+      -0.05258433003944574,
+      0.8933272336078166
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    249,
+    86,
+    392,
+    348
+  ]
+}

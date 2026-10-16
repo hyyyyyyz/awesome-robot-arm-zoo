@@ -1,0 +1,5 @@
+Seeed Studio reBot DevArm (RobStride actuator variant).
+Curated MJCF: Google DeepMind MuJoCo Menagerie contributors.
+Source: https://github.com/google-deepmind/mujoco_menagerie/tree/6da8b971844845de6ab27315aacc3a3fea4ddb8e/seeed_rebot_devarm
+Meshes and physical parameters derive from Seeed-Projects/reBot-Isaacsim under MIT.
+The accompanying MIT license retains Seeed Studio's copyright notice.

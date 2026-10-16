@@ -1,0 +1,2456 @@
+#usda 1.0
+(
+    customLayerData = {
+        dictionary cameraSettings = {
+            dictionary Front = {
+                double3 position = (5, -0.07683172954327705, 1.168593260481868)
+                double radius = 0.5424264430999756
+            }
+            dictionary Perspective = {
+                double3 position = (1.7469874280968074, -2.6438968018194466, 1.4773606397657355)
+                double3 target = (1.0935525886303759, -2.0207966844728613, 1.2215024044976606)
+            }
+            dictionary Right = {
+                double3 position = (0.21279171717907028, -5, 1.167997293724006)
+                double radius = 0.3670602798461914
+            }
+            dictionary Top = {
+                double3 position = (0.12680847351728058, 1.0273027050440338, 5)
+                double radius = 0.954525089263916
+            }
+            string boundCamera = "/OmniverseKit_Persp"
+        }
+        dictionary omni_layer = {
+            string authoring_layer = "./G1_120s.usda"
+            dictionary locked = {
+            }
+            dictionary muteness = {
+            }
+        }
+        dictionary renderSettings = {
+        }
+    }
+    defaultPrim = "G1"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "G1" (
+    prepend apiSchemas = ["PhysicsArticulationRootAPI", "PhysxArticulationAPI"]
+    displayName = "G1"
+    variants = {
+        string Physics = "PhysX"
+        string Sensor = "Sensors"
+    }
+    prepend variantSets = ["Physics", "Sensor"]
+)
+{
+    bool physxArticulation:enabledSelfCollisions = 0
+    quatd xformOp:orient = (1, 0, 0, 0)
+    double3 xformOp:scale = (1, 1, 1)
+    double3 xformOp:translate = (0, 0, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+    over "base_link" (
+        delete apiSchemas = ["PhysicsArticulationRootAPI", "PhysxArticulationAPI"]
+    )
+    {
+        def PhysicsFixedJoint "FixedJoint"
+        {
+            rel physics:body1 = </G1/base_link>
+            float physics:breakForce = inf
+            float physics:breakTorque = inf
+            point3f physics:localPos0 = (0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, 0.21089745953470054)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        over "collisions"
+        {
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, 0.2109)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def Camera "Fisheye_Back_01" (
+            active = true
+        )
+        {
+            token cameraProjectionType = "fisheyePolynomial" (
+                allowedTokens = ["pinhole", "fisheyePolynomial", "fisheyeSpherical", "fisheyeKannalaBrandtK3", "fisheyeRadTanThinPrism", "omniDirectionalStereo"]
+            )
+            float2 clippingRange = (0.01, 10000000)
+            float focalLength = 18.147562
+            float focusDistance = 400
+            bool omni:kit:cameraLock = 1
+            custom uniform vector3d omni:kit:centerOfInterest = (0, 0, -400)
+            token visibility = "invisible"
+            quatd xformOp:orient = (0.49999999999999933, 0.5000000000000001, 0.5000000000000004, 0.5000000000000001)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (-0.30000000447034847, 0.057673270003865684, 1.0630543750437111)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def Camera "Fisheye_Back_02" (
+            active = true
+        )
+        {
+            token cameraProjectionType = "fisheyePolynomial" (
+                allowedTokens = ["pinhole", "fisheyePolynomial", "fisheyeSpherical", "fisheyeKannalaBrandtK3", "fisheyeRadTanThinPrism", "omniDirectionalStereo"]
+            )
+            float2 clippingRange = (0.01, 10000000)
+            float focalLength = 18.147562
+            float focusDistance = 400
+            bool omni:kit:cameraLock = 1
+            custom uniform vector3d omni:kit:centerOfInterest = (0, 0, -400)
+            token visibility = "invisible"
+            quatd xformOp:orient = (0.49999999999999933, 0.5000000000000001, 0.5000000000000004, 0.5000000000000001)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (-0.30000000447034836, -0.05767, 1.063054375043722)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+    }
+
+    over "body_link1" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+    }
+
+    over "body_link2" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+    }
+
+    over "arm_base_link" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+    }
+
+    over "arm_l_base_link" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+    }
+
+    over "arm_l_link1" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+    }
+
+    over "arm_l_link2" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+    }
+
+    over "arm_l_link3" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+    }
+
+    over "arm_l_link4" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+    }
+
+    over "arm_l_link5" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+    }
+
+    over "arm_l_link6" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+    }
+
+    over "arm_l_end_link" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+    }
+
+    over "gripper_l_base_link" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+        double3 xformOp:translate = (0.13099196553230286, 0.8965001106262207, 0.9535000324249268)
+
+        def "camera_stand" (
+            active = true
+            delete payload = @../A2D/camera_stand.usdc@
+            prepend payload = @./configuration/camera_stand.usdc@
+        )
+        {
+            quatf xformOp:orient = (0.5, -0.5, -0.5, -0.5)
+            float3 xformOp:scale = (0.1, 0.1, 0.1)
+            double3 xformOp:translate = (0, -6.569445909487825e-8, -0.023)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            over "World"
+            {
+                over "Geometry"
+                {
+                    over "tn__j0rhk0xq2jmKon6saP_0"
+                    {
+                        over "_________________________GB_FASTENER_SCREWS_HSHCS_M4X8_N_1" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "_________________________GB_FASTENER_SCREWS_HSHCS_M4X8_N_26" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "_________________________GB_FASTENER_SCREWS_HSHCS_M4X8_N_29" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "_________________________GB_FASTENER_SCREWS_HSHCS_M4X8_N_3" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "_________________________GB_FASTENER_SCREWS_HSHCS_M4X8_N_30" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "_________________________GB_FASTENER_SCREWS_HSHCS_M4X8_N_31" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "_________________________GB_FASTENER_SCREWS_HSHCS_M4X8_N_4" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "_________________________GB_FASTENER_SCREWS_HSHCS_M4X8_N_5" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "_________________________GB_FASTENER_SCREWS_HSHCS_M4X8_N_6" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "_________________________GB_FASTENER_SCREWS_HSHCS_M4X8_N_7" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "___________________405_____27"
+                        {
+                            over "________26_28"
+                            {
+                                over "Mesh_17"
+                                {
+                                    over "Mesh_17" (
+                                        prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxConvexHullCollisionAPI", "PhysicsMeshCollisionAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </G1/Looks/OmniPBR_01> (
+                                            bindMaterialAs = "weakerThanDescendants"
+                                        )
+                                        uniform token physics:approximation = "convexHull"
+                                        bool physics:collisionEnabled = 0
+                                    }
+                                }
+                            }
+                        }
+
+                        over "CTAG2F120S_0_00_______________________20241106_step_10"
+                        {
+                            over "NONE_22"
+                            {
+                                over "Mesh_13"
+                                {
+                                    over "Mesh_13" (
+                                        prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxConvexHullCollisionAPI", "PhysicsMeshCollisionAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </G1/Looks/material_black> (
+                                            bindMaterialAs = "weakerThanDescendants"
+                                        )
+                                        uniform token physics:approximation = "convexHull"
+                                        bool physics:collisionEnabled = 0
+                                    }
+                                }
+                            }
+
+                            over "NONE_11"
+                            {
+                                over "Mesh_2"
+                                {
+                                    over "Mesh_2" (
+                                        prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxConvexHullCollisionAPI", "PhysicsMeshCollisionAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </G1/Looks/OmniPBR_01> (
+                                            bindMaterialAs = "weakerThanDescendants"
+                                        )
+                                        uniform token physics:approximation = "convexHull"
+                                        bool physics:collisionEnabled = 0
+                                    }
+                                }
+                            }
+                        }
+
+                        over "D405____________________8"
+                        {
+                            over "NONE_9"
+                            {
+                                over "Mesh_1"
+                                {
+                                    over "Mesh_1" (
+                                        prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxConvexHullCollisionAPI", "PhysicsMeshCollisionAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </G1/Looks/OmniPBR> (
+                                            bindMaterialAs = "weakerThanDescendants"
+                                        )
+                                        uniform token physics:approximation = "convexHull"
+                                        bool physics:collisionEnabled = 0
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxConvexHullCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </G1/PhysicsMaterial_01> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+        }
+
+        def Camera "Left_Camera"
+        {
+            token cameraProjectionType = "pinhole" (
+                allowedTokens = ["pinhole", "fisheyePolynomial", "fisheyeSpherical", "fisheyeKannalaBrandtK3", "fisheyeRadTanThinPrism", "omniDirectionalStereo"]
+            )
+            float2 clippingRange = (0.01, 10000000)
+            float fisheyeResolutionBudget = 1.5
+            float focalLength = 1.93
+            float focusDistance = 400
+            float horizontalAperture = 3.48
+            bool omni:kit:cameraLock = 1
+            float p0 = -0.00036721907
+            float verticalAperture = 2.4
+            token visibility = "invisible"
+            quatd xformOp:orient = (0.2276527509665924, 0.9698432158349699, 0.06654065607906888, 0.0561311211788408)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0.018025112504729504, -0.07, 0.08)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+    }
+
+    over "gripper_l_inner_link1" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxConvexHullCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </G1/PhysicsMaterial_01> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+        }
+    }
+
+    over "gripper_l_inner_link3" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxConvexHullCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </G1/PhysicsMaterial_01> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+        }
+    }
+
+    over "gripper_l_inner_link4" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxConvexHullCollisionAPI", "PhysxConvexDecompositionCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </G1/PhysicsMaterial_01> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexDecomposition"
+            bool physics:collisionEnabled = 1
+        }
+    }
+
+    over "gripper_l_inner_link5" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI", "PhysxContactReportAPI"]
+    )
+    {
+        float physxContactReport:threshold = 0
+        bool physxRigidBody:disableGravity = 1
+        float physxRigidBody:sleepThreshold = 0
+        double3 xformOp:scale = (0.5, 1, 1)
+        double3 xformOp:translate = (0.133, 1.100955843925476, 0.9534998536109924)
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysxContactReportAPI", "MaterialBindingAPI", "PhysxConvexHullCollisionAPI"]
+            instanceable = false
+        )
+        {
+            rel material:binding = </G1/PhysicsMaterial> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            float physxContactReport:threshold = 0
+
+            over "Right_Pad_Link" (
+                active = true
+            )
+            {
+                over "mesh" (
+                    prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxConvexHullCollisionAPI", "PhysicsMeshCollisionAPI"]
+                )
+                {
+                    uniform token physics:approximation = "convexHull"
+                    bool physics:collisionEnabled = 1
+                }
+            }
+        }
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+    }
+
+    over "gripper_l_inner_link2" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxConvexHullCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </G1/PhysicsMaterial_01> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+        }
+    }
+
+    over "gripper_l_outer_link1" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxConvexHullCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </G1/PhysicsMaterial_01> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+        }
+    }
+
+    over "gripper_l_outer_link3" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxConvexHullCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </G1/PhysicsMaterial_01> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+        }
+    }
+
+    over "gripper_l_outer_link4" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxConvexHullCollisionAPI", "PhysxConvexDecompositionCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </G1/PhysicsMaterial_01> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexDecomposition"
+            bool physics:collisionEnabled = 1
+        }
+    }
+
+    over "gripper_l_outer_link5" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI", "PhysxContactReportAPI"]
+    )
+    {
+        float physxContactReport:threshold = 0
+        bool physxRigidBody:disableGravity = 1
+        float physxRigidBody:sleepThreshold = 0
+        double3 xformOp:scale = (0.5, 1, 1)
+        double3 xformOp:translate = (0.129, 1.100955843925476, 0.9534998536109924)
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysxContactReportAPI", "MaterialBindingAPI", "PhysxConvexHullCollisionAPI"]
+            instanceable = false
+        )
+        {
+            rel material:binding = </G1/PhysicsMaterial> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            float physxContactReport:threshold = 0
+
+            over "Left_Pad_Link" (
+                active = true
+            )
+            {
+                over "mesh" (
+                    prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxConvexHullCollisionAPI", "PhysicsMeshCollisionAPI"]
+                )
+                {
+                    uniform token physics:approximation = "convexHull"
+                    bool physics:collisionEnabled = 1
+                }
+            }
+        }
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+    }
+
+    over "gripper_l_outer_link2" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxConvexHullCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </G1/PhysicsMaterial_01> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+        }
+    }
+
+    over "gripper_l_center_link" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+    }
+
+    over "arm_r_base_link" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+    }
+
+    over "arm_r_link1" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+    }
+
+    over "arm_r_link2" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+    }
+
+    over "arm_r_link3" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+    }
+
+    over "arm_r_link4" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+    }
+
+    over "arm_r_link5" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+    }
+
+    over "arm_r_link6" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+    }
+
+    over "arm_r_end_link" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+    }
+
+    over "gripper_r_base_link" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxConvexHullCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </G1/PhysicsMaterial_01> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+        }
+
+        def "camera_stand" (
+            active = true
+            delete payload = @../A2D/camera_stand.usdc@
+            prepend payload = @./configuration/camera_stand.usdc@
+        )
+        {
+            token visibility = "inherited"
+            quatf xformOp:orient = (0.5000049, 0.50000197, -0.4999964, 0.49999675)
+            float3 xformOp:scale = (0.1, 0.1, 0.1)
+            double3 xformOp:translate = (5.189190800947152e-7, 0.00000492474487956418, -0.04381786469262117)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            over "World"
+            {
+                over "Geometry"
+                {
+                    over "tn__j0rhk0xq2jmKon6saP_0"
+                    {
+                        over "_________________________GB_FASTENER_SCREWS_HSHCS_M4X8_N_1" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "_________________________GB_FASTENER_SCREWS_HSHCS_M4X8_N_26" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "_________________________GB_FASTENER_SCREWS_HSHCS_M4X8_N_29" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "_________________________GB_FASTENER_SCREWS_HSHCS_M4X8_N_3" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "_________________________GB_FASTENER_SCREWS_HSHCS_M4X8_N_30" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "_________________________GB_FASTENER_SCREWS_HSHCS_M4X8_N_31" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "_________________________GB_FASTENER_SCREWS_HSHCS_M4X8_N_4" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "_________________________GB_FASTENER_SCREWS_HSHCS_M4X8_N_5" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "_________________________GB_FASTENER_SCREWS_HSHCS_M4X8_N_6" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "_________________________GB_FASTENER_SCREWS_HSHCS_M4X8_N_7" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "___________________405_____27"
+                        {
+                            matrix4d xformOp:transform = ( (0.0007608598306562324, -0.7101511890406217, 0.7040486979415248, 0), (-0.1736464573728907, 0.6932592348959272, 0.6994558643865088, 0), (-0.9848078481448914, -0.12278777161926381, -0.12278778660518164, 0), (998.50765308196, -21.681952752452617, 37.62800809710052, 1) )
+
+                            over "________26_28"
+                            {
+                                matrix4d xformOp:transform = ( (1.0000000001309797, 0, 0, 0), (0, 1, 0, 0), (0, 0, 0.9999999998690201, 0), (8.940696716308594e-8, 0, 0, 1) )
+
+                                over "Mesh_17"
+                                {
+                                    over "Mesh_17" (
+                                        prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxConvexHullCollisionAPI", "PhysicsMeshCollisionAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </G1/Looks/OmniPBR_01> (
+                                            bindMaterialAs = "weakerThanDescendants"
+                                        )
+                                        uniform token physics:approximation = "convexHull"
+                                        bool physics:collisionEnabled = 0
+                                        quatf xformOp:orient = (1, 0, 0, 0)
+                                        float3 xformOp:scale = (1, 1, 1)
+                                        double3 xformOp:translate = (0, 0, 0)
+                                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                    }
+                                }
+                            }
+                        }
+
+                        over "CTAG2F120S_0_00_______________________20241106_step_10"
+                        {
+                            matrix4d xformOp:transform = ( (0.0007607765076038081, -0.7101513750449172, 0.7040486030578254, 0), (0.9848077292466333, 0.12278764285396747, 0.12278782239022681, 0), (-0.17364642393411617, 0.6932591502577118, 0.6994560358462878, 0), (1041.2471520096708, -204.93468970400647, -57.75287712710144, 1) )
+
+                            over "NONE_22"
+                            {
+                                over "Mesh_13"
+                                {
+                                    over "Mesh_13" (
+                                        prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxConvexHullCollisionAPI", "PhysicsMeshCollisionAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </G1/Looks/material_black> (
+                                            bindMaterialAs = "weakerThanDescendants"
+                                        )
+                                        uniform token physics:approximation = "convexHull"
+                                        bool physics:collisionEnabled = 0
+                                    }
+                                }
+                            }
+
+                            over "NONE_11"
+                            {
+                                over "Mesh_2"
+                                {
+                                    over "Mesh_2" (
+                                        prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxConvexHullCollisionAPI", "PhysicsMeshCollisionAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </G1/Looks/OmniPBR_01> (
+                                            bindMaterialAs = "weakerThanDescendants"
+                                        )
+                                        uniform token physics:approximation = "convexHull"
+                                        bool physics:collisionEnabled = 0
+                                    }
+                                }
+                            }
+                        }
+
+                        over "D405____________________8"
+                        {
+                            matrix4d xformOp:transform = ( (0.0007608680398119594, -0.7101512607778375, 0.7040486848280502, 0), (0.5877838382814996, -0.5692706141175358, -0.5748401765355927, 0), (0.8090176655731417, 0.4142657965086494, 0.41698227456255293, 0), (1004.0982292538332, -76.8850376981319, -17.800996572086774, 1) )
+
+                            over "NONE_9"
+                            {
+                                over "Mesh_1"
+                                {
+                                    over "Mesh_1" (
+                                        prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxConvexHullCollisionAPI", "PhysicsMeshCollisionAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </G1/Looks/OmniPBR> (
+                                            bindMaterialAs = "weakerThanDescendants"
+                                        )
+                                        uniform token physics:approximation = "convexHull"
+                                        bool physics:collisionEnabled = 0
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (2.3592239273284576e-15, -2.5424107263916085e-14, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def Camera "Right_Camera"
+        {
+            token cameraProjectionType = "pinhole" (
+                allowedTokens = ["pinhole", "fisheyePolynomial", "fisheyeSpherical", "fisheyeKannalaBrandtK3", "fisheyeRadTanThinPrism", "omniDirectionalStereo"]
+            )
+            float2 clippingRange = (0.01, 10000000)
+            float fisheyeResolutionBudget = 1.5
+            float focalLength = 1.93
+            float focusDistance = 400
+            float horizontalAperture = 3.48
+            bool omni:kit:cameraLock = 0
+            float p0 = -0.00036721907
+            float verticalAperture = 2.4
+            token visibility = "invisible"
+            quatd xformOp:orient = (0.056137595774663325, 0.06653778231951207, -0.9698432830075834, -0.22765170825125447)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (-0.02248, 0.08391, 0.06263)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def PhysicsFixedJoint "FixedJoint" (
+            active = false
+        )
+        {
+            rel physics:body1 = </G1/gripper_r_base_link>
+            float physics:breakForce = inf
+            float physics:breakTorque = inf
+            point3f physics:localPos0 = (0.13100028, -0.8959999, 0.9535001)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.7071068, 0.7071067, 1.6705599e-7, -2.8315927e-9)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+    }
+
+    over "gripper_r_inner_link1" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        float physics:mass = 0.01
+        bool physxRigidBody:disableGravity = 1
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxConvexHullCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </G1/PhysicsMaterial_01> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+        }
+    }
+
+    over "gripper_r_inner_link3" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        float physics:mass = 0.01
+        bool physxRigidBody:disableGravity = 1
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxConvexHullCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </G1/PhysicsMaterial_01> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+        }
+    }
+
+    over "gripper_r_inner_link4" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        float physics:mass = 0.01
+        bool physxRigidBody:disableGravity = 1
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxConvexHullCollisionAPI", "PhysxConvexDecompositionCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </G1/PhysicsMaterial_01> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexDecomposition"
+            bool physics:collisionEnabled = 1
+        }
+    }
+
+    over "gripper_r_inner_link5" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI", "PhysxContactReportAPI"]
+    )
+    {
+        float physics:mass = 0.005
+        float physxContactReport:threshold = 0
+        bool physxRigidBody:disableGravity = 1
+        float physxRigidBody:sleepThreshold = 0
+        double3 xformOp:scale = (0.5, 1, 1)
+        double3 xformOp:translate = (0.133, -1.1030553579330444, 0.9535001516342163)
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysxContactReportAPI", "MaterialBindingAPI", "PhysxConvexHullCollisionAPI"]
+            instanceable = false
+        )
+        {
+            rel material:binding = </G1/PhysicsMaterial> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            float physxContactReport:threshold = 0
+
+            over "Right_Pad_Link" (
+                active = true
+            )
+            {
+                over "mesh" (
+                    prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxConvexHullCollisionAPI", "PhysicsMeshCollisionAPI"]
+                )
+                {
+                    uniform token physics:approximation = "convexHull"
+                    bool physics:collisionEnabled = 1
+                }
+            }
+        }
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+    }
+
+    over "gripper_r_inner_link2" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        float physics:mass = 0.01
+        bool physxRigidBody:disableGravity = 1
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxConvexHullCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </G1/PhysicsMaterial_01> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+        }
+    }
+
+    over "gripper_r_outer_link1" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        float physics:mass = 0.01
+        bool physxRigidBody:disableGravity = 1
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxConvexHullCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </G1/PhysicsMaterial_01> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+        }
+    }
+
+    over "gripper_r_outer_link3" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        float physics:mass = 0.01
+        bool physxRigidBody:disableGravity = 1
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxConvexHullCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </G1/PhysicsMaterial_01> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+        }
+    }
+
+    over "gripper_r_outer_link4" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        float physics:mass = 0.01
+        bool physxRigidBody:disableGravity = 1
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxConvexHullCollisionAPI", "PhysxConvexDecompositionCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </G1/PhysicsMaterial_01> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexDecomposition"
+            bool physics:collisionEnabled = 1
+        }
+    }
+
+    over "gripper_r_outer_link5" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI", "PhysxContactReportAPI"]
+    )
+    {
+        float physics:mass = 0.005
+        float physxContactReport:threshold = 0
+        bool physxRigidBody:disableGravity = 1
+        float physxRigidBody:sleepThreshold = 0
+        quatd xformOp:orient = (1.5645156893930741e-9, -1.73166368504932e-7, 8.934783859161806e-8, 0.999999999999981)
+        double3 xformOp:scale = (0.5, 1, 1)
+        double3 xformOp:translate = (0.129, -1.1030553579330444, 0.9535000920295715)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysxContactReportAPI", "MaterialBindingAPI", "PhysxConvexHullCollisionAPI"]
+            instanceable = false
+        )
+        {
+            rel material:binding = </G1/PhysicsMaterial> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            float physxContactReport:threshold = 0
+
+            over "Left_Pad_Link" (
+                active = true
+            )
+            {
+                over "mesh" (
+                    prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxConvexHullCollisionAPI", "PhysicsMeshCollisionAPI"]
+                )
+                {
+                    uniform token physics:approximation = "convexHull"
+                    bool physics:collisionEnabled = 1
+                }
+            }
+        }
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+    }
+
+    over "gripper_r_outer_link2" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        float physics:mass = 0.01
+        bool physxRigidBody:disableGravity = 1
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+
+        over "collisions" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxConvexHullCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </G1/PhysicsMaterial_01> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+        }
+    }
+
+    over "gripper_r_center_link" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+    }
+
+    over "head_link1" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+        }
+    }
+
+    over "head_link2" (
+        prepend apiSchemas = ["PhysxRigidBodyAPI"]
+    )
+    {
+        bool physxRigidBody:disableGravity = 1
+        token visibility = "inherited"
+        quatd xformOp:orient = (0.7071067094802858, -0.7071068528928021, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0.18124, 2.6285648768720167e-8, 1.14957)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "visuals" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            uniform token physics:approximation = "none"
+            bool physics:collisionEnabled = 0
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0.04270470988363556, -0.024316554729960638, -4.931784555215874e-9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def Camera "Head_Camera" (
+            active = true
+        )
+        {
+            token cameraSensorType = "camera" (
+                allowedTokens = ["camera", "radar", "lidar", "rtxsensor"]
+            )
+            float2 clippingRange = (0.01, 10000000)
+            float focalLength = 1.93
+            float focusDistance = 400
+            float horizontalAperture = 3.896
+            bool omni:kit:cameraLock = 1
+            float verticalAperture = 2.453
+            token visibility = "invisible"
+            quatd xformOp:orient = (-0.006392759553277411, -0.7037240047258977, 0.0019551239234661994, 0.7104419999467111)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0.09038599998285587, -0.0354072226255131, -0.01678286722381183)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def Camera "Top_Camera" (
+            active = true
+        )
+        {
+            token cameraProjectionType = "fisheyePolynomial" (
+                allowedTokens = ["pinhole", "fisheyePolynomial", "fisheyeSpherical", "fisheyeKannalaBrandtK3", "fisheyeRadTanThinPrism", "omniDirectionalStereo"]
+            )
+            float2 clippingRange = (0.01, 10000000)
+            float focalLength = 1.93
+            float focusDistance = 400
+            float horizontalAperture = 3.896
+            bool omni:kit:cameraLock = 1
+            float verticalAperture = 2.453
+            token visibility = "invisible"
+            quatd xformOp:orient = (-0.18736826613406823, -0.6818266303164756, -0.1873654373843812, 0.681835590088221)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0.10389557159845111, -0.08107920413021641, -0.0000015304425758569836)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def Camera "Fisheye_Camera_01" (
+            active = true
+        )
+        {
+            token cameraProjectionType = "fisheyePolynomial" (
+                allowedTokens = ["pinhole", "fisheyePolynomial", "fisheyeSpherical", "fisheyeKannalaBrandtK3", "fisheyeRadTanThinPrism", "omniDirectionalStereo"]
+            )
+            float2 clippingRange = (0.01, 10000000)
+            float focalLength = 1.93
+            float focusDistance = 400
+            float fthetaPolyB = 0.00245
+            float fthetaPolyC = 0
+            float horizontalAperture = 3.896
+            bool omni:kit:cameraLock = 1
+            float verticalAperture = 2.453
+            token visibility = "invisible"
+            quatd xformOp:orient = (0.0751616554826484, 0.9377050893657665, 0.03061320730933683, -0.33782054771858294)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0.07625006802520964, 0.01963027862573452, 0.047878739499306)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def Camera "Fisheye_Camera_02" (
+            active = true
+        )
+        {
+            token cameraProjectionType = "fisheyePolynomial" (
+                allowedTokens = ["pinhole", "fisheyePolynomial", "fisheyeSpherical", "fisheyeKannalaBrandtK3", "fisheyeRadTanThinPrism", "omniDirectionalStereo"]
+            )
+            float2 clippingRange = (0.01, 10000000)
+            float focalLength = 1.93
+            float focusDistance = 400
+            float fthetaPolyB = 0.00245
+            float fthetaPolyC = 0
+            float horizontalAperture = 3.896
+            bool omni:kit:cameraLock = 1
+            float verticalAperture = 2.453
+            token visibility = "invisible"
+            quatd xformOp:orient = (-0.07386098599114498, -0.35900989056451804, -0.1796585020908458, 0.9128960925821419)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0.0762488897231273, 0.019629516716955786, -0.05772210537481481)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+    }
+
+    over "joints"
+    {
+        over "idx01_body_joint1"
+        {
+            float drive:linear:physics:damping = 1000
+            float drive:linear:physics:maxForce = inf
+            float drive:linear:physics:stiffness = 10000
+            float state:linear:physics:position = 0
+            float state:linear:physics:velocity = 0
+        }
+
+        over "idx02_body_joint2"
+        {
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:stiffness = 10000
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "idx11_head_joint1"
+        {
+            float drive:angular:physics:damping = 50
+            float drive:angular:physics:stiffness = 500
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "idx12_head_joint2"
+        {
+            float drive:angular:physics:damping = 50
+            float drive:angular:physics:stiffness = 500
+            float drive:angular:physics:targetPosition = 0
+            float physics:upperLimit = 60
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "idx21_arm_l_joint1"
+        {
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 10000
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            float physxJoint:maxJointVelocity = 1000000
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "idx61_arm_r_joint1"
+        {
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 10000
+            uniform token drive:angular:physics:type = "force"
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            float physxJoint:maxJointVelocity = 100000000
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "idx22_arm_l_joint2"
+        {
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 10000
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            float physxJoint:maxJointVelocity = 1000000
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "idx62_arm_r_joint2"
+        {
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 10000
+            uniform token drive:angular:physics:type = "force"
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            float physxJoint:maxJointVelocity = 100000000
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "idx23_arm_l_joint3"
+        {
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 10000
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            float physxJoint:maxJointVelocity = 1000000
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "idx63_arm_r_joint3"
+        {
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 10000
+            uniform token drive:angular:physics:type = "force"
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            float physxJoint:maxJointVelocity = 100000000
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "idx24_arm_l_joint4"
+        {
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 10000
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            float physxJoint:maxJointVelocity = 1000000
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "idx64_arm_r_joint4"
+        {
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 10000
+            uniform token drive:angular:physics:type = "force"
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            float physxJoint:maxJointVelocity = 100000000
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "idx25_arm_l_joint5"
+        {
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 10000
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            float physxJoint:maxJointVelocity = 1000000
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "idx65_arm_r_joint5"
+        {
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 10000
+            uniform token drive:angular:physics:type = "force"
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            float physxJoint:maxJointVelocity = 100000000
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "idx26_arm_l_joint6"
+        {
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 10000
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            float physxJoint:maxJointVelocity = 1000000
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "idx66_arm_r_joint6"
+        {
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 10000
+            uniform token drive:angular:physics:type = "force"
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            float physxJoint:maxJointVelocity = 100000000
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "idx27_arm_l_joint7"
+        {
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 10000
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            float physxJoint:maxJointVelocity = 1000000
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "idx67_arm_r_joint7"
+        {
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 10000
+            uniform token drive:angular:physics:type = "force"
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            float physxJoint:maxJointVelocity = 100000000
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "idx31_gripper_l_inner_joint1" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysxMimicJointAPI:rotX"]
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxMimicJointAPI:rotX"]
+        )
+        {
+            float drive:angular:physics:damping = 10
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 100
+            float drive:angular:physics:targetPosition = 0
+            point3f physics:localPos0 = (0.032553025, 0, 0.10643995)
+            point3f physics:localPos1 = (0, 0.0025, 0)
+            quatf physics:localRot0 = (6.123234e-17, -4.3297803e-17, 0.70710677, 0.70710677)
+            quatf physics:localRot1 = (6.123234e-17, -6.123234e-17, 1, 6.123234e-17)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 57.353077
+            float physxJoint:maxJointVelocity = 1000000
+            float physxMimicJoint:rotX:gearing = -1
+            rel physxMimicJoint:rotX:referenceJoint = </G1/joints/idx41_gripper_l_outer_joint1>
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over PhysicsSphericalJoint "idx39_gripper_l_inner_joint2" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:stiffness = 0
+            rel physics:body0 = </G1/gripper_l_inner_link2>
+            rel physics:body1 = </G1/gripper_l_base_link>
+            uniform bool physics:excludeFromArticulation = 1
+            point3f physics:localPos0 = (-0.0000015220292, 0.002738943, 0.000003110959)
+            point3f physics:localPos1 = (0.017008025, 9.0782144e-8, 0.12213885)
+            quatf physics:localRot0 = (0.99999976, 0.0005679891, -0.00027769184, 0.00027769184)
+            quatf physics:localRot1 = (0.70710653, 0.707107, -6.181726e-8, -4.6792385e-24)
+            float physxJoint:maxJointVelocity = 240
+        }
+
+        over "idx41_gripper_l_outer_joint1" (
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            float drive:angular:physics:damping = 10
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 100
+            float drive:angular:physics:targetPosition = 0
+            uniform token drive:angular:physics:type = "acceleration"
+            point3f physics:localPos0 = (-0.032552976, 0, 0.10659993)
+            point3f physics:localPos1 = (0, 0.0025, 0)
+            quatf physics:localRot0 = (0.70710677, 0.70710677, 0, 0)
+            quatf physics:localRot1 = (6.123234e-17, -6.123234e-17, 1, 6.123234e-17)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 57.353077
+            float physxJoint:maxJointVelocity = 180
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over PhysicsSphericalJoint "idx49_gripper_l_outer_joint2" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:stiffness = 0
+            rel physics:body0 = </G1/gripper_l_outer_link2>
+            rel physics:body1 = </G1/gripper_l_base_link>
+            uniform bool physics:excludeFromArticulation = 1
+            point3f physics:localPos0 = (0.000008061773, 0.002799511, -1.1970847e-7)
+            point3f physics:localPos1 = (-0.017, 0, 0.122199416)
+            quatf physics:localRot0 = (8.7255016e-11, 4.364068e-11, 1, 3.3207758e-7)
+            quatf physics:localRot1 = (0.7071068, 0.7071067, 3.081246e-8, 3.0876617e-8)
+            float physxJoint:maxJointVelocity = 240
+        }
+
+        over PhysicsRevoluteJoint "idx71_gripper_r_inner_joint1" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular", "PhysxMimicJointAPI:rotX"]
+            prepend apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysxMimicJointAPI:rotX"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 0
+            float drive:angular:physics:stiffness = 0
+            float drive:angular:physics:targetPosition = 0
+            uniform token drive:angular:physics:type = ""
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 57.353077
+            float physxJoint:maxJointVelocity = 1000000
+            float physxMimicJoint:rotX:dampingRatio = 0
+            float physxMimicJoint:rotX:gearing = -1
+            float physxMimicJoint:rotX:naturalFrequency = 0
+            rel physxMimicJoint:rotX:referenceJoint = </G1/joints/idx81_gripper_r_outer_joint1>
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over PhysicsSphericalJoint "idx79_gripper_r_inner_joint2" (
+            active = true
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 0
+            float drive:angular:physics:stiffness = 0
+            rel physics:body0 = </G1/gripper_r_inner_link2>
+            rel physics:body1 = </G1/gripper_r_base_link>
+            uniform bool physics:excludeFromArticulation = 1
+            point3f physics:localPos0 = (1.4901161e-8, 0, 3.8857806e-15)
+            point3f physics:localPos1 = (0.017000005, -1.8698822e-8, 0.12199998)
+            quatf physics:localRot0 = (0.7071068, 4.3426824e-15, 1.9354809e-15, 0.7071067)
+            quatf physics:localRot1 = (0.5000002, 0.4999999, -0.49999982, 0.5000001)
+            float physics:lowerLimit = -inf
+            float physics:upperLimit = inf
+            float physxJoint:maxJointVelocity = 1000000
+        }
+
+        over "idx81_gripper_r_outer_joint1" (
+            delete apiSchemas = ["PhysxMimicJointAPI:rotX"]
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            float drive:angular:physics:damping = 10
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 100
+            float drive:angular:physics:targetPosition = 0
+            float drive:angular:physics:targetVelocity = 0
+            uniform token drive:angular:physics:type = "acceleration"
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 57.353077
+            float physxJoint:maxJointVelocity = 180
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over PhysicsSphericalJoint "idx89_gripper_r_outer_joint2" (
+            active = true
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 0
+            float drive:angular:physics:stiffness = 0
+            rel physics:body0 = </G1/gripper_r_outer_link2>
+            rel physics:body1 = </G1/gripper_r_base_link>
+            uniform bool physics:excludeFromArticulation = 1
+            point3f physics:localPos0 = (8.940701e-8, 5.9604645e-7, -1.1920936e-7)
+            point3f physics:localPos1 = (-0.017000072, -1.2909713e-7, 0.122000575)
+            quatf physics:localRot0 = (-1.5412846e-15, 0.70710677, 0.70710677, -2.1260582e-15)
+            quatf physics:localRot1 = (0.5000001, 0.49999988, -0.49999985, 0.5000002)
+            float physics:lowerLimit = -inf
+            float physics:upperLimit = inf
+            float physxJoint:maxJointVelocity = 1000000
+        }
+
+        over "idx32_gripper_l_inner_joint3" (
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 0.05
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 180
+            float physxJoint:maxJointVelocity = 1000000
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "idx42_gripper_l_outer_joint3" (
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 0.05
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 180
+            float physxJoint:maxJointVelocity = 1000000
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "idx72_gripper_r_inner_joint3" (
+            active = true
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysxMimicJointAPI:rotX"]
+            prepend apiSchemas = ["PhysxJointAPI", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 0.05
+            uniform token drive:angular:physics:type = "force"
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 180
+            float physxJoint:maxJointVelocity = 1000000
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "idx82_gripper_r_outer_joint3" (
+            active = true
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysxMimicJointAPI:rotX"]
+            prepend apiSchemas = ["PhysxJointAPI", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 0.05
+            uniform token drive:angular:physics:type = "force"
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 180
+            float physxJoint:maxJointVelocity = 1000000
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "idx33_gripper_l_inner_joint4" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular"]
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxMimicJointAPI:rotX"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 0.001
+            float drive:angular:physics:targetPosition = 0
+            quatf physics:localRot0 = (0.70710677, 0, 0, 0.70710677)
+            quatf physics:localRot1 = (0.70710677, 0, 0, 0.70710677)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 57.29578
+            float physxJoint:maxJointVelocity = 1000000
+            float physxMimicJoint:rotX:gearing = -1
+            rel physxMimicJoint:rotX:referenceJoint = </G1/joints/idx31_gripper_l_inner_joint1>
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "idx43_gripper_l_outer_joint4" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysxMimicJointAPI:rotX"]
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxMimicJointAPI:rotX"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 0.001
+            float drive:angular:physics:targetPosition = 0
+            quatf physics:localRot0 = (0.70710677, 0, 0, 0.70710677)
+            quatf physics:localRot1 = (0.70710677, 0, 0, 0.70710677)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 57.29578
+            float physxJoint:maxJointVelocity = 1000000
+            float physxMimicJoint:rotX:gearing = -1
+            rel physxMimicJoint:rotX:referenceJoint = </G1/joints/idx41_gripper_l_outer_joint1>
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "idx73_gripper_r_inner_joint4" (
+            active = true
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysxMimicJointAPI:rotX"]
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxMimicJointAPI:rotX"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 0.001
+            float drive:angular:physics:targetPosition = 0
+            uniform token drive:angular:physics:type = "force"
+            quatf physics:localRot0 = (0.70710677, 0, 0, 0.70710677)
+            quatf physics:localRot1 = (0.70710677, 0, 0, 0.70710677)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 57.29578
+            float physxJoint:maxJointVelocity = 1000000
+            float physxMimicJoint:rotX:gearing = -1
+            rel physxMimicJoint:rotX:referenceJoint = </G1/joints/idx71_gripper_r_inner_joint1>
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "idx83_gripper_r_outer_joint4" (
+            active = true
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysxMimicJointAPI:rotX"]
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxMimicJointAPI:rotX"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 0.001
+            float drive:angular:physics:targetPosition = 0
+            uniform token drive:angular:physics:type = "force"
+            quatf physics:localRot0 = (0.70710677, 0, 0, 0.70710677)
+            quatf physics:localRot1 = (0.70710677, 0, 0, 0.70710677)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 57.29578
+            float physxJoint:maxJointVelocity = 1000000
+            float physxMimicJoint:rotX:gearing = -1
+            rel physxMimicJoint:rotX:referenceJoint = </G1/joints/idx81_gripper_r_outer_joint1>
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "idx34_gripper_l_inner_joint5" (
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            point3f physics:localPos0 = (-0.02113, 0.04430789, 2.5275142e-7)
+            point3f physics:localPos1 = (0, 0.000013734884, -0.00003832738)
+            quatf physics:localRot0 = (0.70710695, 1.7355078e-9, 0.7071066, 2.4356248e-10)
+            quatf physics:localRot1 = (0.70710695, 1.7355078e-9, 0.7071066, 2.4356248e-10)
+            float physxJoint:maxJointVelocity = 240
+        }
+
+        over "idx44_gripper_l_outer_joint5" (
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            point3f physics:localPos0 = (-0.02113, 0.044306, 0)
+            float physxJoint:maxJointVelocity = 240
+        }
+
+        over "idx74_gripper_r_inner_joint5" (
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            point3f physics:localPos0 = (-0.02113, 0.044306, 0)
+            float physxJoint:maxJointVelocity = 1000000
+        }
+
+        over "idx84_gripper_r_outer_joint5" (
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            point3f physics:localPos0 = (-0.02113, 0.044306, 0)
+            float physxJoint:maxJointVelocity = 1000000
+        }
+
+        over "idx92_gripper_r_center_joint" (
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            float physxJoint:maxJointVelocity = 240
+        }
+
+        over "idx52_gripper_l_center_joint" (
+            prepend apiSchemas = ["PhysxJointAPI"]
+        )
+        {
+            float physxJoint:maxJointVelocity = 240
+        }
+    }
+
+    def Material "PhysicsMaterial" (
+        prepend apiSchemas = ["PhysicsMaterialAPI", "PhysxMaterialAPI"]
+    )
+    {
+        float physics:dynamicFriction = 1
+        float physics:restitution = 0.1
+        float physics:staticFriction = 1
+        uniform token physxMaterial:frictionCombineMode = "max"
+    }
+
+    over "Looks"
+    {
+        over "Black_002"
+        {
+            over "Black_002"
+            {
+                float inputs:reflection_roughness_constant = 0.29999998
+            }
+        }
+
+        def Material "OmniPBR"
+        {
+            token outputs:mdl:displacement.connect = </G1/Looks/OmniPBR/Shader.outputs:out>
+            token outputs:mdl:surface.connect = </G1/Looks/OmniPBR/Shader.outputs:out>
+            token outputs:mdl:volume.connect = </G1/Looks/OmniPBR/Shader.outputs:out>
+
+            def Shader "Shader"
+            {
+                uniform token info:implementationSource = "sourceAsset"
+                uniform asset info:mdl:sourceAsset = @OmniPBR.mdl@
+                uniform token info:mdl:sourceAsset:subIdentifier = "OmniPBR"
+                float inputs:albedo_brightness = 1
+                color3f inputs:diffuse_color_constant = (0.01930499, 0.019230453, 0.019230453)
+                float inputs:reflection_roughness_constant = 0.14
+                token outputs:out (
+                    renderType = "material"
+                )
+            }
+        }
+
+        def Material "OmniPBR_01"
+        {
+            token outputs:mdl:displacement.connect = </G1/Looks/OmniPBR_01/Shader.outputs:out>
+            token outputs:mdl:surface.connect = </G1/Looks/OmniPBR_01/Shader.outputs:out>
+            token outputs:mdl:volume.connect = </G1/Looks/OmniPBR_01/Shader.outputs:out>
+
+            def Shader "Shader"
+            {
+                uniform token info:implementationSource = "sourceAsset"
+                uniform asset info:mdl:sourceAsset = @OmniPBR.mdl@
+                uniform token info:mdl:sourceAsset:subIdentifier = "OmniPBR"
+                color3f inputs:diffuse_color_constant = (0.721, 0.721, 0.721)
+                float inputs:metallic_constant = 1
+                float inputs:reflection_roughness_constant = 0.28
+                token outputs:out (
+                    renderType = "material"
+                )
+            }
+        }
+    }
+
+    over "loop_joints"
+    {
+        over PhysicsRevoluteJoint "idx53_gripper_l_outer_joint0" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular", "PhysxJointAPI"]
+        )
+        {
+            float drive:angular:physics:maxForce = inf
+            uniform token physics:axis = "Z"
+            uniform bool physics:excludeFromArticulation = 0
+            quatf physics:localRot0 = (0.70710677, 0, 0, -0.70710677)
+            quatf physics:localRot1 = (0.70710677, 0, 0, -0.70710677)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 0
+            float physxJoint:maxJointVelocity = 1000000
+        }
+
+        over PhysicsRevoluteJoint "idx54_gripper_l_inner_joint0" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular", "PhysxJointAPI"]
+        )
+        {
+            float drive:angular:physics:maxForce = inf
+            uniform token physics:axis = "Z"
+            uniform bool physics:excludeFromArticulation = 0
+            quatf physics:localRot0 = (0.70710677, 0, 0, -0.70710677)
+            quatf physics:localRot1 = (0.70710677, 0, 0, -0.70710677)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 0
+            float physxJoint:maxJointVelocity = 1000000
+        }
+
+        over PhysicsRevoluteJoint "idx93_gripper_r_outer_joint0" (
+            active = true
+            delete apiSchemas = ["PhysicsDriveAPI:angular"]
+            prepend apiSchemas = ["PhysxJointAPI", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 0
+            uniform token physics:axis = "Z"
+            uniform bool physics:excludeFromArticulation = 0
+            quatf physics:localRot0 = (0.70710677, 0, 0, -0.70710677)
+            quatf physics:localRot1 = (0.70710677, 0, 0, -0.70710677)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 0
+            float physxJoint:maxJointVelocity = 1000000
+        }
+
+        over PhysicsRevoluteJoint "idx94_gripper_r_inner_joint0" (
+            active = true
+            delete apiSchemas = ["PhysicsDriveAPI:angular"]
+            prepend apiSchemas = ["PhysxJointAPI", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:maxForce = inf
+            float drive:angular:physics:stiffness = 0
+            uniform token physics:axis = "Z"
+            uniform bool physics:excludeFromArticulation = 0
+            quatf physics:localRot0 = (0.70710677, 0, 0, -0.70710677)
+            quatf physics:localRot1 = (0.70710677, 0, 0, -0.70710677)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 0
+            float physxJoint:maxJointVelocity = 1000000
+        }
+    }
+
+    def Material "PhysicsMaterial_01" (
+        prepend apiSchemas = ["PhysicsMaterialAPI"]
+    )
+    {
+        float physics:restitution = 0.1
+    }
+    variantSet "Physics" = {
+        "None" (
+            prepend references = @./configuration/G1_120s_base.usd@
+        ) {
+            over "joints" (
+                active = false
+            )
+            {
+            }
+
+            over "loop_joints" (
+                active = false
+            )
+            {
+            }
+
+        }
+        "PhysX" (
+            prepend payload = @./configuration/G1_120s_physics.usd@
+        ) {
+
+        }
+    }
+    variantSet "Sensor" = {
+        "None" {
+
+        }
+        "Sensors" (
+            prepend payload = @./configuration/G1_120s_sensor.usd@
+        ) {
+
+        }
+    }
+}
+

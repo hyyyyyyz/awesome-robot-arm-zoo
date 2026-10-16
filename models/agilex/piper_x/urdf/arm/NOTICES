@@ -1,0 +1,4 @@
+URDF entry and all copied mesh/material/texture dependencies from piper_x/urdf/piper_x_description.urdf
+Source: https://github.com/agilexrobotics/agx_arm_urdf.git
+Revision: a68b8e876a2c6fcb0ecee7a7943129e4d48dd864
+Resource paths are localized; physical definitions retain their upstream values.

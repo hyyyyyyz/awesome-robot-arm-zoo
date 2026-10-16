@@ -1,0 +1,27 @@
+{
+  "entry": "models/trossen/stationary_ai/mjcf/stationary_ai/stationary_ai.xml",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "Native MJCF loaded in MuJoCo",
+  "pose": "keyframe: home",
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 3.1805573746010114,
+    "lookat": [
+      -0.04741937707786059,
+      -0.017284692940410018,
+      0.383480610663701
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    212,
+    85,
+    430,
+    340
+  ]
+}

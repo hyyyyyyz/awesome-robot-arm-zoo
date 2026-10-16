@@ -1,0 +1,5 @@
+Reachy 2 robot description
+Source: Pollen Robotics reachy2_mujoco, revision f6d8284e812d3b96b557e2e844d55bd09d6e3ee6
+Licensed under Apache License 2.0; see LICENSE.
+
+Local preparation: URDF simulator import hints are omitted. The MJCF robot entry assembles the upstream robot subtree and definitions, with mesh references relative to the format directory.

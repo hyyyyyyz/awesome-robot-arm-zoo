@@ -1,0 +1,27 @@
+{
+  "entry": "models/the_robot_studio/so101/mjcf/so101_new_calib.xml",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "Native MJCF loaded in MuJoCo",
+  "pose": "default qpos0",
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 0.5520930904895067,
+    "lookat": [
+      0.21585630453400173,
+      0.01093335818857527,
+      0.16760782095668764
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    174,
+    115,
+    479,
+    306
+  ]
+}

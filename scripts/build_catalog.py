@@ -74,7 +74,7 @@ def update_brand(path: Path, models: list[Model]) -> None:
     headers = cells(old_rows[0])
     replaced = {
         "Preview", "Model", "Model / assembly", "Format", "Included formats",
-        "Entry", "Native entries", "Documentation", "Format notes", "Model documentation",
+        "Entry", "Native entries", "Documentation", "Format notes", "Model documentation", "Formats",
     }
     extra_columns = [i for i, name in enumerate(headers) if name not in replaced]
     extra_values = {}
@@ -109,8 +109,8 @@ def update_brand(path: Path, models: list[Model]) -> None:
 
 def update_root(brands: dict[str, list[Model]], names: dict[str, str]) -> None:
     headers = {
-        "README.md": "| Brand | Models | Formats |\n|---|---:|---|",
-        "README_CN.md": "| 品牌 | 模型数 | 格式 |\n|---|---:|---|",
+        "README.md": "| Brand / project | Models | Formats |\n|---|---:|---|",
+        "README_CN.md": "| 品牌 / 项目 | 模型数 | 格式 |\n|---|---:|---|",
     }
     rows = []
     for brand, models in brands.items():

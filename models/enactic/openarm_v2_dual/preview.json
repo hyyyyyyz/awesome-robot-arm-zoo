@@ -1,0 +1,27 @@
+{
+  "entry": "models/enactic/openarm_v2_dual/mjcf/openarm_bimanual.xml",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "Native MJCF loaded in MuJoCo",
+  "pose": "default qpos0",
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 1.2581139812744204,
+    "lookat": [
+      0.04635120690874517,
+      -0.07241835250260542,
+      -0.2299373734246976
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    252,
+    82,
+    392,
+    352
+  ]
+}

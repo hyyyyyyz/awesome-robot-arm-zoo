@@ -1,25 +1,16 @@
 {
-  "entry": "models/trossen/wx250s/urdf/wx250s.urdf",
+  "entry": "models/trossen/wx250s/mjcf/wx250s.xml",
   "renderer": "MuJoCo 3.16.0",
-  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
-  "pose": {
-    "waist": 0.0,
-    "shoulder": 0.0,
-    "elbow": 0.0,
-    "forearm_roll": 0.0,
-    "wrist_angle": 0.0,
-    "wrist_rotate": 0.0,
-    "gripper": 0.0,
-    "left_finger": 0.015
-  },
+  "method": "Native MJCF loaded in MuJoCo",
+  "pose": "keyframe: home",
   "camera": {
     "azimuth": 135.0,
     "elevation": -25.0,
-    "distance": 0.8567682078906468,
+    "distance": 0.8310968244961874,
     "lookat": [
-      0.20172762837154623,
-      0.04155022933624819,
-      0.23506849218895448
+      0.014962619572563896,
+      0.02834621136366977,
+      0.15984113061510657
     ]
   },
   "image": "preview.png",
@@ -28,9 +19,9 @@
     480
   ],
   "robot_pixel_bounds": [
-    176,
-    109,
-    465,
-    319
+    190,
+    100,
+    441,
+    330
   ]
 }

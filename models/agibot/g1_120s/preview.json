@@ -1,0 +1,27 @@
+{
+  "entry": "models/agibot/g1_120s/usd/robot.usda",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "USD composed visual meshes at authored transforms rendered in a static MuJoCo scene",
+  "pose": "authored USD transforms",
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 3.067929102345504,
+    "lookat": [
+      0.021222732824215385,
+      -0.16690432883117823,
+      0.7095199074790628
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    182,
+    101,
+    458,
+    330
+  ]
+}

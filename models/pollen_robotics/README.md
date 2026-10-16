@@ -8,6 +8,7 @@ Models and resources are extracted from the linked official manufacturer reposit
 
 | Preview | Model / assembly | Native entries |
 |---|---|---|
+| [<img src="reachy2/preview.png" width="240" alt="Pollen Robotics Reachy 2 model preview">](reachy2/README.md) | [Pollen Robotics Reachy 2](reachy2/README.md) | [URDF](reachy2/urdf/reachy2.urdf)<br>[MJCF](reachy2/mjcf/reachy2.xml) |
 | [<img src="reachy_2021/preview.png" width="240" alt="Pollen Robotics Reachy 2021 model preview">](reachy_2021/README.md) | [Pollen Robotics Reachy 2021](reachy_2021/README.md) | [URDF](reachy_2021/urdf/reachy_2021.urdf) |
 
 ## Sources and licensing

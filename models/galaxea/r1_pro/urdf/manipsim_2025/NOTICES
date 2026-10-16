@@ -1,0 +1,4 @@
+URDF entry and all copied mesh/material/texture dependencies from galaxea_sim/assets/r1_pro/robot.urdf
+Source: https://github.com/OpenGalaxea/GalaxeaManipSim.git
+Revision: abe7f5161eeaa150e6eaffdf443af5df7f23f356
+Resource paths are localized; physical definitions retain their upstream values.

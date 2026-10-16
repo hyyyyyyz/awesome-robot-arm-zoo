@@ -1,0 +1,27 @@
+{
+  "entry": "models/trossen/wxai/mjcf/wxai/wxai_base.xml",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "Native MJCF loaded in MuJoCo",
+  "pose": "keyframe: home",
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 0.5838467670338494,
+    "lookat": [
+      0.05691015650475384,
+      -0.024760928155749262,
+      0.153031757790489
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    165,
+    110,
+    495,
+    320
+  ]
+}

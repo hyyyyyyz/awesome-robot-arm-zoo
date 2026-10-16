@@ -1,0 +1,7 @@
+AIRBOT Play v3 model resources from DISCOVERSE.
+Source: https://github.com/discoverse-dev/DISCOVERSE
+Revision: d67f47c084aba0e0cf422a8725235f8b9238655a
+Entry: models/mjcf/manipulator/robot_airbot_play.xml
+Copyright (c) 2025 Yufei Jia.
+The copied MJCF, meshes and associated material resources retain source contents.
+The directory mjcf/ in the source models tree is named source/ locally; all relative references retain their resolution.

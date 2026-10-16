@@ -1,0 +1,37 @@
+{
+  "entry": "models/lekiwi/lekiwi/urdf/LeKiwi.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "base_back_wheel": 0.0,
+    "base_right_wheel": 0.0,
+    "base_left_wheel": 0.0,
+    "arm_shoulder_pan": 0.0,
+    "arm_shoulder_lift": 0.0,
+    "arm_elbow_flex": 0.0,
+    "arm_wrist_flex": 0.0,
+    "arm_wrist_roll": 0.0,
+    "arm_gripper": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 0.626124172758909,
+    "lookat": [
+      0.022973707343042327,
+      -0.01849147861383499,
+      0.09823861322054539
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    194,
+    83,
+    442,
+    351
+  ]
+}

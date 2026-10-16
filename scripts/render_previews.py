@@ -22,11 +22,17 @@ def model_entries(model_dir):
     """Select a documented robot entry, preferring native MJCF."""
     text = (model_dir / "README.md").read_text()
     section = text.split("## Model entries", 1)[1].split("\n## ", 1)[0]
-    paths = re.findall(r"\[`(models/[^`]+\.(?:urdf|xml))`\]", section)
-    paths = list(dict.fromkeys(paths))
-    if not paths:
+    entries = {}
+    for row in section.splitlines():
+        match = re.search(r"\[`(models/[^`]+\.(?:urdf|xml|usd|usda|usdc))`\]", row)
+        if match:
+            path = match.group(1)
+            purpose = row.split("|")[1].lower()
+            entries[path] = "scene" in purpose or "demonstration" in purpose
+    if not entries:
         raise ValueError(f"No documented entry in {model_dir}")
-    paths.sort(key=lambda path: (
+    paths = sorted(entries, key=lambda path: (
+        entries[path],
         Path(path).suffix != ".xml",
         "scene" in Path(path).stem.lower(),
         "gripper" in Path(path).stem.lower(),
@@ -113,10 +119,11 @@ def caption_image(pixels, title, brand):
 
 def fit_camera(renderer, model, data, camera, options, floor_id):
     """Frame visible robot surfaces, including meshes with distant CAD points."""
+    floor_ids = np.flatnonzero(model.geom_type == mujoco.mjtGeom.mjGEOM_PLANE)
     renderer.update_scene(data, camera=camera, scene_option=options)
     renderer.enable_segmentation_rendering()
     segmentation = renderer.render()
-    mask = (segmentation[:, :, 0] >= 0) & (segmentation[:, :, 0] != floor_id)
+    mask = (segmentation[:, :, 0] >= 0) & ~np.isin(segmentation[:, :, 0], floor_ids)
     yy, xx = np.nonzero(mask)
     if not len(xx):
         raise ValueError("No visible robot surfaces in initial frame")
@@ -150,7 +157,7 @@ def fit_camera(renderer, model, data, camera, options, floor_id):
         renderer.update_scene(data, camera=camera, scene_option=options)
         segmentation = renderer.render()
         yy, xx = np.nonzero((segmentation[:, :, 0] >= 0) &
-                            (segmentation[:, :, 0] != floor_id))
+                            ~np.isin(segmentation[:, :, 0], floor_ids))
         if not len(xx):
             raise ValueError("No visible robot surfaces after camera fitting")
         bounds = [int(xx.min()), int(yy.min()), int(xx.max()), int(yy.max())]
@@ -168,6 +175,11 @@ def render_model(model_dir):
         from preview_urdf import build_urdf_scene
         spec, bounds, pose = build_urdf_scene(entry)
         method = "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene"
+        key = -1
+    elif entry.suffix in (".usd", ".usda", ".usdc"):
+        from preview_usd import build_usd_scene
+        spec, bounds, pose = build_usd_scene(entry)
+        method = "USD composed visual meshes at authored transforms rendered in a static MuJoCo scene"
         key = -1
     else:
         spec, bounds, pose, key = native_scene(entry)

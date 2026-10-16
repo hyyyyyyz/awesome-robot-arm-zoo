@@ -1,0 +1,4 @@
+Upstream MJCF demonstration scene aloha_mujoco/aloha/meshes_mujoco/aloha_v1.xml and its complete mesh closure.
+Source: https://github.com/agilexrobotics/mobile_aloha_sim.git
+Revision: 2843ff11d2695c1563a1c9847f632aa9734f5bbc
+Resource paths are localized; physical definitions retain their upstream values.

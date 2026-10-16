@@ -1,0 +1,4 @@
+Static expansion of piper_x/urdf/piper_x_with_gripper_description.xacro with piper_x/urdf/piper_x_description.urdf and referenced PiPER X / AGX gripper resources.
+Source: https://github.com/agilexrobotics/agx_arm_urdf.git
+Revision: a68b8e876a2c6fcb0ecee7a7943129e4d48dd864
+Resource paths are localized; physical definitions retain their upstream values.

@@ -1,0 +1,45 @@
+{
+  "entry": "models/xlerobot/xlerobot_v0_3/urdf/xlerobot.urdf",
+  "renderer": "MuJoCo 3.16.0",
+  "method": "URDF visual geometry and forward kinematics rendered in a static MuJoCo scene",
+  "pose": {
+    "root_x_axis_joint": 0.0,
+    "root_y_axis_joint": 0.0,
+    "root_z_rotation_joint": 0.0,
+    "Rotation": 0.0,
+    "Pitch": 0.0,
+    "Elbow": 0.0,
+    "Wrist_Pitch": 0.0,
+    "Wrist_Roll": 0.0,
+    "Jaw": 0.0,
+    "Rotation_2": 0.0,
+    "Pitch_2": 0.0,
+    "Elbow_2": 0.0,
+    "Wrist_Pitch_2": 0.0,
+    "Wrist_Roll_2": 0.0,
+    "Jaw_2": 0.0,
+    "head_pan_joint": 0.0,
+    "head_tilt_joint": 0.0
+  },
+  "camera": {
+    "azimuth": 135.0,
+    "elevation": -25.0,
+    "distance": 2.542230033580168,
+    "lookat": [
+      0.05532098327651047,
+      0.03472439293321172,
+      0.6189412742474425
+    ]
+  },
+  "image": "preview.png",
+  "size": [
+    640,
+    480
+  ],
+  "robot_pixel_bounds": [
+    254,
+    89,
+    382,
+    347
+  ]
+}

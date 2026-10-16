@@ -1,6 +1,6 @@
 # Model File Specification
 
-Public model entries use stable paths and resolve their complete resources within a local checkout. Organize files by manufacturer, model, and format so users can choose the entry appropriate for their environment.
+Public model entries use stable paths and resolve their complete resources within a local checkout. Organize files by manufacturer or hardware project, model, and format so users can choose the entry appropriate for their environment.
 
 ## Directories and naming
 
@@ -43,6 +43,8 @@ Resources include meshes, textures, materials, submodels, and all other files re
 | SDF | Meshes, materials, includes, and nested model resource paths |
 
 Write relative references according to the format and target loader's resolution rules. Verify that loading by absolute entry path succeeds after relocating the complete directory and running from another working directory.
+
+Name simulator-provided material modules and schemas in the loading requirements. These runtime components are separate from the model's bundled resources.
 
 URDF models intended for direct file loading provide a static URDF entry. Upstream generation sources such as Xacro may accompany it as supplementary files; users reference the prepared entry directly.
 

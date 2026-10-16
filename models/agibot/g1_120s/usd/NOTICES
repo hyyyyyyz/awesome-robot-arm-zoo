@@ -1,0 +1,7 @@
+AgiBot G1 with 120s grippers, from AgiBot World GenieSimAssets.
+Source: https://huggingface.co/datasets/agibot-world/GenieSimAssets
+Revision: a0813aad7c16165daffbe6c2737754e0344809ee
+Source directory: robot/G1_120s/
+Copyright and attribution: AgiBot World / Genie Sim contributors.
+The dataset card licenses all data and code under CC BY-NC-SA 4.0.
+USD layers and config.yaml are unmodified. No attribution is implied for third-party runtimes.
